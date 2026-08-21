@@ -1,0 +1,78 @@
+/* ==========================================================================
+   GICA & VHO — The Ultimate Co-Op Campaign
+   mobile.css — App-like experience (≤1199px: phones + tablets)
+   Loaded with a media query from page <head>.
+
+   ONE primary navigation system: the top header + hamburger drawer.
+   No fixed bottom navigation.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. HEADER / NAVIGATION
+   -------------------------------------------------------------------------- */
+/* Hamburger is the primary menu on phones/tablets */
+.nav-toggle { display: inline-flex; }
+
+.brand__mono { letter-spacing: 0.04em; }
+
+/* Hide desktop-only quick actions on mobile */
+.header-actions { display: none !important; }
+
+/* --------------------------------------------------------------------------
+   2. MAIN SHELL
+   -------------------------------------------------------------------------- */
+.main-shell {
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+/* --------------------------------------------------------------------------
+   3. HERO (home) — mobile stacks text above art; art is a wide crop
+   -------------------------------------------------------------------------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.hero__content { text-align: center; order: 1; }
+.hero__content h1 { margin-bottom: var(--space-3); }
+.hero__content .lead { margin: 0 auto var(--space-4); }
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.hero__art { order: 2; }
+
+/* Mobile hero art is shorter — keeps the fold light */
+.hero-art .art-frame__fallback { aspect-ratio: 16 / 10; }
+
+/* --------------------------------------------------------------------------
+   4. COUNTDOWN — slightly tighter cells on small screens
+   -------------------------------------------------------------------------- */
+.countdown { gap: var(--space-2); }
+.countdown__cell { padding: var(--space-3) var(--space-1); }
+.countdown__label { font-size: 0.58rem; letter-spacing: 0.12em; }
+
+/* --------------------------------------------------------------------------
+   5. HOMEPAGE QUEST GRID — single column on small phones
+   -------------------------------------------------------------------------- */
+.quest-grid {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--space-4);
+}
+
+/* --------------------------------------------------------------------------
+   6. OPENING SCREEN — keep everything visible on short screens
+   -------------------------------------------------------------------------- */
+.opening { overflow-y: auto; }
+.opening__art {
+  width: min(56vw, 200px);
+  margin-bottom: var(--space-4);
+}
+.opening__date { margin-bottom: var(--space-4); }
+.opening .btn--lg { padding: 0.8rem 2rem; }

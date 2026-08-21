@@ -1,0 +1,125 @@
+/* ==========================================================================
+   GICA & VHO — The Ultimate Co-Op Campaign
+   desktop.css — Centered, spacious wedding layout (≥1200px)
+   Loaded with a media query from page <head>.
+
+   ONE primary navigation system: the top header nav.
+   No persistent sidebars, no dashboard rails.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. HIDE MOBILE / TABLET CONTROLS
+   -------------------------------------------------------------------------- */
+.nav-toggle,
+.drawer,
+.drawer-backdrop,
+.bottom-nav { display: none !important; }
+
+/* --------------------------------------------------------------------------
+   2. HEADER — three-zone layout: brand | nav | actions
+   -------------------------------------------------------------------------- */
+.site-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  padding: 0 var(--space-6);
+}
+
+.site-nav-main {
+  display: block;
+  justify-self: center;
+}
+
+.site-nav-main ul {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  list-style: none;
+  padding: 0;
+}
+
+.site-nav-main a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  font-family: var(--font-pixel);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color var(--dur-s) var(--ease), background-color var(--dur-s) var(--ease);
+  white-space: nowrap;
+}
+
+.site-nav-main a svg { width: 15px; height: 15px; color: var(--accent); }
+
+.site-nav-main a:hover,
+.site-nav-main a:focus-visible {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.site-nav-main a[aria-current="page"] {
+  background: var(--navy);
+  color: #fff;
+}
+.site-nav-main a[aria-current="page"] svg { color: var(--cream); }
+
+.header-actions {
+  display: inline-flex;
+  justify-self: end;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* --------------------------------------------------------------------------
+   3. MAIN SHELL — centered, spacious single column
+   -------------------------------------------------------------------------- */
+.main-shell {
+  max-width: 900px;
+  margin-inline: auto;
+  padding-top: var(--space-7);
+  padding-bottom: var(--space-10);
+}
+
+/* Pages that aren't dashboards (e.g. thank-you) stay centered and narrow */
+.main-shell--no-nav {
+  max-width: var(--maxw-text);
+  margin-inline: auto;
+  padding-bottom: var(--space-8);
+}
+
+/* --------------------------------------------------------------------------
+   4. HERO (home) — split layout, content left, art right
+   -------------------------------------------------------------------------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.hero__content { text-align: left; }
+.hero__cta { justify-content: flex-start; }
+.hero__art { width: clamp(300px, 30vw, 430px); }
+.hero-art .art-frame__fallback { aspect-ratio: 4 / 3; }
+
+/* --------------------------------------------------------------------------
+   5. HOMEPAGE SECTION GRIDS
+   -------------------------------------------------------------------------- */
+.quest-grid {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-5);
+}
+
+/* --------------------------------------------------------------------------
+   6. COUNTDOWN — roomier numerals
+   -------------------------------------------------------------------------- */
+.countdown { margin-top: var(--space-6); }
+.countdown__cell { padding: var(--space-4) var(--space-3); }
+
+/* --------------------------------------------------------------------------
+   7. FOOTER — no bottom nav to clear on desktop
+   -------------------------------------------------------------------------- */
+.site-footer { padding-bottom: var(--space-8); }

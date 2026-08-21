@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gica & Vho - The Ultimate Co-Op Campaign</title>
+  <meta name="description" content="Two Players. One Love. One Unforgettable Adventure. February 7, 2027.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gica and Vho - Wedding Quest">
+  <meta property="og:description" content="Join the ultimate co-op campaign on February 7, 2027.">
+  <meta property="og:type" content="website">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/mobile.css" media="(max-width: 1199px)">
+  <link rel="stylesheet" href="css/desktop.css" media="(min-width: 1200px)">
+
+  <!-- JS -->
+  <script src="js/main.js" defer></script>
+  <script src="js/countdown.js" defer></script>
+</head>
+<body>
+
+  <!-- SKIP LINK -->
+  <a class="skip-link" href="#home-intro">Skip to main content</a>
+
+  <!-- OPENING SCREEN -->
+  <section class="opening" id="opening" aria-label="Opening">
+    <div class="opening__art art-frame" aria-hidden="true">
+      <img class="art-frame__img" src="assets/hero/desktop.webp" alt="">
+      <span class="art-frame__fallback">G HEART V</span>
+    </div>
+
+    <h1 class="opening__title">Gica <span class="heart" aria-hidden="true">*</span> Vho</h1>
+    <p class="opening__campaign">The Ultimate<br>Co-Op Campaign</p>
+    <p class="opening__copy">Two Players. One Love.<br>One Unforgettable Adventure.</p>
+    <p class="opening__date">07 <span class="dot">*</span> 02 <span class="dot">*</span> 27</p>
+
+    <button class="btn btn--opening" data-press-start type="button">Press Start</button>
+  </section>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Gica and Vho - Home">
+      Gica <span class="brand__heart" aria-hidden="true">*</span> Vho
+    </a>
+
+    <!-- Desktop nav (>=1200px) -->
+    <nav class="site-nav-main" aria-label="Main">
+      <ul>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="wedding.html">Wedding Day</a></li>
+        <li><a href="map.html">Campaign Map</a></li>
+        <li><a href="party.html">Party</a></li>
+        <li><a href="guide.html">Guide</a></li>
+        <li><a href="rsvp.html">RSVP</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header actions (desktop only) -->
+    <div class="header-actions">
+      <button class="music-toggle" type="button" aria-label="Toggle music" aria-pressed="false">Music</button>
+      <a class="btn btn--outline" href="rsvp.html">RSVP</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button class="nav-toggle" data-drawer-toggle aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </header>
+
+  <!-- DRAWER NAVIGATION -->
+  <aside class="backdrop drawer-backdrop" data-drawer-backdrop></aside>
+  <aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true">
+    <p class="drawer__label">Journey</p>
+    <a href="story.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-9.4-9C1 8.6 3 4.6 6.5 4.6c2.4 0 3.9 1.5 5.5 3.3 1.6-1.8 3.1-3.3 5.5-3.3C21 4.6 23 8.6 21.4 12 19 16.5 12 21 12 21z"/></svg>
+      Our Story
+    </a>
+    <a href="wedding.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.2 4.5L19 8.3l-3.5 3.4.8 4.9L12 14.4 7.7 16.6l.8-4.9L5 8.3l4.8-.8L12 3z"/></svg>
+      Wedding Day
+    </a>
+    <a href="map.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      Campaign Map
+    </a>
+    <a href="party.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"/></svg>
+      Party Members
+    </a>
+    <a href="guide.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm-1-13h2v8h-2zm0 10h2v2h-2z"/></svg>
+      Player Guide
+    </a>
+    <a href="rsvp.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2h4v2h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4V2z"/></svg>
+      Final Quest
+    </a>
+
+    <p class="drawer__label">Treasure</p>
+    <a href="gallery.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm0 2v14h14V5H5z"/></svg>
+      Gallery
+    </a>
+    <a href="gifts.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8zm3 4v8h2v-8H7zm4 0v8h2v-8h-2zm4 0v8h2v-8h-2zM5 3h14a2 2 0 0 1 2 2v3H3V5a2 2 0 0 1 2-2z"/></svg>
+      Gifts and Wishes
+    </a>
+    <a href="thank-you.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-9.4-9C1 8.6 3 4.6 6.5 4.6c2.4 0 3.9 1.5 5.5 3.3 1.6-1.8 3.1-3.3 5.5-3.3C21 4.6 23 8.6 21.4 12 19 16.5 12 21 12 21z"/></svg>
+      Thank You
+    </a>
+  </aside>
+
+  <main class="main-shell" id="main">
+
+    <!-- HOME / QUEST HUB -->
+    <div class="hero" id="home-intro">
+      <div class="hero__content">
+        <p class="eyebrow">01 - The Journey</p>
+        <h1>The Ultimate<br>Co-Op Campaign</h1>
+        <p class="lead">Two Players. One Love.<br>One Unforgettable Adventure.</p>
+        <p class="countdown__date">07 February 2027</p>
+
+        <div class="hero__cta">
+          <a class="btn btn--outline" href="story.html">Our Story</a>
+          <a class="btn btn--opening" href="rsvp.html">Final Quest</a>
+        </div>
+      </div>
+
+      <div class="hero__art hero-art">
+        <svg class="art-frame__fallback" viewBox="0 0 240 160" aria-hidden="true">
+          <rect width="240" height="160" rx="14" fill="#C97C7F"></rect>
+          <circle cx="80" cy="80" r="34" fill="#FFF8EA" opacity="0.5"></circle>
+          <circle cx="160" cy="80" r="34" fill="#FFF8EA" opacity="0.5"></circle>
+          <path d="M80 62h100a10 10 0 0 1 10 10v22a10 10 0 0 1-10 10H80a10 10 0 0 1-10-10V72a10 10 0 0 1 10-10z" fill="none" stroke="#B89555" stroke-width="4"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- COUNTDOWN -->
+    <section class="section" aria-labelledby="quest-start">
+      <div class="section-head">
+        <p class="eyebrow">Next Quest</p>
+        <h2 id="quest-start">Wedding Day</h2>
+      </div>
+      <p class="countdown__date">07 February 2027</p>
+
+      <div class="countdown" data-countdown-group>
+        <div class="countdown__cell">
+          <span class="countdown__num" data-countdown="days">00</span>
+          <span class="countdown__label">Days</span>
+        </div>
+        <div class="countdown__cell">
+          <span class="countdown__num" data-countdown="hours">00</span>
+          <span class="countdown__label">Hours</span>
+        </div>
+        <div class="countdown__cell">
+          <span class="countdown__num" data-countdown="minutes">00</span>
+          <span class="countdown__label">Minutes</span>
+        </div>
+        <div class="countdown__cell">
+          <span class="countdown__num" data-countdown="seconds">00</span>
+          <span class="countdown__label">Seconds</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHOOSE YOUR ADVENTURE (featured content previews) -->
+    <section class="section" aria-labelledby="quest-hub">
+      <div class="section-head">
+        <p class="eyebrow">Choose Your Adventure</p>
+        <h2 id="quest-hub">Quest Hub</h2>
+      </div>
+
+      <div class="quest-grid">
+        <a class="quest-link" href="story.html">
+          <span class="quest-link__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-9.4-9C1 8.6 3 4.6 6.5 4.6c2.4 0 3.9 1.5 5.5 3.3 1.6-1.8 3.1-3.3 5.5-3.3C21 4.6 23 8.6 21.4 12 19 16.5 12 21 12 21z"/></svg>
+          </span>
+          <h3>Our Story</h3>
+          <p>Every adventure has a beginning.</p>
+        </a>
+
+        <a class="quest-link" href="wedding.html">
+          <span class="quest-link__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.2 4.5L19 8.3l-3.5 3.4.8 4.9L12 14.4 7.7 16.6l.8-4.9L5 8.3l4.8-.8L12 3z"/></svg>
+          </span>
+          <h3>Wedding Day</h3>
+          <p>The biggest quest of our lives.</p>
+        </a>
+
+        <a class="quest-link" href="map.html">
+          <span class="quest-link__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          </span>
+          <h3>Campaign Map</h3>
+          <p>Find your way to the celebration.</p>
+        </a>
+
+        <a class="quest-link" href="party.html">
+          <span class="quest-link__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"/></svg>
+          </span>
+          <h3>Party Members</h3>
+          <p>Meet the people who make our party complete.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- FINAL QUEST CTA -->
+    <section class="section" aria-labelledby="final-quest">
+      <div class="card card--navy text-center">
+        <p class="eyebrow">Final Quest</p>
+        <h2 id="final-quest">Will you join our party guild?</h2>
+        <p class="text-muted">February 7, 2027 - Pooc / Silang, Cavite</p>
+        <a class="btn btn--gold" href="rsvp.html">Accept Quest</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>With love - Gica and Vho. February 7, 2027.</p>
+    <p><span data-year></span> Coded with <span class="footer-heart" aria-hidden="true">*</span></p>
+  </footer>
+
+</body>
+</html>
