@@ -8,52 +8,186 @@
   <link rel="stylesheet" href="css/mobile.css" media="(max-width: 1199px)">
   <link rel="stylesheet" href="css/desktop.css" media="(min-width: 1200px)">
   <script src="js/main.js" defer></script>
+  <style>
+    /* Wedding Day page only; shared palette and typography remain unchanged. */
+    .wedding-page { max-width: 960px; padding-top: clamp(2.5rem, 7vw, 5rem); }
+    .wedding-intro { text-align: center; }
+    .wedding-intro .eyebrow { color: var(--gold); background: transparent; border: 0; padding: 0; margin-bottom: 1rem; }
+    .wedding-intro h1 { color: var(--cream); font-family: var(--font-serif); font-size: clamp(2.35rem, 7vw, 4.75rem); letter-spacing: .12em; line-height: 1; text-transform: uppercase; }
+    .wedding-subtitle { margin: 1rem auto 0; color: var(--cream); font-family: var(--font-serif); font-size: clamp(1.1rem, 2.5vw, 1.5rem); letter-spacing: .12em; text-transform: uppercase; }
+    .wedding-date { margin: 1.5rem auto 0; color: var(--gold); font-family: var(--font-pixel); font-size: clamp(.8rem, 2vw, 1rem); letter-spacing: .18em; line-height: 1.8; text-transform: uppercase; }
+    .wedding-timeline { position: relative; width: min(100%, 760px); margin: clamp(3rem, 8vw, 5.5rem) auto 0; padding-left: 4.5rem; }
+    .wedding-timeline::before { content: ""; position: absolute; top: 1rem; bottom: 1rem; left: 1.05rem; width: 1px; background: var(--gold); }
+    .wedding-event { position: relative; }
+    .wedding-event + .wedding-event { margin-top: 4.5rem; }
+    .wedding-marker { position: absolute; top: .5rem; left: -4.5rem; z-index: 1; display: grid; place-items: center; width: 2.15rem; height: 2.15rem; border: 2px solid var(--gold); border-radius: 50%; background: var(--burgundy); color: var(--cream); font-family: var(--font-pixel); font-size: .65rem; }
+    .wedding-card { padding: clamp(1.4rem, 4vw, 2.25rem); border: 1px solid var(--gold); border-radius: var(--radius-md); background: var(--surface); color: var(--ink); box-shadow: var(--shadow-card); }
+    .wedding-label { color: var(--burgundy); font-family: var(--font-pixel); font-size: var(--text-xs); letter-spacing: .2em; text-transform: uppercase; }
+    .wedding-card h2 { margin-top: .7rem; color: var(--burgundy); font-family: var(--font-serif); font-size: clamp(1.9rem, 4vw, 2.7rem); letter-spacing: .08em; text-transform: uppercase; }
+    .wedding-time { margin-top: .25rem; color: var(--ink); font-family: var(--font-pixel); font-size: .9rem; letter-spacing: .12em; }
+    .wedding-venue { margin-top: 1.25rem; color: var(--ink); font-family: var(--font-serif); font-size: clamp(1.15rem, 2.4vw, 1.35rem); font-weight: 600; line-height: 1.35; }
+    .wedding-address { margin-top: .2rem; color: var(--brown); font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.5; }
+    .wedding-note { width: min(100%, 560px); margin: clamp(3.5rem, 8vw, 5rem) auto 0; padding: 1.5rem; border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold); text-align: center; }
+    .wedding-note h2 { color: var(--cream); font-family: var(--font-pixel); font-size: var(--text-s); letter-spacing: .18em; text-transform: uppercase; }
+    .wedding-note p { margin: .65rem auto 0; color: var(--text-muted); font-family: var(--font-serif); font-size: 1.1rem; }
+    .campaign-map { margin-top: clamp(6rem, 12vw, 9rem); padding-top: clamp(3rem, 7vw, 5rem); border-top: 1px solid var(--gold); }
+    .map-intro { text-align: center; }
+    .map-intro .eyebrow { color: var(--gold); background: transparent; border: 0; padding: 0; margin-bottom: 1rem; }
+    .map-intro h2 { color: var(--cream); font-family: var(--font-serif); font-size: clamp(2.25rem, 6vw, 4.5rem); letter-spacing: .1em; line-height: 1; text-transform: uppercase; }
+    .map-subtitle { margin: 1rem auto 0; color: var(--cream); font-family: var(--font-serif); font-size: clamp(1.1rem, 2.5vw, 1.5rem); letter-spacing: .1em; text-transform: uppercase; }
+    .map-date { margin: 1.5rem auto 0; color: var(--gold); font-family: var(--font-pixel); font-size: clamp(.8rem, 2vw, 1rem); letter-spacing: .18em; text-transform: uppercase; }
+    .map-panel { width: min(100%, 940px); margin: clamp(3rem, 7vw, 5rem) auto 0; padding: clamp(1rem, 3vw, 1.75rem); border: 1px solid var(--gold); border-radius: var(--radius-md); background: var(--surface); color: var(--ink); box-shadow: var(--shadow-card); }
+    .map-panel__heading { text-align: center; }
+    .map-panel__heading h3 { color: var(--burgundy); font-family: var(--font-serif); font-size: clamp(1.6rem, 3vw, 2.25rem); letter-spacing: .08em; text-transform: uppercase; }
+    .map-panel__heading p { margin: .45rem auto 0; color: var(--brown); font-family: var(--font-serif); font-size: 1rem; }
+    .map-visual { margin-top: 1.25rem; overflow: hidden; border: 1px solid var(--line); background: #EDE4D5; }
+    .map-visual svg { display: block; width: 100%; min-height: 300px; }
+    .map-road { fill: none; stroke: #D2C4AE; stroke-width: 8; stroke-linecap: round; }
+    .map-road--wide { stroke: #C7B89F; stroke-width: 14; }
+    .map-route { fill: none; stroke: var(--gold); stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1 18; }
+    .map-marker { fill: var(--burgundy); stroke: var(--cream); stroke-width: 5; }
+    .map-marker__core { fill: var(--cream); }
+    .map-label { fill: var(--burgundy); font-family: var(--font-pixel); font-size: 18px; font-weight: 700; letter-spacing: 2px; }
+    .map-label--small { fill: var(--ink); font-family: var(--font-serif); font-size: 15px; font-weight: 600; letter-spacing: 1px; }
+    .map-caption { margin: .8rem auto 0; color: var(--brown); font-family: var(--font-serif); font-size: .95rem; font-style: italic; text-align: center; }
+    .map-locations { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 3vw, 2rem); width: min(100%, 760px); margin: clamp(2.5rem, 6vw, 4rem) auto 0; }
+    .location-card { display: grid; grid-template-columns: auto 1fr; gap: .35rem 1rem; padding: clamp(1.35rem, 3vw, 2rem); border: 1px solid var(--gold); border-radius: var(--radius-md); background: var(--surface); color: var(--ink); box-shadow: var(--shadow-card); }
+    .location-card__number { grid-row: span 2; color: var(--burgundy); font-family: var(--font-pixel); font-size: var(--text-s); letter-spacing: .1em; }
+    .location-card h3 { color: var(--burgundy); font-family: var(--font-serif); font-size: clamp(1.6rem, 3vw, 2.1rem); letter-spacing: .08em; text-transform: uppercase; }
+    .location-card__venue { margin-top: .65rem; color: var(--ink); font-family: var(--font-serif); font-size: 1.15rem; font-weight: 600; line-height: 1.35; }
+    .location-card__address { margin-top: .15rem; color: var(--brown); font-family: var(--font-serif); font-size: 1rem; line-height: 1.5; }
+    .location-card__button { grid-column: 2; justify-self: start; margin-top: 1.15rem; background: var(--burgundy); border-color: var(--burgundy); color: var(--cream); }
+    .location-card__button:hover { background: #54202F; }
+    @media (max-width: 700px) {
+      .map-visual svg { min-height: 250px; }
+      .map-label { font-size: 16px; }
+      .map-label--small { font-size: 13px; }
+      .map-locations { grid-template-columns: 1fr; }
+      .location-card__button { width: 100%; }
+    }
+    @media (max-width: 420px) {
+      .map-panel { padding: .75rem; }
+      .map-visual svg { min-height: 220px; }
+      .map-label { font-size: 14px; letter-spacing: 1px; }
+      .map-label--small { font-size: 11px; }
+    }
+    @media (max-width: 480px) {
+      .wedding-page { padding-top: 2.25rem; }
+      .wedding-timeline { padding-left: 3.25rem; }
+      .wedding-timeline::before { left: .8rem; }
+      .wedding-marker { left: -3.25rem; }
+      .wedding-event + .wedding-event { margin-top: 3rem; }
+    }
+  </style>
 </head>
 <body>
 
-  <header class="site-header">
-    <a class="brand" href="index.html">Gica <span class="brand__heart" aria-hidden="true">*</span> Vho</a>
-    <nav class="site-nav-main" aria-label="Main">
-      <ul>
-        <li><a href="story.html">Our Story</a></li>
-        <li><a href="wedding.html">Wedding Day</a></li>
-        <li><a href="map.html">Campaign Map</a></li>
-        <li><a href="party.html">Party</a></li>
-        <li><a href="guide.html">Guide</a></li>
-        <li><a href="rsvp.html">RSVP</a></li>
-      </ul>
-    </nav>
+    <header class="site-header">
+    <a class="brand" href="index.html#home" aria-label="Gica and Vho - Home">Gica <span class="brand__heart" aria-hidden="true">&#9829;</span> Vho</a>
+    <nav class="site-nav-main" aria-label="Main navigation">
+  <ul>
+    <li><a href="story.html" data-section="story">Our Story</a></li>
+    <li class="nav-group"><details><summary data-section="wedding">The Wedding</summary><ul><li><a href="wedding.html#events">Wedding Day</a></li><li><a href="wedding.html#map">Campaign Map</a></li></ul></details></li>
+    <li class="nav-group"><details><summary data-section="guide">Guest Guide</summary><ul><li><a href="guide.html#party">Party Members</a></li><li><a href="guide.html#outfit">Outfit Guide</a></li><li><a href="guide.html#faqs">FAQs &amp; Gifts</a></li></ul></details></li>
+    <li><a href="gallery.html" data-section="memories">Memories</a></li>
+    <li><a href="rsvp.html" data-section="rsvp">RSVP</a></li>
+  </ul>
+</nav>
     <div class="header-actions">
-      <a class="btn btn--outline" href="rsvp.html">RSVP</a>
+      <button class="music-toggle" type="button" aria-label="Toggle music" aria-pressed="false">Music</button>
     </div>
-    <button class="nav-toggle" data-drawer-toggle aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+    <button class="nav-toggle" data-drawer-toggle type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
       <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18z"/></svg>
     </button>
   </header>
 
   <aside class="backdrop drawer-backdrop" data-drawer-backdrop></aside>
   <aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true">
-    <p class="drawer__label">Journey</p>
-    <a href="story.html">Our Story</a>
-    <a href="wedding.html">Wedding Day</a>
-    <a href="map.html">Campaign Map</a>
-    <a href="party.html">Party Members</a>
-    <a href="guide.html">Player Guide</a>
-    <a href="rsvp.html">Final Quest</a>
-    <p class="drawer__label">Treasure</p>
-    <a href="gallery.html">Gallery</a>
-    <a href="gifts.html">Gifts and Wishes</a>
-    <a href="thank-you.html">Thank You</a>
-  </aside>
+  <a class="drawer__top-link" href="story.html" data-section="story">Our Story</a>
+  <div class="drawer__group"><p class="drawer__group-title" data-section="wedding">The Wedding</p><div class="drawer__children"><a href="wedding.html#events">Wedding Day</a><a href="wedding.html#map">Campaign Map</a></div></div>
+  <div class="drawer__group"><p class="drawer__group-title" data-section="guide">Guest Guide</p><div class="drawer__children"><a href="guide.html#party">Party Members</a><a href="guide.html#outfit">Outfit Guide</a><a href="guide.html#faqs">FAQs &amp; Gifts</a></div></div>
+  <a class="drawer__top-link" href="gallery.html" data-section="memories">Memories</a>
+  <a class="drawer__top-link" href="rsvp.html" data-section="rsvp">RSVP</a>
+</aside>
 
-  <main class="main-shell main-shell--no-nav">
-    <div class="section">
-      <p class="eyebrow">Coming Soon</p>
-      <h1>Wedding Day</h1>
-      <p class="lead">The biggest quest of our lives. February 7, 2027.</p>
-      <a class="btn" href="index.html">Return to Quest Hub</a>
-    </div>
+  <main class="main-shell wedding-page" id="wedding-main">
+    <section id="events" aria-labelledby="events-heading">
+      <header class="wedding-intro">
+        <p class="eyebrow">The Next Chapter</p>
+        <h1 id="events-heading">Wedding Day</h1>
+        <p class="wedding-subtitle">The Day We've Been Waiting For</p>
+        <p class="wedding-date">07 February 2027<br><span>Sunday</span></p>
+      </header>
+      <section class="wedding-timeline" aria-labelledby="timeline-heading">
+        <h2 class="sr-only" id="timeline-heading">Wedding-day timeline</h2>
+        <article class="wedding-event">
+          <span class="wedding-marker" aria-hidden="true">01</span>
+          <div class="wedding-card">
+            <p class="wedding-label">Event 01</p><h2>Ceremony</h2><p class="wedding-time">10:00 AM</p>
+            <p class="wedding-venue">San Antonio de Padua Parish</p><p class="wedding-address">Pooc, Silang, Cavite</p>
+          </div>
+        </article>
+        <article class="wedding-event">
+          <span class="wedding-marker" aria-hidden="true">02</span>
+          <div class="wedding-card">
+            <p class="wedding-label">Event 02</p><h2>Reception</h2><p class="wedding-time">11:00 AM</p>
+            <p class="wedding-venue">Cana at Silang</p><p class="wedding-address">Cana, Paglinawan Street,<br>Pook 1, Silang, Cavite</p>
+          </div>
+        </article>
+      </section>
+      <section class="wedding-note" aria-labelledby="expect-heading"><h2 id="expect-heading">What to Expect</h2><p>More wedding-day information will be added here.</p></section>
+    </section>
+
+    <section class="campaign-map" id="map" aria-labelledby="map-page-heading">
+      <header class="map-intro">
+        <p class="eyebrow">The Campaign Map</p>
+        <h2 id="map-page-heading">The Campaign Map</h2>
+        <p class="map-subtitle">Find Your Way to the Celebration</p>
+        <p class="map-date">07 February 2027</p>
+      </header>
+
+      <section class="map-panel" aria-labelledby="map-heading">
+        <div class="map-panel__heading">
+          <h3 id="map-heading">Celebration Route</h3>
+          <p>Visual map placeholder &mdash; exact route artwork and links will be added later.</p>
+        </div>
+        <div class="map-visual" role="img" aria-label="Illustrated route from San Antonio de Padua Parish in Pooc, Silang, Cavite to Cana at Silang on Paglinawan Street, Pook 1, Silang, Cavite">
+          <svg viewBox="0 0 900 460" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet">
+            <path class="map-road map-road--wide" d="M-20 390 C120 300 145 130 315 170 S510 390 650 275 S760 90 930 50" />
+            <path class="map-road" d="M20 90 C180 125 240 80 365 105 S570 210 900 200" />
+            <path class="map-road" d="M135 460 C220 350 320 330 405 350 S650 440 760 460" />
+            <path class="map-road" d="M500 0 C470 85 520 145 600 205 S710 300 690 480" />
+            <path class="map-route" d="M245 125 C300 175 330 220 405 260 S500 320 605 345" />
+            <circle class="map-marker" cx="245" cy="125" r="15" />
+            <circle class="map-marker__core" cx="245" cy="125" r="5" />
+            <circle class="map-marker" cx="605" cy="345" r="15" />
+            <circle class="map-marker__core" cx="605" cy="345" r="5" />
+            <text class="map-label" x="245" y="82" text-anchor="middle">CEREMONY</text>
+            <text class="map-label map-label--small" x="245" y="103" text-anchor="middle">POOC, SILANG</text>
+            <text class="map-label" x="605" y="397" text-anchor="middle">RECEPTION</text>
+            <text class="map-label map-label--small" x="605" y="418" text-anchor="middle">CANA AT SILANG</text>
+          </svg>
+        </div>
+        <p class="map-caption">A visual guide for now. Actual map details will be supplied when available.</p>
+      </section>
+
+      <section class="map-locations" aria-labelledby="locations-heading">
+        <h3 class="sr-only" id="locations-heading">Celebration locations</h3>
+        <article class="location-card">
+          <p class="location-card__number">01</p>
+          <div><h3>Ceremony</h3><p class="location-card__venue">San Antonio de Padua Parish</p><p class="location-card__address">Pooc, Silang, Cavite</p></div>
+          <a class="btn location-card__button" href="#map-directions-placeholder-ceremony" aria-label="Get directions to ceremony - placeholder">Get Directions <span aria-hidden="true">&#8594;</span></a>
+        </article>
+        <article class="location-card">
+          <p class="location-card__number">02</p>
+          <div><h3>Reception</h3><p class="location-card__venue">Cana at Silang</p><p class="location-card__address">Cana, Paglinawan Street,<br>Pook 1, Silang, Cavite</p></div>
+          <a class="btn location-card__button" href="#map-directions-placeholder-reception" aria-label="Get directions to reception - placeholder">Get Directions <span aria-hidden="true">&#8594;</span></a>
+        </article>
+      </section>
+      <p class="sr-only" id="map-directions-placeholder-ceremony">Ceremony directions placeholder. An exact map URL will be added when available.</p>
+      <p class="sr-only" id="map-directions-placeholder-reception">Reception directions placeholder. An exact map URL will be added when available.</p>
+    </section>
   </main>
 
 </body>

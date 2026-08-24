@@ -3,58 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Player Guide - Gica & Vho</title>
+  <meta name="description" content="Guest guide, party roles, outfit guidance, FAQs, and gifts for Gica and Vho's wedding day.">
+  <title>Guest Guide - Gica &amp; Vho</title>
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/mobile.css" media="(max-width: 1199px)">
   <link rel="stylesheet" href="css/desktop.css" media="(min-width: 1200px)">
+  <link rel="stylesheet" href="css/guide.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
 
-  <header class="site-header">
-    <a class="brand" href="index.html">Gica <span class="brand__heart" aria-hidden="true">*</span> Vho</a>
-    <nav class="site-nav-main" aria-label="Main">
-      <ul>
-        <li><a href="story.html">Our Story</a></li>
-        <li><a href="wedding.html">Wedding Day</a></li>
-        <li><a href="map.html">Campaign Map</a></li>
-        <li><a href="party.html">Party</a></li>
-        <li><a href="guide.html">Guide</a></li>
-        <li><a href="rsvp.html">RSVP</a></li>
-      </ul>
-    </nav>
+    <header class="site-header">
+    <a class="brand" href="index.html#home" aria-label="Gica and Vho - Home">Gica <span class="brand__heart" aria-hidden="true">&#9829;</span> Vho</a>
+    <nav class="site-nav-main" aria-label="Main navigation">
+  <ul>
+    <li><a href="story.html" data-section="story">Our Story</a></li>
+    <li class="nav-group"><details><summary data-section="wedding">The Wedding</summary><ul><li><a href="wedding.html#events">Wedding Day</a></li><li><a href="wedding.html#map">Campaign Map</a></li></ul></details></li>
+    <li class="nav-group"><details><summary data-section="guide">Guest Guide</summary><ul><li><a href="guide.html#party">Party Members</a></li><li><a href="guide.html#outfit">Outfit Guide</a></li><li><a href="guide.html#faqs">FAQs &amp; Gifts</a></li></ul></details></li>
+    <li><a href="gallery.html" data-section="memories">Memories</a></li>
+    <li><a href="rsvp.html" data-section="rsvp">RSVP</a></li>
+  </ul>
+</nav>
     <div class="header-actions">
-      <a class="btn btn--outline" href="rsvp.html">RSVP</a>
+      <button class="music-toggle" type="button" aria-label="Toggle music" aria-pressed="false">Music</button>
     </div>
-    <button class="nav-toggle" data-drawer-toggle aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+    <button class="nav-toggle" data-drawer-toggle type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
       <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18z"/></svg>
     </button>
   </header>
 
   <aside class="backdrop drawer-backdrop" data-drawer-backdrop></aside>
   <aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true">
-    <p class="drawer__label">Journey</p>
-    <a href="story.html">Our Story</a>
-    <a href="wedding.html">Wedding Day</a>
-    <a href="map.html">Campaign Map</a>
-    <a href="party.html">Party Members</a>
-    <a href="guide.html">Player Guide</a>
-    <a href="rsvp.html">Final Quest</a>
-    <p class="drawer__label">Treasure</p>
-    <a href="gallery.html">Gallery</a>
-    <a href="gifts.html">Gifts and Wishes</a>
-    <a href="thank-you.html">Thank You</a>
-  </aside>
+  <a class="drawer__top-link" href="story.html" data-section="story">Our Story</a>
+  <div class="drawer__group"><p class="drawer__group-title" data-section="wedding">The Wedding</p><div class="drawer__children"><a href="wedding.html#events">Wedding Day</a><a href="wedding.html#map">Campaign Map</a></div></div>
+  <div class="drawer__group"><p class="drawer__group-title" data-section="guide">Guest Guide</p><div class="drawer__children"><a href="guide.html#party">Party Members</a><a href="guide.html#outfit">Outfit Guide</a><a href="guide.html#faqs">FAQs &amp; Gifts</a></div></div>
+  <a class="drawer__top-link" href="gallery.html" data-section="memories">Memories</a>
+  <a class="drawer__top-link" href="rsvp.html" data-section="rsvp">RSVP</a>
+</aside>
 
-  <main class="main-shell main-shell--no-nav">
-    <div class="section">
-      <p class="eyebrow">Coming Soon</p>
-      <h1>Player Guide</h1>
-      <p class="lead">Everything you need before the quest begins.</p>
-      <a class="btn" href="index.html">Return to Quest Hub</a>
-    </div>
+  <main class="main-shell guide-page" id="guide-main">
+    <header class="guide-intro">
+      <p class="eyebrow">The Guest Guide</p>
+      <h1>Guest Guide</h1>
+      <p class="guide-subtitle">Everything You Need Before the Big Day</p>
+      <p class="guide-date">07 February 2027</p>
+    </header>
+
+    <section class="guide-section guide-section--party" id="party" aria-labelledby="members-heading">
+      <div class="party-heading"><h2 id="members-heading">Party Members</h2><p>The People Beside Us on Our Big Day</p></div>
+      <div class="party-grid party-grid--roles">
+        <article class="party-card party-card--role"><p class="party-role">Principal Sponsors</p></article>
+        <article class="party-card party-card--role"><p class="party-role">Maid of Honor</p></article>
+        <article class="party-card party-card--role"><p class="party-role">Bridesmaids</p></article>
+        <article class="party-card party-card--role"><p class="party-role">Best Man</p></article>
+        <article class="party-card party-card--role"><p class="party-role">Groomsmen</p></article>
+        <article class="party-card party-card--role"><p class="party-role">Flower Girls</p></article>
+        <article class="party-card party-card--role"><p class="party-role">Ring Bearer</p></article>
+        <article class="party-card party-card--role"><p class="party-role">Other Special Roles</p></article>
+      </div>
+    </section>
+
+    <section class="guide-section" id="colors" aria-labelledby="colors-heading">
+      <div class="party-heading"><h2 id="colors-heading">Our Colors</h2></div>
+      <div class="palette">
+        <div class="swatch"><div class="swatch-color slate"></div><span class="swatch-name">Slate Blue</span></div>
+        <div class="swatch"><div class="swatch-color burgundy"></div><span class="swatch-name">Burgundy</span></div>
+        <div class="swatch"><div class="swatch-color ivory"></div><span class="swatch-name">Warm Ivory</span></div>
+        <div class="swatch"><div class="swatch-color gold"></div><span class="swatch-name">Antique Gold</span></div>
+      </div>
+    </section>
+
+    <section class="guide-section" id="outfit" aria-labelledby="outfit-heading">
+      <div class="party-heading"><h2 id="outfit-heading">Outfit Guide</h2><p>Dress for the Celebration</p></div>
+      <div class="outfit-grid">
+        <article class="outfit-card"><div class="outfit-photo">OUTFIT REFERENCE<br>PLACEHOLDER</div><h3>Bridesmaids</h3><dl><dt>Color:</dt><dd>TBD</dd><dt>Style:</dt><dd>Formal</dd></dl></article>
+        <article class="outfit-card"><div class="outfit-photo">OUTFIT REFERENCE<br>PLACEHOLDER</div><h3>Groomsmen</h3><dl><dt>Color:</dt><dd>TBD</dd><dt>Style:</dt><dd>Formal</dd></dl></article>
+        <article class="outfit-card"><div class="outfit-photo">OUTFIT REFERENCE<br>PLACEHOLDER</div><h3>Guests</h3><dl><dt>Dress Code:</dt><dd>Formal</dd></dl></article>
+      </div>
+    </section>
+
+    <section class="guide-section" id="faqs" aria-labelledby="faq-heading">
+      <div class="guide-heading"><h2 id="faq-heading">Frequently Asked Questions</h2></div>
+      <div class="faq-list">
+        <details class="faq-item"><summary><span class="faq-number">01</span><span>What Time Should I Arrive?</span></summary><p class="faq-answer">Placeholder answer text will be added here.</p></details>
+        <details class="faq-item"><summary><span class="faq-number">02</span><span>What Should I Wear?</span></summary><p class="faq-answer">Placeholder answer text will be added here.</p></details>
+        <details class="faq-item"><summary><span class="faq-number">03</span><span>Where Is the Ceremony?</span></summary><p class="faq-answer">Placeholder answer text will be added here.</p></details>
+        <details class="faq-item"><summary><span class="faq-number">04</span><span>Where Is the Reception?</span></summary><p class="faq-answer">Placeholder answer text will be added here.</p></details>
+        <details class="faq-item"><summary><span class="faq-number">05</span><span>Is There Parking Available?</span></summary><p class="faq-answer">Placeholder answer text will be added here.</p></details>
+        <details class="faq-item"><summary><span class="faq-number">06</span><span>Can I Bring a Plus One?</span></summary><p class="faq-answer">Placeholder answer text will be added here.</p></details>
+        <details class="faq-item"><summary><span class="faq-number">07</span><span>Are Children Welcome?</span></summary><p class="faq-answer">Placeholder answer text will be added here.</p></details>
+        <details class="faq-item"><summary><span class="faq-number">08</span><span>Is There Anything Else I Should Know?</span></summary><p class="faq-answer">Placeholder answer text will be added here.</p></details>
+      </div>
+    </section>
+
+    <section class="guide-section" id="gifts" aria-labelledby="gifts-heading">
+      <div class="gift-card">
+        <p class="eyebrow">A Little Something</p>
+        <h2 id="gifts-heading">Gifts &amp; Wishes</h2>
+        <p>Your presence is already a gift to us. For those who would like to give something more, details will be shared here.</p>
+        <p class="gift-label">Gift Guide</p>
+        <p>Details coming soon.</p>
+      </div>
+    </section>
+
+    <p class="guide-closing">Thank You for Being Part of Our Adventure.</p>
   </main>
+
+  <footer class="site-footer">
+    <p>With love - Gica and Vho. February 7, 2027.</p>
+    <p><span data-year></span> Coded with <span class="footer-heart" aria-hidden="true">*</span></p>
+  </footer>
+
+  <script>
+    (function () {
+      "use strict";
+      var items = document.querySelectorAll(".faq-item");
+      items.forEach(function (item) {
+        item.addEventListener("toggle", function () {
+          if (!item.open) { return; }
+          items.forEach(function (other) {
+            if (other !== item) { other.removeAttribute("open"); }
+          });
+        });
+        item.querySelector("summary").addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && item.open) {
+            item.removeAttribute("open");
+            event.preventDefault();
+          }
+        });
+      });
+    }());
+  </script>
 
 </body>
 </html>

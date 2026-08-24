@@ -12,9 +12,12 @@
      ------------------------------------------------------------------ */
   document.documentElement.classList.add("js");
 
-  // Lock body scroll while the Opening Screen is visible.
+  // Internal Home links bypass the Opening Screen; normal entry keeps it.
   var openingInit = document.getElementById("opening");
-  if (openingInit && !openingInit.hasAttribute("hidden")) {
+  var isHomeDestination = window.location.hash === "#home";
+  if (openingInit && isHomeDestination) {
+    openingInit.setAttribute("hidden", "");
+  } else if (openingInit && !openingInit.hasAttribute("hidden")) {
     document.body.classList.add("u-overflow-hidden");
   }
 
@@ -35,7 +38,7 @@
   /* ------------------------------------------------------------------
      2. OPENING SCREEN ("Press Start")
      Handles the transition to the Home / Quest Hub.
-     Link fallback: if JS fails, the <a href="#home-intro"> still works.
+     Link fallback: if JS fails, the Home target remains available.
      ------------------------------------------------------------------ */
   var pressStart = document.querySelector("[data-press-start]");
   if (pressStart) {
@@ -45,7 +48,7 @@
       var opening = document.getElementById("opening");
       if (!opening) { return; }
 
-      var target = pressStart.getAttribute("href") || "#home-intro";
+      var target = pressStart.getAttribute("href") || "#home";
 
       // Respect reduced motion: skip straight to hidden.
       if (prefersReducedMotion) {
@@ -82,7 +85,15 @@
   function setDrawer(open) {
     if (!drawer || !toggle) { return; }
     drawer.classList.toggle("is-open", open);
+    drawer.setAttribute("aria-hidden", String(!open));
     toggle.setAttribute("aria-expanded", String(open));
+    drawer.querySelectorAll("a, button").forEach(function (control) {
+      if (open) {
+        control.removeAttribute("tabindex");
+      } else {
+        control.setAttribute("tabindex", "-1");
+      }
+    });
     if (drawerBackdrop) {
       drawerBackdrop.classList.toggle("is-visible", open);
     }
@@ -92,6 +103,9 @@
       if (first) { first.focus(); }
     }
   }
+
+  // Keep the closed drawer out of the keyboard tab order on initial load.
+  setDrawer(false);
 
   if (toggle) {
     toggle.addEventListener("click", function () {
@@ -124,7 +138,36 @@
   window.WeddingSite.closeDrawer = function () { setDrawer(false); };
 
   /* ------------------------------------------------------------------
-     4. FLOATING HEARTS (opening & anywhere .floating-hearts sits)
+     4. DESKTOP DROPDOWN NAVIGATION
+     Native details keep the controls keyboard-accessible. Only one group
+     remains open, and menus close on outside click or Escape.
+     ------------------------------------------------------------------ */
+  var navDetails = document.querySelectorAll(".site-nav-main details");
+  navDetails.forEach(function (details) {
+    details.addEventListener("toggle", function () {
+      if (!details.open) { return; }
+      navDetails.forEach(function (other) {
+        if (other !== details) { other.open = false; }
+      });
+    });
+  });
+
+  document.addEventListener("click", function (event) {
+    if (event.target.closest(".site-nav-main")) { return; }
+    navDetails.forEach(function (details) { details.open = false; });
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key !== "Escape") { return; }
+    var openDetails = document.querySelector(".site-nav-main details[open]");
+    if (openDetails) {
+      openDetails.open = false;
+      openDetails.querySelector("summary").focus();
+    }
+  });
+
+  /* ------------------------------------------------------------------
+     5. FLOATING HEARTS (opening & anywhere .floating-hearts sits)
      ------------------------------------------------------------------ */
   document.querySelectorAll(".floating-hearts").forEach(function (container) {
     if (prefersReducedMotion) { return; }
@@ -182,9 +225,18 @@
 
   /* ------------------------------------------------------------------
      8. ACTIVE LINK HIGHLIGHT
-     Marks the current page in the drawer + bottom nav via aria-current.
+     Marks the current page and its navigation group.
      ------------------------------------------------------------------ */
   var currentPath = window.location.pathname.split("/").pop() || "index.html";
+  var sectionByPath = {
+    "story.html": "story",
+    "wedding.html": "wedding",
+    "map.html": "wedding",
+    "party.html": "guide",
+    "guide.html": "guide",
+    "gallery.html": "memories",
+    "rsvp.html": "rsvp"
+  };
   document.querySelectorAll("a[href]").forEach(function (link) {
     var href = link.getAttribute("href");
     if (!href || href.indexOf("#") === 0 || href.indexOf("http") === 0) { return; }
@@ -192,6 +244,12 @@
       link.setAttribute("aria-current", "page");
     }
   });
+  var currentSection = sectionByPath[currentPath];
+  if (currentSection) {
+    document.querySelectorAll('[data-section="' + currentSection + '"]').forEach(function (item) {
+      item.setAttribute("aria-current", "page");
+    });
+  }
 
   /* ------------------------------------------------------------------
      9. MUSIC TOGGLE (dummy for this phase; wired in a later phase)

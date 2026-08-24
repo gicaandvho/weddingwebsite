@@ -7,53 +7,68 @@
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/mobile.css" media="(max-width: 1199px)">
   <link rel="stylesheet" href="css/desktop.css" media="(min-width: 1200px)">
+  <link rel="stylesheet" href="css/rsvp.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
 
-  <header class="site-header">
-    <a class="brand" href="index.html">Gica <span class="brand__heart" aria-hidden="true">*</span> Vho</a>
-    <nav class="site-nav-main" aria-label="Main">
-      <ul>
-        <li><a href="story.html">Our Story</a></li>
-        <li><a href="wedding.html">Wedding Day</a></li>
-        <li><a href="map.html">Campaign Map</a></li>
-        <li><a href="party.html">Party</a></li>
-        <li><a href="guide.html">Guide</a></li>
-        <li><a href="rsvp.html">RSVP</a></li>
-      </ul>
-    </nav>
+    <header class="site-header">
+    <a class="brand" href="index.html#home" aria-label="Gica and Vho - Home">Gica <span class="brand__heart" aria-hidden="true">&#9829;</span> Vho</a>
+    <nav class="site-nav-main" aria-label="Main navigation">
+  <ul>
+    <li><a href="story.html" data-section="story">Our Story</a></li>
+    <li class="nav-group"><details><summary data-section="wedding">The Wedding</summary><ul><li><a href="wedding.html#events">Wedding Day</a></li><li><a href="wedding.html#map">Campaign Map</a></li></ul></details></li>
+    <li class="nav-group"><details><summary data-section="guide">Guest Guide</summary><ul><li><a href="guide.html#party">Party Members</a></li><li><a href="guide.html#outfit">Outfit Guide</a></li><li><a href="guide.html#faqs">FAQs &amp; Gifts</a></li></ul></details></li>
+    <li><a href="gallery.html" data-section="memories">Memories</a></li>
+    <li><a href="rsvp.html" data-section="rsvp">RSVP</a></li>
+  </ul>
+</nav>
     <div class="header-actions">
-      <a class="btn btn--outline" href="rsvp.html">RSVP</a>
+      <button class="music-toggle" type="button" aria-label="Toggle music" aria-pressed="false">Music</button>
     </div>
-    <button class="nav-toggle" data-drawer-toggle aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+    <button class="nav-toggle" data-drawer-toggle type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
       <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18z"/></svg>
     </button>
   </header>
 
   <aside class="backdrop drawer-backdrop" data-drawer-backdrop></aside>
   <aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true">
-    <p class="drawer__label">Journey</p>
-    <a href="story.html">Our Story</a>
-    <a href="wedding.html">Wedding Day</a>
-    <a href="map.html">Campaign Map</a>
-    <a href="party.html">Party Members</a>
-    <a href="guide.html">Player Guide</a>
-    <a href="rsvp.html">Final Quest</a>
-    <p class="drawer__label">Treasure</p>
-    <a href="gallery.html">Gallery</a>
-    <a href="gifts.html">Gifts and Wishes</a>
-    <a href="thank-you.html">Thank You</a>
-  </aside>
+  <a class="drawer__top-link" href="story.html" data-section="story">Our Story</a>
+  <div class="drawer__group"><p class="drawer__group-title" data-section="wedding">The Wedding</p><div class="drawer__children"><a href="wedding.html#events">Wedding Day</a><a href="wedding.html#map">Campaign Map</a></div></div>
+  <div class="drawer__group"><p class="drawer__group-title" data-section="guide">Guest Guide</p><div class="drawer__children"><a href="guide.html#party">Party Members</a><a href="guide.html#outfit">Outfit Guide</a><a href="guide.html#faqs">FAQs &amp; Gifts</a></div></div>
+  <a class="drawer__top-link" href="gallery.html" data-section="memories">Memories</a>
+  <a class="drawer__top-link" href="rsvp.html" data-section="rsvp">RSVP</a>
+</aside>
 
-  <main class="main-shell main-shell--no-nav">
-    <div class="section">
-      <p class="eyebrow">Coming Soon</p>
-      <h1>Final Quest</h1>
-      <p class="lead">Will you join our party guild?</p>
-      <a class="btn" href="index.html">Return to Quest Hub</a>
-    </div>
+  <main class="main-shell rsvp-page" id="rsvp-main">
+    <header class="page-intro text-center rsvp-intro">
+      <p class="eyebrow">The Final Quest</p>
+      <h1>Will You Join Our Party?</h1>
+      <p class="lead">Let Us Know If You'll Join Us for the Next Chapter.</p>
+      <p class="page-intro__note">07 February 2027</p>
+    </header>
+
+    <section class="rsvp-gateway" aria-labelledby="rsvp-heading">
+      <div class="rsvp-card">
+        <p class="eyebrow">Your Next Step</p>
+        <h2 id="rsvp-heading">Ready to Join the Party?</h2>
+        <p class="rsvp-card__copy">Please use our RSVP link to let us know if you'll be celebrating with us.</p>
+        <a class="btn rsvp-card__button" href="https://example.com/rsvp" aria-label="RSVP now through the separate RSVP page">RSVP Now <span aria-hidden="true">&#8594;</span></a>
+        <p class="rsvp-card__note">RSVPs are managed through our separate RSVP page.</p>
+      </div>
+    </section>
+
+    <section class="rsvp-deadline text-center" aria-labelledby="deadline-heading">
+      <p class="eyebrow">RSVP Deadline</p>
+      <h2 class="sr-only" id="deadline-heading">RSVP deadline details</h2>
+      <p>Details coming soon.</p>
+    </section>
+
+    <section class="rsvp-closing text-center" aria-labelledby="closing-heading">
+      <h2 id="closing-heading">We Hope to See You There.</h2>
+      <p>Every great adventure is better together.</p>
+    </section>
   </main>
 
 </body>
