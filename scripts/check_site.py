@@ -63,3 +63,30 @@ for time in ['10:00 AM','11:00 AM','12:30 PM','12:45 PM','1:30 PM','4:00 PM']: a
 assert 'Guest Welcome · 11:00 AM' in wedding
 assert 'January 16, 2027' in ' '.join(pages['rsvp.html'].text)
 print('PASS: 10 HTML pages; balanced markup; unique IDs; local links/assets; tab and ARIA targets; 10 FAQs; 12 outfit cards; timeline; RSVP gateway; no prohibited public content.')
+
+# The illustrated V2 direction applies outside Gallery, including CSS scene assets.
+assert (ROOT/'BUILD_SPEC_FINAL_V2.md').exists()
+for name in ['index.html','wedding.html','guide.html','rsvp.html']:
+    for tag, attrs in pages[name].elements:
+        if tag == 'img': assert attrs.get('src','').startswith('assets/pixel/'), (name,'Non-gallery illustration required')
+        assert tag != 'video', (name,'Real video belongs in Gallery')
+    assert any(tag == 'link' and urlsplit(attrs.get('href','')).path == 'css/pixel.css' for tag,attrs in pages[name].elements)
+for stylesheet in ['global.css','pixel.css']:
+    css_path = ROOT/'css'/stylesheet
+    for url in re.findall(r'url\([\"\']?([^\)\"\']+)', css_path.read_text(encoding='utf-8')):
+        if not urlsplit(url).scheme: assert (css_path.parent/url).exists(), (stylesheet,'Missing scene',url)
+assert 'data-home-photo' not in (ROOT/'index.html').read_text(encoding='utf-8')
+print('PASS: V2 source specification, pixel artwork references, and Gallery-only real-media structure.')
+
+# Generated artwork must reserve its intrinsic size before lazy loading.
+for name, page in pages.items():
+    for tag, attrs in page.elements:
+        if tag == 'img' and attrs.get('src', '').startswith('assets/pixel/'):
+            assert int(attrs.get('width', 0)) > 0 and int(attrs.get('height', 0)) > 0, (name, 'Missing image dimensions')
+        if tag in {'script', 'link'}:
+            url = urlsplit(attrs.get('src') or attrs.get('href', ''))
+            if name in {'index.html','wedding.html','guide.html','gallery.html','rsvp.html'} and url.path.endswith(('.css', '.js')):
+                import hashlib
+                expected = hashlib.sha256((ROOT / url.path).read_bytes()).hexdigest()[:12]
+                assert url.query == 'v=' + expected, (name, 'Stale generated asset version', url.path)
+print('PASS: reserved artwork dimensions and current CSS/JavaScript content versions.')

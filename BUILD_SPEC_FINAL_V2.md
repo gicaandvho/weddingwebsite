@@ -1,47 +1,81 @@
 # Gica & Vho Wedding Website
 
-## Final Approved Website Specification
+## Final Approved Website Specification — Pixel Art Direction Update
 
 **Wedding Date:** February 7, 2027\
 **Primary Date Styling:** 2.7.27\
-**Website Direction:** Elegant wedding invitation with subtle retro
-pixel/game details\
-**Design Balance:** Wedding first, game second
+**Website Direction:** Elegant pixel-art wedding invitation website\
+**Design Balance:** Romantic wedding first, game-inspired presentation strongly visible through the visual system
 
 ------------------------------------------------------------------------
 
 ## 1. Overall Website Direction
 
-The website should feel primarily like an elegant digital wedding
-invitation, with the gaming concept appearing through subtle microcopy,
-pixel illustrations, small interactions, and easter eggs.
+The website should now move more clearly in the direction of an **elegant pixel-art wedding world**.
+
+Instead of a mostly plain editorial site with only small game references, the website should feel like a **beautiful retro-inspired wedding storybook / game interface** rendered in a polished pixel-art style.
+
+The site must still feel **classy, warm, and wedding-appropriate**, not childish or chaotic.
+
+### Updated Core Direction
+
+-   Use **pixel-art illustrated backgrounds, scene art, icons, decorative dividers, and themed visual panels throughout the website**.
+-   Most non-gallery visuals should be **generated pixel-art illustrations**, not plain empty backgrounds.
+-   Outside of the Gallery, avoid relying on real couple photos or real-video thumbnails as the primary visual language.
+-   The visual treatment should feel like a **cohesive wedding game world** from page to page.
+-   The design should remain **elegant and readable**, with information still easy to scan for all guests, including elderly guests.
+-   The pixel style should be **soft, refined, romantic, and polished**—not harsh arcade UI, not noisy 8-bit chaos, and not dark fantasy.
+-   The site should use **custom scene illustrations** that support the content of each page.
+-   Real photos and video should be used mainly in the **Gallery**, where they are intentionally featured.
 
 ### Core Design Principles
 
--   Light cream or warm-white backgrounds should dominate.
--   Navy blue is the primary typography color.
--   Burgundy is used for CTAs, hearts, selected states, and important
-    accents.
--   Muted gold is reserved for thin dividers and restrained ornamental
-    details.
--   Elegant serif typography should be used for names and major wedding
-    headings.
--   Pixel-style typography should only appear in small game/system
-    labels and microcopy.
--   Pixel art should remain sparse and decorative.
--   Maintain generous whitespace.
--   Keep all important information easy to read, including for elderly
-    guests.
--   Avoid heavy frames, thick pixel borders, full game HUDs, and large
-    dark panels.
--   Animations should generally last around 0.5--1 second and should
-    never block access to information.
+-   Light cream or warm-white backgrounds should still dominate overall.
+-   Navy blue remains the primary typography color.
+-   Burgundy is used for CTAs, hearts, selected states, and important accents.
+-   Muted gold is reserved for dividers, pixel ornaments, borders, map markers, and restrained decorative details.
+-   Elegant serif typography should still be used for names and major headings.
+-   Pixel-style typography may now be used more visibly in page labels, buttons, microcopy, counters, UI accents, and section markers.
+-   Pixel art should no longer be merely sparse decoration; it should be a major part of the visual identity.
+-   Keep layouts structured and readable with enough whitespace.
+-   Use decorative frames and pixel borders in a tasteful way, but do not overcrowd the page.
+-   Avoid heavy black backgrounds, neon arcade overload, overly cartoonish mascots, and cluttered HUD-like interfaces.
+-   Animations should generally last around 0.5–1 second and should never block access to information.
+
+### Visual Language Reference
+
+The target direction should be similar to the newly approved pixel-art concept direction:
+
+-   Cream background base
+-   Navy and burgundy headline emphasis
+-   Muted gold ornaments and dividers
+-   Pixel-art churches, venues, route maps, icons, decorative clouds, hearts, flowers, signs, banners, and scenic panels
+-   Pixel-art characters or couple silhouettes used sparingly and intentionally
+-   Stronger visual immersion without sacrificing clarity
+
+### Sitewide Illustration Rule
+
+Across the site, **most content images and decorative visuals should be in this same pixel-art style**.
+
+This includes:
+
+-   Press Start background art
+-   Home hero / welcome art
+-   Story support illustrations
+-   Wedding details cards and venue illustrations
+-   Campaign / route map visuals
+-   Guest Guide dress-code illustrations and entourage visuals
+-   FAQ / Gifts decorative art
+-   RSVP decorative art
+-   Footer decorative details
+
+**Exception:** The Gallery should remain the main place where the actual prenup photos and actual save-the-date video are shown.
 
 ### Navigation
 
 Desktop navigation:
 
-**G&V \| HOME \| WEDDING DETAILS ▾ \| GUEST GUIDE ▾ \| GALLERY \| RSVP**
+**G&V | HOME | WEDDING DETAILS ▾ | GUEST GUIDE ▾ | GALLERY | RSVP**
 
 Mobile navigation:
 
@@ -49,23 +83,23 @@ Mobile navigation:
 -   Full-screen or spacious mobile drawer
 -   No bottom navigation
 
-Navigation labels should remain practical and obvious. Gaming
-terminology belongs mainly in page content and microcopy.
+Navigation labels should remain practical and obvious.
 
 ------------------------------------------------------------------------
 
 # 2. Opening / Press Start
 
-**Status: APPROVED**
+**Status: UPDATED**
 
-The opening screen introduces the gaming theme without overpowering the
-wedding aesthetic.
+The opening screen should now feel like a **full illustrated title screen**, not a plain background with a small decorative element.
 
 ## Content Hierarchy
 
 ### GICA & VHO
 
-Small muted-gold divider with a tiny pixel heart.
+Use a central title lockup with elegant serif typography.
+
+Include a small pixel heart / gold divider detail.
 
 **A New Game Is About to Begin**
 
@@ -73,50 +107,80 @@ Small muted-gold divider with a tiny pixel heart.
 
 **Two Players. One Love. One Unforgettable Adventure.**
 
-Small pixel-art couple illustration near the bottom with only faint
-floral or landscape details.
-
 ### PRESS START
 
-Use a slim burgundy button.
+Use a strong burgundy pixel-inspired button that still feels refined.
+
+## Updated Visual Direction
+
+-   The Press Start screen should use a **full pixel-art illustrated background scene**.
+-   The background should feel romantic, elegant, and world-building.
+-   Possible setting: a scenic path leading toward the church and reception venue, with soft clouds, florals, subtle hearts, and gentle landscape details.
+-   The illustrated environment should feel like the beginning of a game journey.
+-   The layout should still keep the central text highly readable.
+
+## Replace the Temporary Mini Couple Image
+
+The temporary small couple mini image should be replaced with a better integrated pixel-art element.
+
+Preferred options:
+
+1.  A **small back-view pixel couple** standing in the scene as part of the environment
+2.  A **tiny pixel vignette** showing the church and reception venue connected by a path
+3.  A **small decorative pixel emblem** / crest / heart banner if a couple figure feels too cheesy
+
+### Recommended Direction
+
+Best overall choice:
+
+**A small back-view pixel couple incorporated into the illustrated background scene**, styled elegantly and simply—not based on an actual photograph.
+
+This keeps the romantic mood while avoiding the cheesy feeling of using a direct real-life photo or awkward oversized character art.
 
 ## Interaction
 
 -   Navigation should not appear before Press Start.
 -   Press Start transitions smoothly into Home.
--   Use a subtle heart/pixel transition or gentle fade.
--   Transition should take approximately 0.5--1 second.
+-   Use a subtle heart / pixel transition or gentle fade.
+-   Transition should take approximately 0.5–1 second.
 -   No long loading animation.
 
 ## Avoid
 
--   "Your Invitation Awaits"
--   "Wedding Quest Active"
--   Heavy pixel borders
--   Large dark backgrounds
--   Chunky pixel typography for the date
--   Oversized pixel characters
--   Multiple competing game illustrations
+-   Plain flat empty background
+-   A random temporary mini sprite floating alone without context
+-   Large realistic photo on the opening screen
+-   Oversized chibi character focus
+-   Dark heavy title-screen styling
+-   Chunky unreadable pixel typography
+-   Multiple competing illustrations
 
 ------------------------------------------------------------------------
 
 # 3. Home
 
-**Status: APPROVED**
+**Status: UPDATED**
 
-The Home page is the emotional heart of the website rather than a
-directory.
+The Home page should now feel like the main **pixel-art story landing page**, while still functioning clearly as the emotional center of the website.
 
-## Section 1 --- Welcome
+## Section 1 — Welcome
 
 ### YOU'VE ENTERED OUR STORY
 
-Use a short, warm welcome message accompanied by a small pixel-couple
-illustration.
+Use a short, warm welcome message.
+
+Pair it with a larger **pixel-art hero illustration** rather than a tiny accent image.
+
+Preferred visual direction:
+
+-   Pixel-art couple viewed from behind or in silhouette
+-   Scenic environment
+-   Church or romantic destination in the distance
+-   Florals, pathway, clouds, or soft landscape details
 
 Do not unnecessarily repeat the wedding date in this section.
 
-## Section 2 --- Countdown
+## Section 2 — Countdown
 
 ### 2.7.27
 
@@ -124,11 +188,17 @@ Do not unnecessarily repeat the wedding date in this section.
 
 Display a live countdown:
 
-**DAYS \| HOURS \| MINUTES \| SECONDS**
+**DAYS | HOURS | MINUTES | SECONDS**
+
+The countdown block may use:
+
+-   pixel-art divider ornaments
+-   small icons
+-   subtle framed panel styling
 
 The date should remain visually prominent.
 
-## Section 3 --- Our Story
+## Section 3 — Our Story
 
 ### OUR STORY
 
@@ -140,7 +210,7 @@ Preferred shortened story:
 > encounters later, a conversation on Gica's birthday became the
 > beginning of something more.
 >
-> What followed was a collection of adventures---traveling with family
+> What followed was a collection of adventures—traveling with family
 > to the UAE, experiencing Vho's first BLACKPINK concert, exploring
 > Japan together, and discovering that life was simply more fun when
 > they shared it.
@@ -157,20 +227,26 @@ Preferred shortened story:
 
 **Unexpected Meeting → Adventures Together → The Next Chapter**
 
-Use real photos when available.
+Instead of depending mainly on real photos in this section, the site may use:
+
+-   framed illustrative panels
+-   pixel-art scene cards
+-   generated visual moments representing the story
+-   optional mixed treatment where a story card uses stylized imagery rather than literal real photos
 
 Possible subtle decorative details:
 
--   Tiny dotted journey line
--   Pixel heart
--   Small airplane waypoint
+-   tiny dotted journey line
+-   pixel heart
+-   small airplane waypoint
+-   soft pixel florals or landmarks
 
-These should remain secondary to the photography.
-
-## Section 4 --- Closing
+## Section 4 — Closing
 
 **Two People. One Journey.**\
 **A Lifetime of Adventures Ahead.**
+
+This closing section may use a scenic pixel-art footer-like landscape or a small couple/world vignette.
 
 No CTA or additional button is needed.
 
@@ -180,9 +256,9 @@ Do not include "See You on Game Day."
 
 # 4. Wedding Details
 
-**Status: APPROVED**
+**Status: UPDATED**
 
-This page should prioritize clarity and practical information.
+This page should still prioritize clarity and practical information, but the presentation should now be much more visually themed in the approved pixel-art style.
 
 ## Page Header
 
@@ -192,7 +268,7 @@ This page should prioritize clarity and practical information.
 
 Primary tabs:
 
-**CEREMONY \| RECEPTION**
+**CEREMONY | RECEPTION**
 
 ------------------------------------------------------------------------
 
@@ -211,6 +287,10 @@ Buttons:
 
 **VIEW MAP**\
 **GET DIRECTIONS**
+
+### Visual Direction
+
+Include a scene illustration of the church in the same approved pixel-art style.
 
 ------------------------------------------------------------------------
 
@@ -231,8 +311,11 @@ Buttons:
 **VIEW MAP**\
 **GET DIRECTIONS**
 
-"Guest Welcome · 11:00 AM" should be used rather than implying that the
-formal reception program begins at 11:00 AM.
+"Guest Welcome · 11:00 AM" should be used rather than implying that the formal reception program begins at 11:00 AM.
+
+### Visual Direction
+
+Include a scene illustration of the reception venue in the same approved pixel-art style.
 
 ------------------------------------------------------------------------
 
@@ -242,12 +325,20 @@ formal reception program begins at 11:00 AM.
 
 *From the Ceremony to the Celebration.*
 
-Show a light illustrated route connecting:
+Show a pixel-art illustrated route connecting:
 
 **San Antonio de Padua Parish → Cana at Silang**
 
-The route illustration should be decorative/schematic rather than
-pretending to be an exact road map.
+The route illustration should be decorative / schematic rather than pretending to be an exact satellite road map.
+
+It may include:
+
+-   stylized road segments
+-   small signboards
+-   trees
+-   a tiny car
+-   hearts or route markers
+-   venue mini-illustrations at each end
 
 Include:
 
@@ -272,8 +363,9 @@ The actual button should open the appropriate navigation service.
   1:30 PM    Lunch / Buffet
   4:00 PM    Program Ends
 
-Do not reveal reception games, the Bank Heist, Final Boss, Game Master
-reveal, SDE timing, flashmob, or other surprises.
+The timeline may use a more visual pixel-art presentation with small icons per milestone, as long as readability remains excellent.
+
+Do not reveal reception games, the Bank Heist, Final Boss, Game Master reveal, SDE timing, flashmob, or other surprises.
 
 ### Approved Page Sequence
 
@@ -283,14 +375,13 @@ reveal, SDE timing, flashmob, or other surprises.
 
 # 5. Guest Guide
 
-**Status: APPROVED**
+**Status: UPDATED**
 
 Main sections:
 
-**OUTFIT GUIDE \| FAQ & GIFTS**
+**OUTFIT GUIDE | FAQ & GIFTS**
 
-The Guest Guide is information-heavy, so clarity and easy scanning are
-priorities.
+The Guest Guide should remain information-heavy and easy to scan, but it should visually adopt the same elegant pixel-art language.
 
 ------------------------------------------------------------------------
 
@@ -304,7 +395,7 @@ priorities.
 
 Primary tabs:
 
-**GUESTS \| WEDDING ENTOURAGE**
+**GUESTS | WEDDING ENTOURAGE**
 
 ------------------------------------------------------------------------
 
@@ -316,9 +407,9 @@ Primary tabs:
 
 ### Primary Palette
 
--   **Charcoal Clay** --- `#3A2B20`
--   **Rustic Taupe** --- `#7E6A52`
--   **Warm Beige** --- `#B89C82`
+-   **Charcoal Clay** — `#3A2B20`
+-   **Rustic Taupe** — `#7E6A52`
+-   **Warm Beige** — `#B89C82`
 
 ### Guidance
 
@@ -344,7 +435,9 @@ Similar shades are welcome, including:
 -   Bright or Neon Colors
 -   Bold Prints and Patterns
 
-Show curated visual outfit examples for both women and men.
+Show curated **pixel-art styled outfit example visuals** for both women and men.
+
+These may appear as elegant stylized illustrated characters or lineup panels rather than photographic fashion boards.
 
 ------------------------------------------------------------------------
 
@@ -352,7 +445,7 @@ Show curated visual outfit examples for both women and men.
 
 Secondary structure:
 
-**MEN \| WOMEN**
+**MEN | WOMEN**
 
 Use one representative illustrated person per role.
 
@@ -384,7 +477,7 @@ Do not include Bride or Groom cards.
 -   White Longsleeves
 -   Navy Blue Neck Tie
 
-#### Kids --- Entourage
+#### Kids — Entourage
 
 -   Baby Blue Vest & Pants
 -   White Longsleeves
@@ -433,11 +526,12 @@ No supplier section is required unless one is provided later.
 
 ### Outfit Guide Visual Rules
 
--   No decorative character/message at the upper-left corner.
--   Do not repeat "Outfit Unlocked" on every card.
--   Small pixel hearts or character details may be used sparingly.
+-   Use pixel-art character or outfit illustrations that match the approved website style.
+-   Decorative character elements may be used, but should feel intentional and not cluttered.
+-   Small pixel hearts, ribbons, banners, or icon accents may be used sparingly.
 -   Prioritize clothing specifications and color swatches.
--   Maintain the cream/navy/burgundy/gold visual system.
+-   Maintain the cream / navy / burgundy / gold visual system.
+-   The outfit visuals should feel elegant and organized, not like a children’s dress-up page.
 
 ------------------------------------------------------------------------
 
@@ -451,6 +545,8 @@ No supplier section is required unless one is provided later.
 
 Use collapsed accordion items for the FAQs.
 
+The overall page may include soft pixel-art decorative framing and iconography.
+
 ------------------------------------------------------------------------
 
 ## Guest List Note
@@ -460,6 +556,8 @@ Use collapsed accordion items for the FAQs.
 > We would truly love to celebrate with everyone, but with limited
 > seating available, we hope you understand that we can only accommodate
 > the guests included in each invitation.
+
+This note may be presented inside an elegant illustrated info panel.
 
 ------------------------------------------------------------------------
 
@@ -548,13 +646,17 @@ cashless-gifting card or QR code.
 
 Do not turn gifting into a game mechanic.
 
+### Visual Direction
+
+The Gifts section may use tasteful pixel-art envelope / gift / floral illustrations to support the content.
+
 ------------------------------------------------------------------------
 
 # 6. Gallery
 
-**Status: APPROVED**
+**Status: APPROVED WITH CLARIFICATION**
 
-The Gallery should be visually relaxed and photography-led.
+The Gallery remains the main place where actual photos and actual video are intentionally featured.
 
 ## Header
 
@@ -563,6 +665,8 @@ The Gallery should be visually relaxed and photography-led.
 ### OUR PRE-WEDDING STORY
 
 *Before the wedding day, a little glimpse of us.*
+
+The Gallery can still use pixel-art framing, labels, buttons, and decorative accents, but the featured media itself should remain the real content.
 
 ------------------------------------------------------------------------
 
@@ -583,31 +687,31 @@ Use a large 16:9 feature preview.
 
 ### PRENUP SLIDESHOW
 
-Use approximately **15--20 prenup photos**.
+Use approximately **15–20 prenup photos**.
 
 ### Desktop
 
 -   One large photograph at a time
--   Previous/next arrows
+-   Previous / next arrows
 
 ### Mobile
 
--   Swipe left/right
+-   Swipe left / right
 
 ### Controls
 
--   Photo counter, e.g. **03 / 18**
+-   Photo counter, e.g. **03 / 18**
 -   Thin progress indicator
 -   Small thumbnail strip showing approximately five images at a time
 -   Tap main image for a larger lightbox view
--   Optional slow auto-advance around 5--6 seconds
+-   Optional slow auto-advance around 5–6 seconds
 -   Manual controls must always remain available
 
 ### Transition
 
-Use a gentle crossfade around 0.5--1 second.
+Use a gentle crossfade around 0.5–1 second.
 
-Avoid dramatic sliding/game transitions.
+Avoid dramatic sliding / game transitions.
 
 ------------------------------------------------------------------------
 
@@ -617,19 +721,19 @@ Avoid dramatic sliding/game transitions.
 
 *And many more still to come.*
 
-Do not add individual photo captions, dates, locations, game
-achievements, or character illustrations.
+Pixel-art decorative elements may frame the section, but do not overwhelm the real gallery media.
+
+Do not add individual photo captions, dates, locations, game achievements, or too many character illustrations.
 
 ------------------------------------------------------------------------
 
 # 7. RSVP
 
-**Status: APPROVED**
+**Status: UPDATED**
 
 The wedding website only redirects guests to a separate RSVP system.
 
-The external RSVP system will handle the actual registration process and
-the Game Master Message.
+The external RSVP system will handle the actual registration process and the Game Master Message.
 
 ## Header
 
@@ -643,6 +747,10 @@ the Game Master Message.
 
 > We've reserved a place for you in our celebration. Please use our RSVP
 > system below to confirm your attendance.
+
+### Visual Direction
+
+The page may use pixel-art environment or decorative illustration panels (for example castle / venue / sign / heart / floral / envelope elements), while keeping the form gateway message clear and central.
 
 ------------------------------------------------------------------------
 
@@ -681,28 +789,28 @@ The website itself should not contain:
 
 Keep this visible rather than placing it inside an accordion.
 
+The reminder block may use small supporting pixel-art icons.
+
 ------------------------------------------------------------------------
 
 ## External RSVP System
 
-After guests select **Confirm Your RSVP**, the separate RSVP system may
-handle:
+After guests select **Confirm Your RSVP**, the separate RSVP system may handle:
 
 **Guest Identification → Reserved Seats → Attendance → Dietary
 Restrictions → Confirmation → Game Master Message**
 
-There should be **no Game Master hint on the wedding website RSVP
-page**.
+There should be **no Game Master hint on the wedding website RSVP page**.
 
 ------------------------------------------------------------------------
 
 # 8. Footer
 
-**Status: APPROVED**
+**Status: UPDATED**
 
-The footer should be simple, light, and memorable.
+The footer should remain light, simple, and memorable, but it may use subtle pixel-art world details consistent with the rest of the site.
 
-Use a cream/warm-white background rather than a dark footer block.
+Use a cream / warm-white background rather than a dark footer block.
 
 ### Gica & Vho
 
@@ -713,14 +821,19 @@ Small burgundy pixel heart.
 
 ### 2.7.27
 
-Optional tiny pixel couple detail and restrained muted-gold decoration.
+Optional details:
+
+-   tiny pixel couple silhouette
+-   tiny pixel church / venue / heart detail
+-   muted-gold decoration
+-   light scenic pixel border or cloud motif
 
 Do not add:
 
--   Extra buttons
--   Large dark backgrounds
--   Additional closing messages
--   Heavy game graphics
+-   extra buttons
+-   large dark backgrounds
+-   cluttered game graphics
+-   heavy closing copy
 
 ------------------------------------------------------------------------
 
@@ -742,59 +855,40 @@ The approved guest journey is:
 ↓\
 **Simple Footer**
 
-Navigation remains available after the Opening screen so guests do not
-need to follow this order.
+Navigation remains available after the Opening screen so guests do not need to follow this order.
 
 ------------------------------------------------------------------------
 
 # 10. Game Master Integration
 
-The website should not reveal that Gica & Vho are the Game Masters.
+The website should still not reveal that Gica & Vho are the Game Masters.
 
-The concept should remain a hidden narrative layer until the wedding-day
-reveal.
+The concept should remain a hidden narrative layer until the wedding-day reveal.
 
 On the public wedding website:
 
--   Use subtle gaming language only.
+-   Use gaming language in a romantic, elegant, and guest-friendly way.
+-   Let the pixel-art world suggest the game theme visually.
 -   Do not explain the Game Master concept.
--   Do not reveal the Bank Heist.
--   Do not reveal the Final Boss.
--   Do not reveal reception surprises.
-
-The separate RSVP system may deliver the first mysterious **Game Master
-Message** after successful registration.
-
-The complete Game Master identity reveal belongs to the wedding
-reception experience.
+-   Do not reveal reception twists or hidden game mechanics.
 
 ------------------------------------------------------------------------
 
-# 11. Remaining Placeholders / Implementation Items
+# 11. Summary of the Direction Change
 
-The following items still need final implementation details or assets:
+This updated specification changes the site direction from:
 
--   Final wedding coordinator name and contact details
--   Final external RSVP URL
--   Final map/directions links
--   Final Home photographs
--   Final 15--20 prenup photographs
--   Final Save the Date video source
--   Final responsive Outfit Guide illustrations/assets
--   Verification of actual ceremony-to-reception directions before
-    publishing
+**Elegant wedding website with subtle game details**
 
-------------------------------------------------------------------------
+to:
 
-# 12. Locked Creative Direction
+**Elegant pixel-art wedding website where the generated illustration style is a major part of the experience.**
 
-This specification represents the approved website direction.
+### In practical terms, this means:
 
-Future implementation should preserve the following rule:
-
-> **Elegant wedding invitation first. Subtle game experience second.**
-
-Older concepts that conflict with this specification---such as heavy
-game dashboards, dark full-page interfaces, Quest Hub navigation cards,
-excessive pixel graphics, or Game Master reveals on the public
-website---should not be reintroduced unless explicitly requested.
+-   The Press Start screen should use a **full illustrated pixel-art background**.
+-   The temporary mini couple should be replaced with a **better integrated pixel-art scene element**.
+-   The overall site should use **generated pixel-art visuals across most sections**.
+-   Real photos / video should be used **mainly in the Gallery**.
+-   The entire website should feel more cohesive with the **same approved pixel-art motif** used throughout.
+-   The website should remain classy, romantic, and readable despite the stronger game-inspired presentation.

@@ -124,14 +124,6 @@
     rsvp.removeAttribute('role');
     document.querySelector('[data-rsvp-status]').hidden = true;
   }
-  document.querySelectorAll('[data-home-photo]').forEach(slot => {
-    const photo = config.homePhotos?.[Number(slot.dataset.homePhoto)];
-    if(!safeUrl(photo?.src)) return;
-    const img = new Image();
-    img.alt = photo.alt || 'Gica and Vho together';
-    img.onload = () => slot.replaceChildren(img);
-    img.src = photo.src;
-  });
   document.querySelectorAll('[data-coordinator]').forEach(el => {
     if(config.coordinator) el.textContent = config.coordinator;
   });

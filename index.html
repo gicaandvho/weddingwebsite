@@ -8,33 +8,32 @@
 <meta property="og:title" content="Our Wedding · Gica &amp; Vho">
 <meta property="og:description" content="Two Players. One Love. One Unforgettable Adventure. 2.7.27">
 <meta property="og:type" content="website">
-<link rel="stylesheet" href="css/global.css">
-<script src="js/config.js" defer>
+<link rel="stylesheet" href="css/global.css?v=a0a542fe81ab">
+<link rel="stylesheet" href="css/pixel.css?v=d48bd6c3b62c">
+<script src="js/config.js?v=45c37981acce" defer>
 </script>
-<script src="js/main.js" defer>
+<script src="js/main.js?v=98e1de0ef040" defer>
 </script>
-<script src="js/countdown.js" defer>
+<link rel="preload" as="image" href="assets/pixel/wedding-world.png">
+<script src="js/countdown.js?v=842e9f76e913" defer>
 </script>
 <script>if(!location.hash){document.documentElement.classList.add('opening-pending');document.addEventListener('DOMContentLoaded',()=>document.documentElement.classList.remove('opening-pending'));}</script>
 </head>
 <body>
 <section id="opening" class="opening" aria-label="Wedding invitation" hidden>
+<div class="opening-lockup">
 <h1>Gica &amp; Vho</h1>
 <div class="ornament">
-<span class="pixel-heart" aria-hidden="true">♥</span>
+<svg class="pixel-heart" viewBox="0 0 9 8" aria-hidden="true" shape-rendering="crispEdges">
+<path fill="currentColor" d="M1 0h2v1h1v1h1V1h1V0h2v1h1v3H8v1H7v1H6v1H5v1H4V7H3V6H2V5H1V4H0V1h1z"/>
+<path fill="#c97c7f" d="M1 1h2v1H1z"/>
+</svg>
 </div>
 <p class="opening-line">A New Game Is About to Begin</p>
 <p class="opening-date">2.7.27</p>
 <p class="opening-copy">Two Players. One Love.<br>One Unforgettable Adventure.</p>
-<svg class="couple" viewBox="0 0 100 80" aria-hidden="true" shape-rendering="crispEdges">
-<path fill="#24354b" d="M18 13h20v7H18zM14 20h28v14H14zM14 38h28v28H14zM18 66h9v12h-9zM31 66h9v12h-9z"/>
-<path fill="#bd957b" d="M20 20h17v16H20zM60 22h17v15H60zM40 43h20v7H40z"/>
-<path fill="#4a342b" d="M58 13h21v8H58zM54 20h8v24h-8zM77 20h7v24h-7z"/>
-<path fill="#ded4c4" d="M61 37h15l12 36H49z"/>
-<path fill="#fffdf8" d="M62 38h13l8 29H54zM23 39h11l-5 14z"/>
-<path fill="#7c293d" d="M47 13h5v5h5v5h-5v5h-5v-5h-5v-5h5z"/>
-</svg>
 <button type="button" class="btn" data-press-start>Press Start</button>
+</div>
 </section>
 <div id="site-content">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -91,19 +90,28 @@
 </dialog>
 <main id="main">
 <section id="home" class="welcome section">
+<div class="welcome-copy">
 <p class="eyebrow">You’ve entered our story</p>
 <h2>A little serendipity.<br>A lifetime together.</h2>
 <p>Welcome to our next chapter. We’re so happy to share this day with the people who have been part of our journey. Thank you for being here, and for celebrating with us.</p>
-<svg class="couple" viewBox="0 0 100 80" aria-hidden="true" shape-rendering="crispEdges">
-<path fill="#24354b" d="M18 13h20v7H18zM14 20h28v14H14zM14 38h28v28H14zM18 66h9v12h-9zM31 66h9v12h-9z"/>
-<path fill="#bd957b" d="M20 20h17v16H20zM60 22h17v15H60zM40 43h20v7H40z"/>
-<path fill="#4a342b" d="M58 13h21v8H58zM54 20h8v24h-8zM77 20h7v24h-7z"/>
-<path fill="#ded4c4" d="M61 37h15l12 36H49z"/>
-<path fill="#fffdf8" d="M62 38h13l8 29H54zM23 39h11l-5 14z"/>
-<path fill="#7c293d" d="M47 13h5v5h5v5h-5v5h-5v-5h-5v-5h5z"/>
+<div class="ornament">
+<svg class="pixel-heart" viewBox="0 0 9 8" aria-hidden="true" shape-rendering="crispEdges">
+<path fill="currentColor" d="M1 0h2v1h1v1h1V1h1V0h2v1h1v3H8v1H7v1H6v1H5v1H4V7H3V6H2V5H1V4H0V1h1z"/>
+<path fill="#c97c7f" d="M1 1h2v1H1z"/>
 </svg>
+</div>
+</div>
+<div class="welcome-scene">
+<img class="scene-art" src="assets/pixel/wedding-world.png" width="1672" height="941" alt="A romantic pixel-art path connecting a church and a garden wedding venue" loading="eager" decoding="async">
+</div>
 </section>
 <section class="countdown-section section">
+<div class="ornament">
+<svg class="pixel-heart" viewBox="0 0 9 8" aria-hidden="true" shape-rendering="crispEdges">
+<path fill="currentColor" d="M1 0h2v1h1v1h1V1h1V0h2v1h1v3H8v1H7v1H6v1H5v1H4V7H3V6H2V5H1V4H0V1h1z"/>
+<path fill="#c97c7f" d="M1 1h2v1H1z"/>
+</svg>
+</div>
 <h2 class="date">2.7.27</h2>
 <p class="eyebrow">Until our next adventure begins</p>
 <div class="countdown" data-countdown-group>
@@ -138,33 +146,41 @@
 </div>
 <div class="story-moments">
 <figure>
-<div class="photo-slot" data-home-photo="0">
-<span>Photograph to follow</span>
+<div class="story-scene story-scene--0" role="img" aria-label="Pixel illustration of two people meeting on a garden path">
 </div>
-<figcaption>Unexpected Meeting</figcaption>
+<figcaption>
+<span class="story-marker" aria-hidden="true">01</span>Unexpected Meeting</figcaption>
 </figure>
 <figure>
-<div class="photo-slot" data-home-photo="1">
-<span>Photograph to follow</span>
+<div class="story-scene story-scene--1" role="img" aria-label="Pixel illustration of a suitcase and a journey through a garden">
 </div>
-<figcaption>Adventures Together</figcaption>
+<figcaption>
+<span class="story-marker" aria-hidden="true">02</span>Adventures Together</figcaption>
 </figure>
 <figure>
-<div class="photo-slot" data-home-photo="2">
-<span>Photograph to follow</span>
+<div class="story-scene story-scene--2" role="img" aria-label="Pixel illustration of a couple walking toward a wedding arch">
 </div>
-<figcaption>The Next Chapter</figcaption>
+<figcaption>
+<span class="story-marker" aria-hidden="true">03</span>The Next Chapter</figcaption>
 </figure>
 </div>
 </section>
 <section class="closing section">
 <h2>Two People. One Journey.<br>A Lifetime of Adventures Ahead.</h2>
-<span class="pixel-heart" aria-hidden="true">♥</span>
+<svg class="pixel-heart" viewBox="0 0 9 8" aria-hidden="true" shape-rendering="crispEdges">
+<path fill="currentColor" d="M1 0h2v1h1v1h1V1h1V0h2v1h1v3H8v1H7v1H6v1H5v1H4V7H3V6H2V5H1V4H0V1h1z"/>
+<path fill="#c97c7f" d="M1 1h2v1H1z"/>
+</svg>
 </section>
 </main>
 <footer class="site-footer">
+<div class="footer-landscape" aria-hidden="true">
+</div>
 <p class="footer-names">Gica &amp; Vho</p>
-<span class="pixel-heart" aria-hidden="true">♥</span>
+<svg class="pixel-heart" viewBox="0 0 9 8" aria-hidden="true" shape-rendering="crispEdges">
+<path fill="currentColor" d="M1 0h2v1h1v1h1V1h1V0h2v1h1v3H8v1H7v1H6v1H5v1H4V7H3V6H2V5H1V4H0V1h1z"/>
+<path fill="#c97c7f" d="M1 1h2v1H1z"/>
+</svg>
 <p>Two Players. One Love.<br>One Unforgettable Adventure.</p>
 <p class="footer-date">2.7.27</p>
 </footer>

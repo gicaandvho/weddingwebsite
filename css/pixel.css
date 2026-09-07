@@ -1,0 +1,143 @@
+/* The V2 illustrated wedding world; shared layout and accessible behavior remain in global.css. */
+:root {
+  --font-retro: 'Courier New', Courier, monospace;
+  --pixel-line: #c4ad80;
+}
+body {
+  background-image: radial-gradient(#b49b6b13 .7px, transparent .7px);
+  background-size: 8px 8px;
+}
+.pixel-heart { display: inline-block; width: 21px; height: 19px; vertical-align: middle; }
+.pixel-icon { width: 24px; height: 24px; flex: 0 0 24px; color: var(--gold); vertical-align: middle; }
+.eyebrow, .tabs a, .btn, .countdown__label, .story-marker { font-family: var(--font-retro); }
+.eyebrow { color: var(--burgundy); letter-spacing: .1em; }
+.btn {
+  font-size: .875rem;
+  border-radius: 0;
+  box-shadow: 3px 0 0 var(--burgundy), -3px 0 0 var(--burgundy), 0 3px 0 var(--burgundy), 0 -3px 0 var(--burgundy);
+  margin-inline: 3px;
+}
+.btn-outline { box-shadow: 2px 0 0 var(--line), -2px 0 0 var(--line), 0 2px 0 var(--line), 0 -2px 0 var(--line); }
+.site-header { border-bottom-color: var(--pixel-line); box-shadow: 0 3px 0 #b49b6b16; }
+.brand { color: var(--navy); }
+.dropdown { border-color: var(--pixel-line); }
+/* A single viewport title composition; the scene always retains its proportions. */
+.opening {
+  background: #faf4e8 url('../assets/pixel/wedding-world.png') center 58% / cover no-repeat;
+  justify-content: center;
+  padding: 24px 24px 7vh;
+  overflow: hidden;
+}
+.opening-lockup { width: min(100%, 760px); text-shadow: 0 1px 12px #fff8ec, 0 0 24px #fff8ec; }
+.opening h1 { font-size: clamp(4rem, 7.2vw, 6.75rem); line-height: 1.1; }
+.opening .ornament { margin-block: clamp(16px, 2.4vh, 26px); }
+.opening-date { font-size: clamp(3.4rem, 5.3vw, 5rem); line-height: 1.1; margin: 22px 0 16px; color: var(--burgundy); }
+.opening-copy { font-size: 1.2rem; line-height: 1.65; margin: 0; }
+.opening .btn { margin-top: 30px; padding: 18px 46px; font-size: 1.1rem; min-height: 58px; text-shadow: none; }
+.opening .opening-line { font-size: 1.6rem; margin: 0; }
+.welcome { max-width: 1200px; display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 50px; text-align: left; }
+.welcome-copy h2 { font-size: clamp(2.5rem, 4.1vw, 3.6rem); }
+.welcome-copy p:not(.eyebrow) { font-size: 1rem; }
+.welcome-copy .ornament { margin-left: 0; }
+.welcome-scene { height: 440px; border: 1px solid var(--pixel-line); padding: 7px; background: var(--paper); box-shadow: 7px 7px 0 #dfd4c244; }
+.scene-art { display: block; width: 100%; height: auto; }
+.welcome-scene .scene-art { height: 100%; object-fit: cover; object-position: 50% 85%; }
+.countdown-section { position: relative; background: var(--paper); border: 1px solid var(--pixel-line); padding: 46px 28px; box-shadow: 5px 5px 0 #dfd4c23b; }
+.countdown-section::before, .countdown-section::after { content: ''; position: absolute; width: 9px; height: 9px; background: var(--gold); top: -5px; }
+.countdown-section::before { left: -5px; }
+.countdown-section::after { right: -5px; }
+.countdown-section .ornament { margin-top: 0; }
+.countdown__num { font-variant-numeric: tabular-nums; }
+.story-moments { gap: 20px; }
+.story-moments figure { border: 1px solid var(--pixel-line); padding: 6px 6px 20px; background: var(--paper); }
+.story-scene { aspect-ratio: 1; background-image: url('../assets/pixel/story-triptych.png'); background-size: 300% 100%; background-repeat: no-repeat; }
+.story-scene--0 { background-position: left center; }
+.story-scene--1 { background-position: center; }
+.story-scene--2 { background-position: right center; }
+.story-moments figcaption { display: grid; gap: 12px; margin-top: 18px; font-size: 1.15rem; }
+.story-marker { color: var(--gold); font-size: .875rem; }
+.closing { position: relative; }
+.closing::before { content: ''; display: block; width: 70px; height: 12px; margin: 0 auto 25px; background: linear-gradient(90deg, transparent 5%, var(--line) 5% 35%, transparent 35% 45%, var(--burgundy) 45% 55%, transparent 55% 65%, var(--line) 65% 95%, transparent 95%) center / 100% 3px no-repeat; }
+.page-intro { position: relative; border-bottom: 1px solid #dfd4c266; background: linear-gradient(90deg, #faf7f0f5, #faf7f0d9, #faf7f0f5), url('../assets/pixel/wedding-world.png') center 45% / cover; padding-bottom: 44px; }
+.page-intro::after { content: ''; display: block; width: 7px; height: 7px; background: var(--burgundy); margin: 28px auto 0; box-shadow: 16px 0 0 var(--line), -16px 0 0 var(--line); }
+.tabs { border-color: var(--pixel-line); }
+.tabs [aria-selected=true] { box-shadow: 0 3px 0 #7c293d1c; }
+.venue { display: grid; grid-template-columns: .9fr 1.1fr; padding: 7px; max-width: 1024px; gap: 0; border-color: var(--pixel-line); }
+.venue-scene { min-height: 380px; background-image: url('../assets/pixel/wedding-world.png'); background-repeat: no-repeat; background-size: auto 125%; }
+.venue-scene--ceremony { background-position: left bottom; }
+.venue-scene--reception { background-position: right bottom; }
+.venue-content { padding: 35px 23px; align-self: center; }
+.venue-content h2 { font-size: 2.25rem; }
+.venue-content h3 { font-size: 1.5rem; }
+.venue-content .actions { gap: 18px; }
+.venue-content .btn { padding-inline: 14px; font-size: .8rem; }
+.journey { background: #fffdf866; }
+.route-art { margin: 35px auto 0; max-width: 900px; border: 1px solid var(--line); padding: 5px; background: var(--paper); }
+.route-labels { display: grid; grid-template-columns: 1fr 40px 1fr; align-items: center; gap: 12px; max-width: 900px; margin: 24px auto; font: 1.15rem/1.4 var(--serif); }
+.route-labels p { margin: 0; }
+.route-labels span { color: var(--burgundy); }
+.timeline li > span { display: flex; align-items: center; gap: 20px; }
+.timeline time { font-family: var(--font-retro); font-size: .95rem; }
+.section-links a { font-family: var(--font-retro); }
+.palette span { border-radius: 0; width: 82px; height: 82px; box-shadow: 4px 4px 0 #dfd4c2; border: 5px solid var(--paper); }
+.role-swatch { border-radius: 0; }
+.outfit-card { background: linear-gradient(180deg, #efe7d750, #fffdf8 75%); border: 1px solid var(--line); }
+.outfit-illustration { image-rendering: pixelated; width: 136px; height: 238px; }
+.outfit-card h3 { font-size: 1.35rem; }
+.note { position: relative; border: 1px solid var(--pixel-line); background: #f3eddf; box-shadow: 4px 4px 0 #dfd4c233; }
+.note > .pixel-icon { float: right; margin-left: 16px; }
+.faq-item summary::after { font-family: var(--font-retro); }
+.faq-item { border-color: var(--line); }
+.gifts { border: 1px solid var(--line); padding: 25px 35px 40px; background: var(--paper); }
+.stationery-art { width: min(100%, 370px); height: auto; margin: 0 auto 22px; mix-blend-mode: multiply; }
+.gifts .stationery-art { width: min(100%, 300px); }
+.rsvp-gateway { max-width: 770px; }
+.rsvp-reminder { background: #f3eddf; }
+.video-feature, .gallery-empty, .slide-main { border: 1px solid var(--pixel-line); outline: 5px solid var(--paper); box-shadow: 0 0 0 6px var(--line); }
+.video-feature, .gallery-empty { background: linear-gradient(#faf7f0ee, #faf7f0ee), url('../assets/pixel/wedding-world.png') center bottom / cover; }
+.arrow { border-color: var(--pixel-line); box-shadow: 2px 2px 0 var(--line); }
+.site-footer { position: relative; overflow: hidden; padding-top: 165px; }
+.footer-landscape { position: absolute; top: 0; left: 0; width: 100%; height: 130px; background: linear-gradient(0deg, var(--paper), #fffdf822 70%), url('../assets/pixel/wedding-world.png') center 80% / cover; opacity: .55; }
+.site-footer > .pixel-heart { margin: 16px auto; }
+@media (max-width: 980px) {
+  .welcome { grid-template-columns: 1fr; gap: 22px; text-align: center; max-width: 760px; }
+  .welcome-copy .ornament { margin-inline: auto; }
+  .welcome-scene { height: 360px; }
+  .countdown-section { margin-inline: 24px; }
+  .venue { grid-template-columns: 1fr; max-width: 680px; }
+  .venue-scene { min-height: 290px; background-size: auto 190%; }
+  .venue-content { padding: 32px 18px; }
+}
+@media (max-width: 540px) {
+  .opening { background-position: 50% 60%; padding: 20px 18px 7vh; }
+  .opening-lockup { width: 100%; }
+  .opening h1 { font-size: clamp(3.55rem, 16vw, 4.2rem); }
+  .opening .opening-line { font-size: clamp(1.15rem, 5vw, 1.35rem); line-height: 1.4; }
+  .opening-date { font-size: 3.6rem; }
+  .opening .btn { margin-top: 28px; padding: 18px 32px; }
+  .opening-copy { font-size: 1.05rem; }
+  .welcome-scene { height: 300px; }
+  .countdown-section { padding: 32px 14px; margin-inline: 22px; }
+  .story-moments { max-width: 370px; }
+  .page-intro { padding-bottom: 35px; }
+  .venue-content h2 { font-size: 2rem; }
+  .venue-content .btn { padding-inline: 12px; }
+  .route-labels { font-size: 1rem; grid-template-columns: 1fr 20px 1fr; }
+  .timeline li { gap: 10px; grid-template-columns: 90px 1fr; }
+  .timeline li > span { gap: 10px; }
+  .timeline .pixel-icon { width: 20px; flex-basis: 20px; }
+  .palette span { width: 64px; height: 64px; }
+  .outfit-illustration { width: 105px; height: 190px; }
+  .outfit-card h3 { font-size: 1.15rem; }
+  .gifts { padding-inline: 20px; }
+  .site-footer { padding-top: 145px; }
+  .footer-landscape { height: 110px; }
+}
+@media (max-height: 700px) {
+  .opening { padding-block: 16px; }
+  .opening h1 { font-size: clamp(2.7rem, 9vh, 4.8rem); }
+  .opening-date { font-size: clamp(2.3rem, 7vh, 3.5rem); margin-block: 10px; }
+  .opening .ornament { margin-block: 10px; }
+  .opening .btn { margin-top: 14px; padding-block: 12px; min-height: 48px; }
+  .opening-copy { font-size: 1rem; }
+}
