@@ -1,107 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Memory Archive &mdash; moments from Gica and Vho's adventure.">
-  <title>Memory Archive - Gica & Vho</title>
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/mobile.css" media="(max-width: 1199px)">
-  <link rel="stylesheet" href="css/desktop.css" media="(min-width: 1200px)">
-  <script src="js/main.js" defer></script>
-  <script src="js/gallery.js" defer></script>
-  <link rel="stylesheet" href="css/gallery.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery · Gica &amp; Vho</title>
+<meta name="description" content="Celebrate the wedding of Gica and Vho on February 7, 2027. Wedding details, guest guide, gallery, and RSVP.">
+<meta property="og:title" content="Gallery · Gica &amp; Vho">
+<meta property="og:description" content="Two Players. One Love. One Unforgettable Adventure. 2.7.27">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/global.css">
+<script src="js/config.js" defer>
+</script>
+<script src="js/main.js" defer>
+</script>
+<script src="js/gallery.js" defer>
+</script>
 </head>
 <body>
-  <a class="skip-link" href="#gallery-main">Skip to main content</a>
-
-    <header class="site-header">
-    <a class="brand" href="index.html#home" aria-label="Gica and Vho - Home">Gica <span class="brand__heart" aria-hidden="true">&#9829;</span> Vho</a>
-    <nav class="site-nav-main" aria-label="Main navigation">
-  <ul>
-    <li><a href="story.html" data-section="story">Our Story</a></li>
-    <li class="nav-group"><details><summary data-section="wedding">The Wedding</summary><ul><li><a href="wedding.html#events">Wedding Day</a></li><li><a href="wedding.html#map">Campaign Map</a></li></ul></details></li>
-    <li class="nav-group"><details><summary data-section="guide">Guest Guide</summary><ul><li><a href="guide.html#party">Party Members</a></li><li><a href="guide.html#outfit">Outfit Guide</a></li><li><a href="guide.html#faqs">FAQs &amp; Gifts</a></li></ul></details></li>
-    <li><a href="gallery.html" data-section="memories">Memories</a></li>
-    <li><a href="rsvp.html" data-section="rsvp">RSVP</a></li>
-  </ul>
+<div id="site-content">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<a class="brand" href="index.html#home" aria-label="Gica and Vho home">G&amp;V</a>
+<nav class="desktop-nav" aria-label="Main navigation">
+<a href="index.html#home">Home</a>
+<details>
+<summary>Wedding Details</summary>
+<div class="dropdown">
+<a href="wedding.html#ceremony">Ceremony</a>
+<a href="wedding.html#reception">Reception</a>
+<a href="wedding.html#map">The Journey</a>
+<a href="wedding.html#timeline">Timeline</a>
+</div>
+</details>
+<details>
+<summary>Guest Guide</summary>
+<div class="dropdown">
+<a href="guide.html#outfit">Outfit Guide</a>
+<a href="guide.html#faqs">FAQ &amp; Gifts</a>
+</div>
+</details>
+<a href="gallery.html">Gallery</a>
+<a class="nav-rsvp" href="rsvp.html">RSVP</a>
 </nav>
-    <div class="header-actions">
-      <button class="music-toggle" type="button" aria-label="Toggle music" aria-pressed="false">Music</button>
-    </div>
-    <button class="nav-toggle" data-drawer-toggle type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18z"/></svg>
-    </button>
-  </header>
-
-  <aside class="backdrop drawer-backdrop" data-drawer-backdrop></aside>
-  <aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true">
-  <a class="drawer__top-link" href="story.html" data-section="story">Our Story</a>
-  <div class="drawer__group"><p class="drawer__group-title" data-section="wedding">The Wedding</p><div class="drawer__children"><a href="wedding.html#events">Wedding Day</a><a href="wedding.html#map">Campaign Map</a></div></div>
-  <div class="drawer__group"><p class="drawer__group-title" data-section="guide">Guest Guide</p><div class="drawer__children"><a href="guide.html#party">Party Members</a><a href="guide.html#outfit">Outfit Guide</a><a href="guide.html#faqs">FAQs &amp; Gifts</a></div></div>
-  <a class="drawer__top-link" href="gallery.html" data-section="memories">Memories</a>
-  <a class="drawer__top-link" href="rsvp.html" data-section="rsvp">RSVP</a>
-</aside>
-
-  <main class="main-shell gallery-page" id="gallery-main">
-    <header class="page-intro text-center gallery-intro">
-      <p class="eyebrow">The Memories</p>
-      <h1>Our Memories</h1>
-      <p class="lead">A Collection of Moments From Our Adventure</p>
-      <p class="page-intro__note">07 February 2027</p>
-    </header>
-
-    <section aria-labelledby="gallery-heading" class="memory-archive">
-      <h2 class="sr-only" id="gallery-heading">Our memories</h2>
-      <div class="gallery-grid">
-        <button class="gallery-item" type="button" data-lightbox-src="assets/gallery/photo-01.webp" data-lightbox-alt="Placeholder for The Beginning memory" aria-label="Open The Beginning memory placeholder">
-          <span class="gallery-item__image image-placeholder"><img src="assets/gallery/photo-01.webp" loading="lazy" width="720" height="540" alt="Placeholder for The Beginning memory" onerror="this.hidden=true"><span>PHOTO<br>MEMORY 01</span></span>
-          <span class="gallery-item__caption"><span><small>01 &mdash;</small> The Beginning</span><span class="gallery-item__caption-note">A new chapter</span></span>
-        </button>
-        <button class="gallery-item" type="button" data-lightbox-src="assets/gallery/photo-02.webp" data-lightbox-alt="Placeholder for The Adventure memory" aria-label="Open The Adventure memory placeholder">
-          <span class="gallery-item__image image-placeholder"><img src="assets/gallery/photo-02.webp" loading="lazy" width="720" height="540" alt="Placeholder for The Adventure memory" onerror="this.hidden=true"><span>PHOTO<br>MEMORY 02</span></span>
-          <span class="gallery-item__caption"><span><small>02 &mdash;</small> The Adventure</span><span class="gallery-item__caption-note">Miles together</span></span>
-        </button>
-        <button class="gallery-item" type="button" data-lightbox-src="assets/gallery/photo-03.webp" data-lightbox-alt="Placeholder for The Moments memory" aria-label="Open The Moments memory placeholder">
-          <span class="gallery-item__image image-placeholder"><img src="assets/gallery/photo-03.webp" loading="lazy" width="720" height="540" alt="Placeholder for The Moments memory" onerror="this.hidden=true"><span>PHOTO<br>MEMORY 03</span></span>
-          <span class="gallery-item__caption"><span><small>03 &mdash;</small> The Moments</span><span class="gallery-item__caption-note">The little things</span></span>
-        </button>
-        <button class="gallery-item" type="button" data-lightbox-src="assets/gallery/photo-04.webp" data-lightbox-alt="Placeholder for The Proposal memory" aria-label="Open The Proposal memory placeholder">
-          <span class="gallery-item__image image-placeholder"><img src="assets/gallery/photo-04.webp" loading="lazy" width="720" height="540" alt="Placeholder for The Proposal memory" onerror="this.hidden=true"><span>PHOTO<br>MEMORY 04</span></span>
-          <span class="gallery-item__caption"><span><small>04 &mdash;</small> The Proposal</span><span class="gallery-item__caption-note">A promise kept</span></span>
-        </button>
-        <button class="gallery-item" type="button" data-lightbox-src="assets/gallery/photo-05.webp" data-lightbox-alt="Placeholder for The Next Chapter memory" aria-label="Open The Next Chapter memory placeholder">
-          <span class="gallery-item__image image-placeholder"><img src="assets/gallery/photo-05.webp" loading="lazy" width="720" height="540" alt="Placeholder for The Next Chapter memory" onerror="this.hidden=true"><span>PHOTO<br>MEMORY 05</span></span>
-          <span class="gallery-item__caption"><span><small>05 &mdash;</small> The Next Chapter</span><span class="gallery-item__caption-note">Still unfolding</span></span>
-        </button>
-        <button class="gallery-item" type="button" data-lightbox-src="assets/gallery/photo-06.webp" data-lightbox-alt="Placeholder for To Be Continued memory" aria-label="Open To Be Continued memory placeholder">
-          <span class="gallery-item__image image-placeholder"><img src="assets/gallery/photo-06.webp" loading="lazy" width="720" height="540" alt="Placeholder for To Be Continued memory" onerror="this.hidden=true"><span>PHOTO<br>MEMORY 06</span></span>
-          <span class="gallery-item__caption"><span><small>06 &mdash;</small> To Be Continued</span><span class="gallery-item__caption-note">More to come</span></span>
-        </button>
-      </div>
-    </section>
-
-    <section class="gallery-closing text-center" aria-labelledby="closing-heading">
-      <h2 id="closing-heading">More Memories to Come.</h2>
-      <p>Every chapter is better when shared together.</p>
-    </section>
-  </main>
-
-  <div class="lightbox" data-lightbox hidden role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
-    <div class="lightbox__panel">
-      <h2 class="sr-only" id="lightbox-title">Enlarged gallery photograph</h2>
-      <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close enlarged photograph">&times;</button>
-      <button class="lightbox__prev" type="button" data-lightbox-prev aria-label="Previous photograph">&#8592;</button>
-      <img class="lightbox__image" data-lightbox-image src="" alt="">
-      <button class="lightbox__next" type="button" data-lightbox-next aria-label="Next photograph">&#8594;</button>
-    </div>
-  </div>
-
-  <footer class="site-footer">
-    <p>With love - Gica and Vho. February 7, 2027.</p>
-    <p><span data-year></span> Coded with <span class="footer-heart" aria-hidden="true">*</span></p>
-  </footer>
+<button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false">☰ <span>Menu</span>
+</button>
+</header>
+<dialog id="mobile-menu" class="mobile-menu" aria-label="Navigation">
+<button class="menu-close" type="button" aria-label="Close menu">×</button>
+<p class="brand">G&amp;V</p>
+<nav aria-label="Mobile navigation">
+<a href="index.html#home">Home</a>
+<details>
+<summary>Wedding Details</summary>
+<div class="dropdown">
+<a href="wedding.html#ceremony">Ceremony</a>
+<a href="wedding.html#reception">Reception</a>
+<a href="wedding.html#map">The Journey</a>
+<a href="wedding.html#timeline">Timeline</a>
+</div>
+</details>
+<details>
+<summary>Guest Guide</summary>
+<div class="dropdown">
+<a href="guide.html#outfit">Outfit Guide</a>
+<a href="guide.html#faqs">FAQ &amp; Gifts</a>
+</div>
+</details>
+<a href="gallery.html">Gallery</a>
+<a class="nav-rsvp" href="rsvp.html">RSVP</a>
+</nav>
+</dialog>
+<main id="main">
+<header class="page-intro">
+<p class="eyebrow">Gica &amp; Vho · 2.7.27</p>
+<h1>Gallery</h1>
+<p class="subtitle">Before the wedding day, a little glimpse of us.</p>
+</header>
+<section class="section gallery-story">
+<h2>Our Pre-Wedding Story</h2>
+<section class="video-section">
+<h3 class="eyebrow">Save the Date Video</h3>
+<div class="video-feature" data-video-container>
+<p>Our save the date film is coming soon.</p>
+<button type="button" class="btn" data-play-video disabled>Play Video</button>
+</div>
+</section>
+<section class="slideshow-section">
+<h3>Prenup Slideshow</h3>
+<p class="gallery-empty" data-gallery-empty>Our pre-wedding photographs will be shared here soon.</p>
+<div class="slideshow" data-slideshow hidden>
+<button class="slide-main" data-enlarge aria-label="Enlarge photograph">
+<img data-slide-image alt="">
+</button>
+<div class="slide-controls">
+<button class="arrow" data-prev aria-label="Previous photograph">←</button>
+<span data-photo-counter aria-live="polite">
+</span>
+<button class="arrow" data-next aria-label="Next photograph">→</button>
+</div>
+<progress data-photo-progress aria-label="Photo progress" max="1" value="1">
+</progress>
+<div class="thumbnails" data-thumbnails aria-label="Choose photograph">
+</div>
+</div>
+</section>
+</section>
+<section class="closing section">
+<h2>Memories Collected <span class="pixel-heart" aria-hidden="true">♥</span>
+</h2>
+<p class="subtitle">And many more still to come.</p>
+</section>
+<dialog class="lightbox" data-lightbox aria-label="Enlarged photograph">
+<button class="lightbox-close" data-lightbox-close aria-label="Close photograph">×</button>
+<img data-lightbox-image alt="">
+<div class="slide-controls">
+<button class="arrow" data-lightbox-prev aria-label="Previous photograph">←</button>
+<button class="arrow" data-lightbox-next aria-label="Next photograph">→</button>
+</div>
+</dialog>
+</main>
+<footer class="site-footer">
+<p class="footer-names">Gica &amp; Vho</p>
+<span class="pixel-heart" aria-hidden="true">♥</span>
+<p>Two Players. One Love.<br>One Unforgettable Adventure.</p>
+<p class="footer-date">2.7.27</p>
+</footer>
+</div>
 </body>
 </html>

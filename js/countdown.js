@@ -18,8 +18,8 @@
   // Bail if no cells exist (e.g. page without a countdown)
   if (!cells.length) { return; }
 
-  // Wedding day: February 7, 2027, 9:00 AM
-  var targetDate = new Date("2027-02-07T09:00:00+08:00").getTime();
+  // Wedding day: February 7, 2027, 10:00 AM in the Philippines.
+  var targetDate = new Date("2027-02-07T10:00:00+08:00").getTime();
 
   function pad(value) {
     return value < 10 ? "0" + value : String(value);

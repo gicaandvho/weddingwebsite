@@ -1,140 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Guest guide, party roles, outfit guidance, FAQs, and gifts for Gica and Vho's wedding day.">
-  <title>Guest Guide - Gica &amp; Vho</title>
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/mobile.css" media="(max-width: 1199px)">
-  <link rel="stylesheet" href="css/desktop.css" media="(min-width: 1200px)">
-  <link rel="stylesheet" href="css/guide.css">
-  <script src="js/main.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guest Guide · Gica &amp; Vho</title>
+<meta name="description" content="Celebrate the wedding of Gica and Vho on February 7, 2027. Wedding details, guest guide, gallery, and RSVP.">
+<meta property="og:title" content="Guest Guide · Gica &amp; Vho">
+<meta property="og:description" content="Two Players. One Love. One Unforgettable Adventure. 2.7.27">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/global.css">
+<script src="js/config.js" defer>
+</script>
+<script src="js/main.js" defer>
+</script>
 </head>
 <body>
-
-    <header class="site-header">
-    <a class="brand" href="index.html#home" aria-label="Gica and Vho - Home">Gica <span class="brand__heart" aria-hidden="true">&#9829;</span> Vho</a>
-    <nav class="site-nav-main" aria-label="Main navigation">
-  <ul>
-    <li><a href="story.html" data-section="story">Our Story</a></li>
-    <li class="nav-group"><details><summary data-section="wedding">The Wedding</summary><ul><li><a href="wedding.html#events">Wedding Day</a></li><li><a href="wedding.html#map">Campaign Map</a></li></ul></details></li>
-    <li class="nav-group"><details><summary data-section="guide">Guest Guide</summary><ul><li><a href="guide.html#party">Party Members</a></li><li><a href="guide.html#outfit">Outfit Guide</a></li><li><a href="guide.html#faqs">FAQs &amp; Gifts</a></li></ul></details></li>
-    <li><a href="gallery.html" data-section="memories">Memories</a></li>
-    <li><a href="rsvp.html" data-section="rsvp">RSVP</a></li>
-  </ul>
+<div id="site-content">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<a class="brand" href="index.html#home" aria-label="Gica and Vho home">G&amp;V</a>
+<nav class="desktop-nav" aria-label="Main navigation">
+<a href="index.html#home">Home</a>
+<details>
+<summary>Wedding Details</summary>
+<div class="dropdown">
+<a href="wedding.html#ceremony">Ceremony</a>
+<a href="wedding.html#reception">Reception</a>
+<a href="wedding.html#map">The Journey</a>
+<a href="wedding.html#timeline">Timeline</a>
+</div>
+</details>
+<details>
+<summary>Guest Guide</summary>
+<div class="dropdown">
+<a href="guide.html#outfit">Outfit Guide</a>
+<a href="guide.html#faqs">FAQ &amp; Gifts</a>
+</div>
+</details>
+<a href="gallery.html">Gallery</a>
+<a class="nav-rsvp" href="rsvp.html">RSVP</a>
 </nav>
-    <div class="header-actions">
-      <button class="music-toggle" type="button" aria-label="Toggle music" aria-pressed="false">Music</button>
-    </div>
-    <button class="nav-toggle" data-drawer-toggle type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18z"/></svg>
-    </button>
-  </header>
-
-  <aside class="backdrop drawer-backdrop" data-drawer-backdrop></aside>
-  <aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true">
-  <a class="drawer__top-link" href="story.html" data-section="story">Our Story</a>
-  <div class="drawer__group"><p class="drawer__group-title" data-section="wedding">The Wedding</p><div class="drawer__children"><a href="wedding.html#events">Wedding Day</a><a href="wedding.html#map">Campaign Map</a></div></div>
-  <div class="drawer__group"><p class="drawer__group-title" data-section="guide">Guest Guide</p><div class="drawer__children"><a href="guide.html#party">Party Members</a><a href="guide.html#outfit">Outfit Guide</a><a href="guide.html#faqs">FAQs &amp; Gifts</a></div></div>
-  <a class="drawer__top-link" href="gallery.html" data-section="memories">Memories</a>
-  <a class="drawer__top-link" href="rsvp.html" data-section="rsvp">RSVP</a>
+<button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false">☰ <span>Menu</span>
+</button>
+</header>
+<dialog id="mobile-menu" class="mobile-menu" aria-label="Navigation">
+<button class="menu-close" type="button" aria-label="Close menu">×</button>
+<p class="brand">G&amp;V</p>
+<nav aria-label="Mobile navigation">
+<a href="index.html#home">Home</a>
+<details>
+<summary>Wedding Details</summary>
+<div class="dropdown">
+<a href="wedding.html#ceremony">Ceremony</a>
+<a href="wedding.html#reception">Reception</a>
+<a href="wedding.html#map">The Journey</a>
+<a href="wedding.html#timeline">Timeline</a>
+</div>
+</details>
+<details>
+<summary>Guest Guide</summary>
+<div class="dropdown">
+<a href="guide.html#outfit">Outfit Guide</a>
+<a href="guide.html#faqs">FAQ &amp; Gifts</a>
+</div>
+</details>
+<a href="gallery.html">Gallery</a>
+<a class="nav-rsvp" href="rsvp.html">RSVP</a>
+</nav>
+</dialog>
+<main id="main">
+<header class="page-intro">
+<p class="eyebrow">Gica &amp; Vho · 2.7.27</p>
+<h1>Guest Guide</h1>
+<p class="subtitle">A few details to help you feel right at home.</p>
+</header>
+<nav class="section-links" aria-label="Guest guide sections">
+<a href="#outfit">Outfit Guide</a>
+<a href="#faqs">FAQ &amp; Gifts</a>
+</nav>
+<section id="outfit" class="section">
+<div class="section-heading">
+<h2>Outfit Guide</h2>
+<p class="subtitle">Dress for the celebration.</p>
+</div>
+<div class="tabs" data-tabs="outfits" aria-label="outfits">
+<a id="tab-guests" href="#guests">Guests</a>
+<a id="tab-entourage" href="#entourage">Wedding Entourage</a>
+</div>
+<section id="guests" data-panel="outfits" class="tab-panel">
+<div class="section-heading">
+<p class="eyebrow">Dress Code</p>
+<h3 class="dress-code">Semi-Formal to Smart Casual</h3>
+</div>
+<ul class="palette">
+<li>
+<span style="--swatch:#3A2B20">
+</span>
+<strong>Charcoal Clay</strong>
+<small>#3A2B20</small>
+</li>
+<li>
+<span style="--swatch:#7E6A52">
+</span>
+<strong>Rustic Taupe</strong>
+<small>#7E6A52</small>
+</li>
+<li>
+<span style="--swatch:#B89C82">
+</span>
+<strong>Warm Beige</strong>
+<small>#B89C82</small>
+</li>
+</ul>
+<p class="narrow">Please wear colors within or close to the tones above. Exact match is not required. We simply ask that your attire falls within these neutral earth-tone shades to create a cohesive and elegant celebration.</p>
+<p class="narrow muted">Similar shades are welcome, including chocolate brown, espresso, mocha, mushroom taupe, camel, sand, champagne beige, and latte.</p>
+<aside class="note">
+<h3>Please Avoid</h3>
+<p>White, Ivory, or Cream · Bright or Neon Colors · Bold Prints and Patterns</p>
 </aside>
-
-  <main class="main-shell guide-page" id="guide-main">
-    <header class="guide-intro">
-      <p class="eyebrow">The Guest Guide</p>
-      <h1>Guest Guide</h1>
-      <p class="guide-subtitle">Everything You Need Before the Big Day</p>
-      <p class="guide-date">07 February 2027</p>
-    </header>
-
-    <section class="guide-section guide-section--party" id="party" aria-labelledby="members-heading">
-      <div class="party-heading"><h2 id="members-heading">Party Members</h2><p>The People Beside Us on Our Big Day</p></div>
-      <div class="party-grid party-grid--roles">
-        <article class="party-card party-card--role"><p class="party-role">Principal Sponsors</p></article>
-        <article class="party-card party-card--role"><p class="party-role">Maid of Honor</p></article>
-        <article class="party-card party-card--role"><p class="party-role">Bridesmaids</p></article>
-        <article class="party-card party-card--role"><p class="party-role">Best Man</p></article>
-        <article class="party-card party-card--role"><p class="party-role">Groomsmen</p></article>
-        <article class="party-card party-card--role"><p class="party-role">Flower Girls</p></article>
-        <article class="party-card party-card--role"><p class="party-role">Ring Bearer</p></article>
-        <article class="party-card party-card--role"><p class="party-role">Other Special Roles</p></article>
-      </div>
-    </section>
-
-    <section class="guide-section" id="colors" aria-labelledby="colors-heading">
-      <div class="party-heading"><h2 id="colors-heading">Our Colors</h2></div>
-      <div class="palette">
-        <div class="swatch"><div class="swatch-color slate"></div><span class="swatch-name">Slate Blue</span></div>
-        <div class="swatch"><div class="swatch-color burgundy"></div><span class="swatch-name">Burgundy</span></div>
-        <div class="swatch"><div class="swatch-color ivory"></div><span class="swatch-name">Warm Ivory</span></div>
-        <div class="swatch"><div class="swatch-color gold"></div><span class="swatch-name">Antique Gold</span></div>
-      </div>
-    </section>
-
-    <section class="guide-section" id="outfit" aria-labelledby="outfit-heading">
-      <div class="party-heading"><h2 id="outfit-heading">Outfit Guide</h2><p>Dress for the Celebration</p></div>
-      <div class="outfit-grid">
-        <article class="outfit-card"><div class="outfit-photo">OUTFIT REFERENCE<br>PLACEHOLDER</div><h3>Bridesmaids</h3><dl><dt>Color:</dt><dd>TBD</dd><dt>Style:</dt><dd>Formal</dd></dl></article>
-        <article class="outfit-card"><div class="outfit-photo">OUTFIT REFERENCE<br>PLACEHOLDER</div><h3>Groomsmen</h3><dl><dt>Color:</dt><dd>TBD</dd><dt>Style:</dt><dd>Formal</dd></dl></article>
-        <article class="outfit-card"><div class="outfit-photo">OUTFIT REFERENCE<br>PLACEHOLDER</div><h3>Guests</h3><dl><dt>Dress Code:</dt><dd>Formal</dd></dl></article>
-      </div>
-    </section>
-
-    <section class="guide-section" id="faqs" aria-labelledby="faq-heading">
-      <div class="guide-heading"><h2 id="faq-heading">Frequently Asked Questions</h2></div>
-      <div class="faq-list">
-        <details class="faq-item"><summary><span class="faq-number">01</span><span>What Time Should I Arrive?</span></summary><p class="faq-answer">Placeholder answer text will be added here.</p></details>
-        <details class="faq-item"><summary><span class="faq-number">02</span><span>What Should I Wear?</span></summary><p class="faq-answer">Placeholder answer text will be added here.</p></details>
-        <details class="faq-item"><summary><span class="faq-number">03</span><span>Where Is the Ceremony?</span></summary><p class="faq-answer">Placeholder answer text will be added here.</p></details>
-        <details class="faq-item"><summary><span class="faq-number">04</span><span>Where Is the Reception?</span></summary><p class="faq-answer">Placeholder answer text will be added here.</p></details>
-        <details class="faq-item"><summary><span class="faq-number">05</span><span>Is There Parking Available?</span></summary><p class="faq-answer">Placeholder answer text will be added here.</p></details>
-        <details class="faq-item"><summary><span class="faq-number">06</span><span>Can I Bring a Plus One?</span></summary><p class="faq-answer">Placeholder answer text will be added here.</p></details>
-        <details class="faq-item"><summary><span class="faq-number">07</span><span>Are Children Welcome?</span></summary><p class="faq-answer">Placeholder answer text will be added here.</p></details>
-        <details class="faq-item"><summary><span class="faq-number">08</span><span>Is There Anything Else I Should Know?</span></summary><p class="faq-answer">Placeholder answer text will be added here.</p></details>
-      </div>
-    </section>
-
-    <section class="guide-section" id="gifts" aria-labelledby="gifts-heading">
-      <div class="gift-card">
-        <p class="eyebrow">A Little Something</p>
-        <h2 id="gifts-heading">Gifts &amp; Wishes</h2>
-        <p>Your presence is already a gift to us. For those who would like to give something more, details will be shared here.</p>
-        <p class="gift-label">Gift Guide</p>
-        <p>Details coming soon.</p>
-      </div>
-    </section>
-
-    <p class="guide-closing">Thank You for Being Part of Our Adventure.</p>
-  </main>
-
-  <footer class="site-footer">
-    <p>With love - Gica and Vho. February 7, 2027.</p>
-    <p><span data-year></span> Coded with <span class="footer-heart" aria-hidden="true">*</span></p>
-  </footer>
-
-  <script>
-    (function () {
-      "use strict";
-      var items = document.querySelectorAll(".faq-item");
-      items.forEach(function (item) {
-        item.addEventListener("toggle", function () {
-          if (!item.open) { return; }
-          items.forEach(function (other) {
-            if (other !== item) { other.removeAttribute("open"); }
-          });
-        });
-        item.querySelector("summary").addEventListener("keydown", function (event) {
-          if (event.key === "Escape" && item.open) {
-            item.removeAttribute("open");
-            event.preventDefault();
-          }
-        });
-      });
-    }());
-  </script>
-
+<div class="outfit-grid guest-examples">
+<article class="outfit-card">
+<svg class="outfit-illustration" viewBox="0 0 100 190" aria-hidden="true">
+<ellipse cx="50" cy="181" rx="32" ry="3" fill="#ddd3c4"/>
+<path d="M41 40h18v23H41z" fill="#ba9279"/>
+<path fill="#7E6A52" d="M38 55h24l22 100H16z"/>
+<ellipse cx="50" cy="30" rx="15" ry="20" fill="#c8a087"/>
+<path d="M35 28q-7-33 22-22 14 4 8 24l-7-14-20 4z" fill="#493b34"/>
+<path d="M29 62l-10 53M72 62l9 53" fill="none" stroke="#7E6A52" stroke-width="11" stroke-linecap="round"/>
+</svg>
+<h3>For Women</h3>
+<span class="role-swatch" style="--swatch:#7E6A52" aria-hidden="true">
+</span>
+<ul>
+<li>An earth-tone midi dress</li>
+<li>Comfortable dress shoes</li>
+</ul>
+</article>
+<article class="outfit-card">
+<svg class="outfit-illustration" viewBox="0 0 100 190" aria-hidden="true">
+<ellipse cx="50" cy="181" rx="32" ry="3" fill="#ddd3c4"/>
+<path d="M41 40h18v23H41z" fill="#ba9279"/>
+<path fill="#B89C82" d="M30 55h40l9 64H21zM29 115h19l-2 59H27zM52 115h19l2 59H54z"/>
+<path fill="#fffaf4" d="M38 56h24l-12 41z"/>
+<path fill="#24354b" d="M48 60h4l3 24-5 6-5-6z"/>
+<ellipse cx="50" cy="30" rx="15" ry="20" fill="#c8a087"/>
+<path d="M35 28q-7-33 22-22 14 4 8 24l-7-14-20 4z" fill="#493b34"/>
+<path d="M29 62l-10 53M72 62l9 53" fill="none" stroke="#B89C82" stroke-width="11" stroke-linecap="round"/>
+</svg>
+<h3>For Men</h3>
+<span class="role-swatch" style="--swatch:#B89C82" aria-hidden="true">
+</span>
+<ul>
+<li>A collared shirt and tailored trousers</li>
+<li>Dress shoes</li>
+</ul>
+</article>
+</div>
+<p class="small muted text-center">Illustrations are a guide to color and style.</p>
+</section>
+<section id="entourage" data-panel="outfits" class="tab-panel">
+<div class="tabs" data-tabs="entourage-roles" aria-label="entourage-roles">
+<a id="tab-men" href="#men">Men</a>
+<a id="tab-women" href="#women">Women</a>
+</div>
+<section id="men" data-panel="entourage-roles" class="tab-panel">
+<h3 class="sr-only">Men’s Entourage</h3>
+<div class="outfit-grid">
+<article class="outfit-card">
+<svg class="outfit-illustration" viewBox="0 0 100 190" aria-hidden="true">
+<ellipse cx="50" cy="181" rx="32" ry="3" fill="#ddd3c4"/>
+<path d="M41 40h18v23H41z" fill="#ba9279"/>
+<path fill="#839aae" d="M30 55h40l9 64H21zM29 115h19l-2 59H27zM52 115h19l2 59H54z"/>
+<path fill="#fffaf4" d="M38 56h24l-12 41z"/>
+<path fill="#24354b" d="M48 60h4l3 24-5 6-5-6z"/>
+<path fill="#839aae" stroke="#fffaf4" stroke-width="1" d="M36 65l14 29 14-29v46H36z"/>
+<ellipse cx="50" cy="30" rx="15" ry="20" fill="#c8a087"/>
+<path d="M35 28q-7-33 22-22 14 4 8 24l-7-14-20 4z" fill="#493b34"/>
+<path d="M29 62l-10 53M72 62l9 53" fill="none" stroke="#839aae" stroke-width="11" stroke-linecap="round"/>
+</svg>
+<h3>Fathers of the Couple</h3>
+<span class="role-swatch" style="--swatch:#839aae" aria-hidden="true">
+</span>
+<ul>
+<li>Dusty Blue 3-Piece Suit</li>
+<li>White Longsleeves</li>
+<li>Navy Blue Neck Tie</li>
+</ul>
+</article>
+<article class="outfit-card">
+<svg class="outfit-illustration" viewBox="0 0 100 190" aria-hidden="true">
+<ellipse cx="50" cy="181" rx="32" ry="3" fill="#ddd3c4"/>
+<path d="M41 40h18v23H41z" fill="#ba9279"/>
+<path fill="#4a4c50" d="M30 55h40l9 64H21zM29 115h19l-2 59H27zM52 115h19l2 59H54z"/>
+<path fill="#fffaf4" d="M38 56h24l-12 41z"/>
+<path fill="#24354b" d="M48 60h4l3 24-5 6-5-6z"/>
+<ellipse cx="50" cy="30" rx="15" ry="20" fill="#c8a087"/>
+<path d="M35 28q-7-33 22-22 14 4 8 24l-7-14-20 4z" fill="#493b34"/>
+<path d="M29 62l-10 53M72 62l9 53" fill="none" stroke="#4a4c50" stroke-width="11" stroke-linecap="round"/>
+</svg>
+<h3>Principal Sponsors</h3>
+<span class="role-swatch" style="--swatch:#4a4c50" aria-hidden="true">
+</span>
+<ul>
+<li>Dark Gray 2-Piece Suit</li>
+<li>White Longsleeves</li>
+<li>Navy Blue Neck Tie</li>
+</ul>
+</article>
+<article class="outfit-card">
+<svg class="outfit-illustration" viewBox="0 0 100 190" aria-hidden="true">
+<ellipse cx="50" cy="181" rx="32" ry="3" fill="#ddd3c4"/>
+<path d="M41 40h18v23H41z" fill="#ba9279"/>
+<path fill="#b6b9bc" d="M30 55h40l9 64H21zM29 115h19l-2 59H27zM52 115h19l2 59H54z"/>
+<path fill="#fffaf4" d="M38 56h24l-12 41z"/>
+<path fill="#24354b" d="M48 60h4l3 24-5 6-5-6z"/>
+<path fill="#b6b9bc" stroke="#fffaf4" stroke-width="1" d="M36 65l14 29 14-29v46H36z"/>
+<ellipse cx="50" cy="30" rx="15" ry="20" fill="#c8a087"/>
+<path d="M35 28q-7-33 22-22 14 4 8 24l-7-14-20 4z" fill="#493b34"/>
+<path d="M29 62l-10 53M72 62l9 53" fill="none" stroke="#b6b9bc" stroke-width="11" stroke-linecap="round"/>
+</svg>
+<h3>Best Man</h3>
+<span class="role-swatch" style="--swatch:#b6b9bc" aria-hidden="true">
+</span>
+<ul>
+<li>Light Gray 3-Piece Suit</li>
+<li>White Longsleeves</li>
+<li>Navy Blue Neck Tie</li>
+</ul>
+</article>
+<article class="outfit-card">
+<svg class="outfit-illustration" viewBox="0 0 100 190" aria-hidden="true">
+<ellipse cx="50" cy="181" rx="32" ry="3" fill="#ddd3c4"/>
+<path d="M41 40h18v23H41z" fill="#ba9279"/>
+<path fill="#b6b9bc" d="M30 55h40l9 64H21zM29 115h19l-2 59H27zM52 115h19l2 59H54z"/>
+<path fill="#fffaf4" d="M38 56h24l-12 41z"/>
+<path fill="#24354b" d="M48 60h4l3 24-5 6-5-6z"/>
+<ellipse cx="50" cy="30" rx="15" ry="20" fill="#c8a087"/>
+<path d="M35 28q-7-33 22-22 14 4 8 24l-7-14-20 4z" fill="#493b34"/>
+<path d="M29 62l-10 53M72 62l9 53" fill="none" stroke="#b6b9bc" stroke-width="11" stroke-linecap="round"/>
+</svg>
+<h3>Groomsmen &amp; Secondary Sponsors</h3>
+<span class="role-swatch" style="--swatch:#b6b9bc" aria-hidden="true">
+</span>
+<ul>
+<li>Light Gray 2-Piece Suit</li>
+<li>White Longsleeves</li>
+<li>Navy Blue Neck Tie</li>
+</ul>
+</article>
+<article class="outfit-card">
+<svg class="outfit-illustration" viewBox="0 0 100 190" aria-hidden="true">
+<ellipse cx="50" cy="181" rx="32" ry="3" fill="#ddd3c4"/>
+<path d="M41 40h18v23H41z" fill="#ba9279"/>
+<path fill="#adcadf" d="M30 55h40l9 64H21zM29 115h19l-2 59H27zM52 115h19l2 59H54z"/>
+<path fill="#fffaf4" d="M38 56h24l-12 41z"/>
+<path fill="#24354b" d="M48 60h4l3 24-5 6-5-6z"/>
+<path fill="#adcadf" stroke="#fffaf4" stroke-width="1" d="M36 65l14 29 14-29v46H36z"/>
+<path fill="#24354b" d="M41 60l9 4 9-4v10l-9-4-9 4z"/>
+<ellipse cx="50" cy="30" rx="15" ry="20" fill="#c8a087"/>
+<path d="M35 28q-7-33 22-22 14 4 8 24l-7-14-20 4z" fill="#493b34"/>
+<path d="M29 62l-10 53M72 62l9 53" fill="none" stroke="#adcadf" stroke-width="11" stroke-linecap="round"/>
+</svg>
+<h3>Kids — Entourage</h3>
+<span class="role-swatch" style="--swatch:#adcadf" aria-hidden="true">
+</span>
+<ul>
+<li>Baby Blue Vest &amp; Pants</li>
+<li>White Longsleeves</li>
+<li>Navy Blue Bow Tie</li>
+</ul>
+</article>
+</div>
+<aside class="supplier">
+<p class="eyebrow">Recommended Suit Supplier</p>
+<h3>Gardini Silang Branch</h3>
+<a class="text-link" href="tel:+639099393710">0909 939 3710</a>
+<p>Please mention that you are part of Gica &amp; Vho’s wedding when coordinating so they can refer to the appropriate attire guide.</p>
+</aside>
+</section>
+<section id="women" data-panel="entourage-roles" class="tab-panel">
+<h3 class="sr-only">Women’s Entourage</h3>
+<div class="outfit-grid">
+<article class="outfit-card">
+<svg class="outfit-illustration" viewBox="0 0 100 190" aria-hidden="true">
+<ellipse cx="50" cy="181" rx="32" ry="3" fill="#ddd3c4"/>
+<path d="M41 40h18v23H41z" fill="#ba9279"/>
+<path fill="#bb8994" d="M38 55h24l22 100H16z"/>
+<ellipse cx="50" cy="30" rx="15" ry="20" fill="#c8a087"/>
+<path d="M35 28q-7-33 22-22 14 4 8 24l-7-14-20 4z" fill="#493b34"/>
+<path d="M29 62l-10 53M72 62l9 53" fill="none" stroke="#bb8994" stroke-width="11" stroke-linecap="round"/>
+</svg>
+<h3>Mothers of the Couple</h3>
+<span class="role-swatch" style="--swatch:#bb8994" aria-hidden="true">
+</span>
+<ul>
+<li>Dusty Rose / Dusty Pink</li>
+<li>Mauve</li>
+</ul>
+</article>
+<article class="outfit-card">
+<svg class="outfit-illustration" viewBox="0 0 100 190" aria-hidden="true">
+<ellipse cx="50" cy="181" rx="32" ry="3" fill="#ddd3c4"/>
+<path d="M41 40h18v23H41z" fill="#ba9279"/>
+<path fill="#e7bbc4" d="M38 55h24l22 100H16z"/>
+<ellipse cx="50" cy="30" rx="15" ry="20" fill="#c8a087"/>
+<path d="M35 28q-7-33 22-22 14 4 8 24l-7-14-20 4z" fill="#493b34"/>
+<path d="M29 62l-10 53M72 62l9 53" fill="none" stroke="#e7bbc4" stroke-width="11" stroke-linecap="round"/>
+</svg>
+<h3>Principal Sponsors</h3>
+<span class="role-swatch" style="--swatch:#e7bbc4" aria-hidden="true">
+</span>
+<ul>
+<li>Light Pink / Blush Pink</li>
+</ul>
+</article>
+<article class="outfit-card">
+<svg class="outfit-illustration" viewBox="0 0 100 190" aria-hidden="true">
+<ellipse cx="50" cy="181" rx="32" ry="3" fill="#ddd3c4"/>
+<path d="M41 40h18v23H41z" fill="#ba9279"/>
+<path fill="#7c293d" d="M38 55h24l22 100H16z"/>
+<ellipse cx="50" cy="30" rx="15" ry="20" fill="#c8a087"/>
+<path d="M35 28q-7-33 22-22 14 4 8 24l-7-14-20 4z" fill="#493b34"/>
+<path d="M29 62l-10 53M72 62l9 53" fill="none" stroke="#7c293d" stroke-width="11" stroke-linecap="round"/>
+</svg>
+<h3>Maid of Honor</h3>
+<span class="role-swatch" style="--swatch:#7c293d" aria-hidden="true">
+</span>
+<ul>
+<li>Burgundy with a touch of Pink</li>
+</ul>
+</article>
+<article class="outfit-card">
+<svg class="outfit-illustration" viewBox="0 0 100 190" aria-hidden="true">
+<ellipse cx="50" cy="181" rx="32" ry="3" fill="#ddd3c4"/>
+<path d="M41 40h18v23H41z" fill="#ba9279"/>
+<path fill="#7c293d" d="M38 55h24l22 100H16z"/>
+<ellipse cx="50" cy="30" rx="15" ry="20" fill="#c8a087"/>
+<path d="M35 28q-7-33 22-22 14 4 8 24l-7-14-20 4z" fill="#493b34"/>
+<path d="M29 62l-10 53M72 62l9 53" fill="none" stroke="#7c293d" stroke-width="11" stroke-linecap="round"/>
+</svg>
+<h3>Bridesmaids &amp; Secondary Sponsors</h3>
+<span class="role-swatch" style="--swatch:#7c293d" aria-hidden="true">
+</span>
+<ul>
+<li>Burgundy</li>
+</ul>
+</article>
+<article class="outfit-card">
+<svg class="outfit-illustration" viewBox="0 0 100 190" aria-hidden="true">
+<ellipse cx="50" cy="181" rx="32" ry="3" fill="#ddd3c4"/>
+<path d="M41 40h18v23H41z" fill="#ba9279"/>
+<path fill="#efc6d0" d="M38 55h24l22 100H16z"/>
+<ellipse cx="50" cy="30" rx="15" ry="20" fill="#c8a087"/>
+<path d="M35 28q-7-33 22-22 14 4 8 24l-7-14-20 4z" fill="#493b34"/>
+<path d="M29 62l-10 53M72 62l9 53" fill="none" stroke="#efc6d0" stroke-width="11" stroke-linecap="round"/>
+</svg>
+<h3>Flower Girl</h3>
+<span class="role-swatch" style="--swatch:#efc6d0" aria-hidden="true">
+</span>
+<ul>
+<li>Baby Pink</li>
+</ul>
+</article>
+</div>
+</section>
+</section>
+</section>
+<section id="faqs" class="section">
+<div class="section-heading">
+<h2>FAQ &amp; Gifts</h2>
+<p class="subtitle">Everything else you might want to know.</p>
+</div>
+<aside class="note">
+<h3>A Little Note About Our Guest List</h3>
+<p>We would truly love to celebrate with everyone, but with limited seating available, we hope you understand that we can only accommodate the guests included in each invitation.</p>
+</aside>
+<div class="faq-list">
+<details class="faq-item">
+<summary>What time should I arrive?</summary>
+<p>We recommend arriving by <strong>9:30 AM or earlier</strong> to give you enough time to park and settle in. The wedding ceremony will <strong>strictly begin at 10:00 AM</strong>, so please plan accordingly.</p>
+</details>
+<details class="faq-item">
+<summary>Can I take photos or videos during the ceremony?</summary>
+<p>We&#x27;re having an <strong>unplugged ceremony</strong> and kindly ask that phones and cameras be kept away during the ceremony. Our photographers and videographers will be there to capture the moments, so we invite you to simply be present and celebrate with us. ♡</p>
+</details>
+<details class="faq-item">
+<summary>When is the RSVP deadline?</summary>
+<p>Kindly send your response on or before <strong>January 16, 2027</strong>. Your timely RSVP will help us finalize our seating and other wedding arrangements.</p>
+</details>
+<details class="faq-item">
+<summary>What kind of food and drinks will be served?</summary>
+<p>A buffet-style meal and refreshments will be served during the reception. If you have any food allergies or dietary restrictions, please let us know when you RSVP so we can coordinate accordingly.</p>
+</details>
+<details class="faq-item">
+<summary>Are children allowed?</summary>
+<p>Our celebration will be primarily adults-only. Children who are specifically invited will be indicated on the invitation. We kindly ask that only the guests named on your invitation attend.</p>
+</details>
+<details class="faq-item">
+<summary>Can I bring a plus one?</summary>
+<p>Plus ones are included for selected invitations. Please check your RSVP for the number of seats reserved for your party.</p>
+</details>
+<details class="faq-item">
+<summary>Is parking available?</summary>
+<p>Yes. Parking is available at both the ceremony church and the reception venue. We recommend arriving a little early to allow enough time to park and settle in comfortably.</p>
+</details>
+<details class="faq-item">
+<summary>What should I wear?</summary>
+<p>Please see our Outfit Guide for the dress code, colors, and attire inspiration. <a class="text-link" href="#outfit">View Outfit Guide →</a>
+</p>
+</details>
+<details class="faq-item">
+<summary>What if I can&#x27;t attend?</summary>
+<p>We&#x27;ll be sad not to celebrate with you, but we completely understand. Please let us know through the RSVP so we can adjust our seating accordingly. Even if you can&#x27;t be there on the day, we&#x27;re truly grateful to have you as part of our lives.</p>
+</details>
+<details class="faq-item">
+<summary>Who can I contact on the wedding day?</summary>
+<p>For any questions or concerns on the wedding day, please contact our wedding coordinator. <span data-coordinator>Contact details to follow.</span>
+</p>
+</details>
+</div>
+<section id="gifts" class="gifts">
+<div class="ornament">
+<span class="pixel-heart" aria-hidden="true">♥</span>
+</div>
+<h2>Your Presence Is Present Enough</h2>
+<p>Your presence on our wedding day is already the greatest gift we could ask for. Should you wish to give something more, a monetary gift toward our next adventure would be sincerely appreciated.</p>
+</section>
+</section>
+</main>
+<footer class="site-footer">
+<p class="footer-names">Gica &amp; Vho</p>
+<span class="pixel-heart" aria-hidden="true">♥</span>
+<p>Two Players. One Love.<br>One Unforgettable Adventure.</p>
+<p class="footer-date">2.7.27</p>
+</footer>
+</div>
 </body>
 </html>

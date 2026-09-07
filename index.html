@@ -1,301 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gica & Vho - The Ultimate Co-Op Campaign</title>
-  <meta name="description" content="Two Players. One Love. One Unforgettable Adventure. February 7, 2027.">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Gica and Vho - Wedding Quest">
-  <meta property="og:description" content="Join the ultimate co-op campaign on February 7, 2027.">
-  <meta property="og:type" content="website">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/mobile.css" media="(max-width: 1199px)">
-  <link rel="stylesheet" href="css/desktop.css" media="(min-width: 1200px)">
-
-  <!-- JS -->
-  <script src="js/main.js" defer></script>
-  <script src="js/countdown.js" defer></script>
-  <style>
-    /* Home page only: editorial campaign hub */
-    .home-page {
-      max-width: 1120px;
-      text-align: center;
-      padding-top: clamp(2.5rem, 6vw, 5rem);
-    }
-    .home-hero { display: flex; flex-direction: column; align-items: center; scroll-margin-top: 90px; }
-    .home-players {
-      color: var(--gold);
-      font-family: var(--font-pixel);
-      font-size: var(--text-xs);
-      font-weight: 700;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-    }
-    .home-players span { color: var(--cream); margin: 0 0.4rem; }
-    .home-hero h1 {
-      margin-top: 0.7rem;
-      color: var(--cream);
-      font-family: var(--font-serif);
-      font-size: clamp(2.5rem, 7vw, 5rem);
-      letter-spacing: 0.12em;
-      line-height: 1;
-    }
-    .home-hero h1 span { color: var(--gold); }
-    .home-campaign {
-      margin-top: 1rem;
-      color: var(--gold);
-      font-family: var(--font-pixel);
-      font-size: clamp(0.8rem, 1.8vw, 1rem);
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-    }
-    .home-tagline {
-      margin-top: 1rem;
-      color: var(--cream);
-      font-family: var(--font-serif);
-      font-size: clamp(1rem, 2vw, 1.3rem);
-      letter-spacing: 0.12em;
-      line-height: 1.55;
-    }
-    .home-art {
-      width: min(100%, 300px);
-      margin-top: 1.75rem;
-      border-radius: var(--radius-md);
-      border-width: 2px;
-      box-shadow: var(--shadow-soft);
-    }
-    .home-countdown {
-      width: min(100%, 760px);
-      margin: clamp(2.5rem, 6vw, 4.5rem) auto 0;
-      padding: clamp(1.25rem, 3vw, 2rem);
-      background: var(--cream);
-      border: 2px solid var(--gold);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-card);
-    }
-    .home-countdown h2,
-    .home-adventures h2 {
-      color: var(--burgundy);
-      font-family: var(--font-pixel);
-      font-size: clamp(0.75rem, 1.8vw, 1rem);
-      letter-spacing: 0.18em;
-      line-height: 1.5;
-      text-transform: uppercase;
-    }
-    .home-countdown .countdown { margin-top: 1.25rem; }
-    .home-countdown .countdown__cell {
-      padding: 0.4rem 0.25rem;
-      background: transparent;
-      border: 0;
-      box-shadow: none;
-    }
-    .home-countdown .countdown__num {
-      color: var(--burgundy);
-      font-size: clamp(1.7rem, 5vw, 3rem);
-    }
-    .home-countdown .countdown__label { color: var(--brown); }
-    .home-rsvp { margin: 1.5rem 0 0; }
-    .home-rsvp .btn--final-quest {
-      min-width: 140px;
-      background: var(--burgundy);
-      color: var(--cream);
-      border-color: var(--gold);
-    }
-    .home-adventures { margin-top: clamp(3rem, 7vw, 5.5rem); }
-    .home-adventures h2 { color: var(--cream); }
-    .home-adventures .quest-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.25rem;
-      margin-top: 1.75rem;
-      text-align: left;
-    }
-    .home-adventures .quest-link {
-      min-height: 245px;
-      gap: 0.7rem;
-      padding: 1.35rem;
-      border: 1px solid rgba(184, 154, 99, 0.8);
-      border-radius: var(--radius-sm);
-      background: var(--cream);
-      box-shadow: none;
-    }
-    .home-adventures .quest-link:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); }
-    .home-adventures .quest-link__number {
-      color: var(--burgundy);
-      font-family: var(--font-pixel);
-      font-size: var(--text-xs);
-      letter-spacing: 0.15em;
-    }
-    .home-adventures .quest-link__icon {
-      width: 2rem;
-      height: 2rem;
-      border: 0;
-      border-radius: 0;
-      background: transparent;
-      color: var(--gold);
-      box-shadow: none;
-      font-family: var(--font-serif);
-      font-size: 1.5rem;
-    }
-    .home-adventures .quest-link h3 {
-      margin-top: 0;
-      color: var(--burgundy);
-      font-family: var(--font-pixel);
-      font-size: 0.9rem;
-      letter-spacing: 0.1em;
-    }
-    .home-adventures .quest-link p { color: var(--ink); line-height: 1.5; }
-    .home-adventures .quest-link__cta {
-      margin-top: auto;
-      color: var(--burgundy);
-      font-family: var(--font-pixel);
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-    }
-    .home-adventures .quest-link--rsvp {
-      background: var(--burgundy);
-      border-color: var(--gold);
-    }
-    .home-adventures .quest-link--rsvp .quest-link__number,
-    .home-adventures .quest-link--rsvp h3,
-    .home-adventures .quest-link--rsvp p,
-    .home-adventures .quest-link--rsvp .quest-link__cta { color: var(--cream); }
-    .home-adventures .quest-link--rsvp .quest-link__icon { color: var(--gold); }
-    .home-page + .site-footer { margin-top: 2rem; }
-    /* Phase 3: desktop-only visual scale adjustment for the Home page */
-    @media (min-width: 1200px) {
-      .home-page { max-width: 1280px; padding-top: 4.5rem; }
-      body:has(.home-page) .site-nav-main a { font-size: 0.8rem; }
-      .home-hero h1 { font-size: clamp(2.9rem, 7vw, 5.8rem); }
-      .home-campaign { font-size: clamp(0.85rem, 1.8vw, 1.1rem); }
-      .home-tagline { font-size: clamp(1.05rem, 2vw, 1.4rem); }
-      .home-countdown { width: min(100%, 900px); }
-      .home-countdown .countdown__num { font-size: clamp(1.9rem, 5vw, 3.4rem); }
-      .home-countdown .countdown__label { font-size: 0.68rem; }
-      .home-rsvp .btn--final-quest {
-        width: 120px;
-        min-width: 0;
-        padding-inline: 1rem;
-      }
-      .home-adventures .quest-link h3 { font-size: 1rem; }
-      .home-adventures .quest-link p { font-size: 0.95rem; }
-    }
-    @media (max-width: 1199px) {
-      .home-page { max-width: 1000px; }
-    }
-    @media (max-width: 700px) {
-      .home-adventures .quest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; }
-      .home-adventures .quest-link { min-height: 225px; padding: 1rem; }
-      .home-adventures .quest-link h3 { font-size: 0.78rem; letter-spacing: 0.06em; }
-      .home-adventures .quest-link p { font-size: 0.82rem; }
-      .home-adventures .quest-link__cta { font-size: 0.6rem; }
-    }
-    @media (max-width: 390px) {
-      .home-adventures .quest-grid { grid-template-columns: 1fr; }
-      .home-adventures .quest-link { min-height: 190px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Wedding · Gica &amp; Vho</title>
+<meta name="description" content="Celebrate the wedding of Gica and Vho on February 7, 2027. Wedding details, guest guide, gallery, and RSVP.">
+<meta property="og:title" content="Our Wedding · Gica &amp; Vho">
+<meta property="og:description" content="Two Players. One Love. One Unforgettable Adventure. 2.7.27">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/global.css">
+<script src="js/config.js" defer>
+</script>
+<script src="js/main.js" defer>
+</script>
+<script src="js/countdown.js" defer>
+</script>
+<script>if(!location.hash){document.documentElement.classList.add('opening-pending');document.addEventListener('DOMContentLoaded',()=>document.documentElement.classList.remove('opening-pending'));}</script>
 </head>
 <body>
-
-  <!-- SKIP LINK -->
-  <a class="skip-link" href="#home">Skip to main content</a>
-
-  <!-- OPENING SCREEN -->
-  <section class="opening" id="opening" aria-label="Opening">
-    <div class="opening__art art-frame" aria-hidden="true">
-      <img class="art-frame__img" src="assets/hero/desktop.webp" alt="">
-      <span class="art-frame__fallback">G HEART V</span>
-    </div>
-
-    <h1 class="opening__title">Gica <span class="heart" aria-hidden="true">*</span> Vho</h1>
-    <p class="opening__campaign">The Ultimate<br>Co-Op Campaign</p>
-    <p class="opening__copy">Two Players. One Love.<br>One Unforgettable Adventure.</p>
-    <p class="opening__date">07 <span class="dot">*</span> 02 <span class="dot">*</span> 27</p>
-
-    <button class="btn btn--opening" data-press-start type="button">Press Start</button>
-  </section>
-
-  <!-- HEADER -->
-    <header class="site-header">
-    <a class="brand" href="index.html#home" aria-label="Gica and Vho - Home">Gica <span class="brand__heart" aria-hidden="true">&#9829;</span> Vho</a>
-    <nav class="site-nav-main" aria-label="Main navigation">
-  <ul>
-    <li><a href="story.html" data-section="story">Our Story</a></li>
-    <li class="nav-group"><details><summary data-section="wedding">The Wedding</summary><ul><li><a href="wedding.html#events">Wedding Day</a></li><li><a href="wedding.html#map">Campaign Map</a></li></ul></details></li>
-    <li class="nav-group"><details><summary data-section="guide">Guest Guide</summary><ul><li><a href="guide.html#party">Party Members</a></li><li><a href="guide.html#outfit">Outfit Guide</a></li><li><a href="guide.html#faqs">FAQs &amp; Gifts</a></li></ul></details></li>
-    <li><a href="gallery.html" data-section="memories">Memories</a></li>
-    <li><a href="rsvp.html" data-section="rsvp">RSVP</a></li>
-  </ul>
+<section id="opening" class="opening" aria-label="Wedding invitation" hidden>
+<h1>Gica &amp; Vho</h1>
+<div class="ornament">
+<span class="pixel-heart" aria-hidden="true">♥</span>
+</div>
+<p class="opening-line">A New Game Is About to Begin</p>
+<p class="opening-date">2.7.27</p>
+<p class="opening-copy">Two Players. One Love.<br>One Unforgettable Adventure.</p>
+<svg class="couple" viewBox="0 0 100 80" aria-hidden="true" shape-rendering="crispEdges">
+<path fill="#24354b" d="M18 13h20v7H18zM14 20h28v14H14zM14 38h28v28H14zM18 66h9v12h-9zM31 66h9v12h-9z"/>
+<path fill="#bd957b" d="M20 20h17v16H20zM60 22h17v15H60zM40 43h20v7H40z"/>
+<path fill="#4a342b" d="M58 13h21v8H58zM54 20h8v24h-8zM77 20h7v24h-7z"/>
+<path fill="#ded4c4" d="M61 37h15l12 36H49z"/>
+<path fill="#fffdf8" d="M62 38h13l8 29H54zM23 39h11l-5 14z"/>
+<path fill="#7c293d" d="M47 13h5v5h5v5h-5v5h-5v-5h-5v-5h5z"/>
+</svg>
+<button type="button" class="btn" data-press-start>Press Start</button>
+</section>
+<div id="site-content">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<a class="brand" href="index.html#home" aria-label="Gica and Vho home">G&amp;V</a>
+<nav class="desktop-nav" aria-label="Main navigation">
+<a href="index.html#home">Home</a>
+<details>
+<summary>Wedding Details</summary>
+<div class="dropdown">
+<a href="wedding.html#ceremony">Ceremony</a>
+<a href="wedding.html#reception">Reception</a>
+<a href="wedding.html#map">The Journey</a>
+<a href="wedding.html#timeline">Timeline</a>
+</div>
+</details>
+<details>
+<summary>Guest Guide</summary>
+<div class="dropdown">
+<a href="guide.html#outfit">Outfit Guide</a>
+<a href="guide.html#faqs">FAQ &amp; Gifts</a>
+</div>
+</details>
+<a href="gallery.html">Gallery</a>
+<a class="nav-rsvp" href="rsvp.html">RSVP</a>
 </nav>
-    <div class="header-actions">
-      <button class="music-toggle" type="button" aria-label="Toggle music" aria-pressed="false">Music</button>
-    </div>
-    <button class="nav-toggle" data-drawer-toggle type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18z"/></svg>
-    </button>
-  </header>
-
-  <aside class="backdrop drawer-backdrop" data-drawer-backdrop></aside>
-  <aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true">
-  <a class="drawer__top-link" href="story.html" data-section="story">Our Story</a>
-  <div class="drawer__group"><p class="drawer__group-title" data-section="wedding">The Wedding</p><div class="drawer__children"><a href="wedding.html#events">Wedding Day</a><a href="wedding.html#map">Campaign Map</a></div></div>
-  <div class="drawer__group"><p class="drawer__group-title" data-section="guide">Guest Guide</p><div class="drawer__children"><a href="guide.html#party">Party Members</a><a href="guide.html#outfit">Outfit Guide</a><a href="guide.html#faqs">FAQs &amp; Gifts</a></div></div>
-  <a class="drawer__top-link" href="gallery.html" data-section="memories">Memories</a>
-  <a class="drawer__top-link" href="rsvp.html" data-section="rsvp">RSVP</a>
-</aside>
-
-  <main class="main-shell home-page" id="main">
-
-    <section class="home-hero" id="home" aria-labelledby="home-title">
-      <p class="home-players">PLAYER 01 <span aria-hidden="true">&#10022;</span> PLAYER 02</p>
-      <h1 id="home-title">GICA <span aria-hidden="true">&amp;</span> VHO</h1>
-      <p class="home-campaign">THE ULTIMATE CO-OP CAMPAIGN</p>
-      <p class="home-tagline">TWO PLAYERS. ONE LOVE.<br>ONE UNFORGETTABLE ADVENTURE.</p>
-      <div class="home-art hero-art" aria-label="Lightweight placeholder artwork">
-        <svg class="art-frame__fallback" viewBox="0 0 240 160" aria-hidden="true">
-          <rect width="240" height="160" rx="14" fill="#C97C7F"></rect>
-          <circle cx="80" cy="80" r="34" fill="#F5EEE3" opacity="0.5"></circle>
-          <circle cx="160" cy="80" r="34" fill="#F5EEE3" opacity="0.5"></circle>
-          <path d="M80 62h100a10 10 0 0 1 10 10v22a10 10 0 0 1-10 10H80a10 10 0 0 1-10-10V72a10 10 0 0 1 10-10z" fill="none" stroke="#B89A63" stroke-width="4"></path>
-        </svg>
-      </div>
-    </section>
-
-    <section class="home-countdown" aria-labelledby="countdown-title">
-      <h2 id="countdown-title">THE NEXT CHAPTER BEGINS IN</h2>
-      <div class="countdown" data-countdown-group>
-        <div class="countdown__cell"><span class="countdown__num" data-countdown="days">00</span><span class="countdown__label">Days</span></div>
-        <div class="countdown__cell"><span class="countdown__num" data-countdown="hours">00</span><span class="countdown__label">Hours</span></div>
-        <div class="countdown__cell"><span class="countdown__num" data-countdown="minutes">00</span><span class="countdown__label">Minutes</span></div>
-        <div class="countdown__cell"><span class="countdown__num" data-countdown="seconds">00</span><span class="countdown__label">Seconds</span></div>
-      </div>
-    </section>
-
-    <section class="home-adventures" aria-labelledby="adventures-title">
-      <h2 id="adventures-title">&#10022; CHOOSE YOUR NEXT ADVENTURE &#10022;</h2>
-      <div class="quest-grid">
-        <a class="quest-link" href="wedding.html#events"><span class="quest-link__number">01</span><span class="quest-link__icon" aria-hidden="true">&#10022;</span><h3>THE WEDDING</h3><p>Follow the celebration from ceremony to reception.</p><span class="quest-link__cta">EXPLORE THE DAY &#8594;</span></a>
-        <a class="quest-link" href="wedding.html#map"><span class="quest-link__number">02</span><span class="quest-link__icon" aria-hidden="true">&#8982;</span><h3>THE JOURNEY</h3><p>Find your way to the celebration.</p><span class="quest-link__cta">VIEW CAMPAIGN MAP &#8594;</span></a>
-        <a class="quest-link" href="guide.html#outfit"><span class="quest-link__number">03</span><span class="quest-link__icon" aria-hidden="true">&#9672;</span><h3>YOUR LOOK</h3><p>Discover the colors and style for our special day.</p><span class="quest-link__cta">SEE THE GUIDE &#8594;</span></a>
-        <a class="quest-link" href="guide.html#faqs"><span class="quest-link__number">04</span><span class="quest-link__icon" aria-hidden="true">?</span><h3>FOR OUR GUESTS</h3><p>Everything you need to know before joining our adventure.</p><span class="quest-link__cta">READ THE GUIDE &#8594;</span></a>
-        <a class="quest-link" href="gallery.html"><span class="quest-link__number">05</span><span class="quest-link__icon" aria-hidden="true">&#9671;</span><h3>OUR MEMORIES</h3><p>Memories from our adventure together so far.</p><span class="quest-link__cta">VIEW GALLERY &#8594;</span></a>
-        <a class="quest-link quest-link--rsvp" href="rsvp.html"><span class="quest-link__number">06</span><span class="quest-link__icon" aria-hidden="true">&#9829;</span><h3>JOIN THE PARTY</h3><p>Let us know if you'll join us for the next chapter.</p><span class="quest-link__cta">RSVP NOW &#8594;</span></a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <p>With love - Gica and Vho. February 7, 2027.</p>
-    <p><span data-year></span> Coded with <span class="footer-heart" aria-hidden="true">*</span></p>
-  </footer>
-
+<button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false">☰ <span>Menu</span>
+</button>
+</header>
+<dialog id="mobile-menu" class="mobile-menu" aria-label="Navigation">
+<button class="menu-close" type="button" aria-label="Close menu">×</button>
+<p class="brand">G&amp;V</p>
+<nav aria-label="Mobile navigation">
+<a href="index.html#home">Home</a>
+<details>
+<summary>Wedding Details</summary>
+<div class="dropdown">
+<a href="wedding.html#ceremony">Ceremony</a>
+<a href="wedding.html#reception">Reception</a>
+<a href="wedding.html#map">The Journey</a>
+<a href="wedding.html#timeline">Timeline</a>
+</div>
+</details>
+<details>
+<summary>Guest Guide</summary>
+<div class="dropdown">
+<a href="guide.html#outfit">Outfit Guide</a>
+<a href="guide.html#faqs">FAQ &amp; Gifts</a>
+</div>
+</details>
+<a href="gallery.html">Gallery</a>
+<a class="nav-rsvp" href="rsvp.html">RSVP</a>
+</nav>
+</dialog>
+<main id="main">
+<section id="home" class="welcome section">
+<p class="eyebrow">You’ve entered our story</p>
+<h2>A little serendipity.<br>A lifetime together.</h2>
+<p>Welcome to our next chapter. We’re so happy to share this day with the people who have been part of our journey. Thank you for being here, and for celebrating with us.</p>
+<svg class="couple" viewBox="0 0 100 80" aria-hidden="true" shape-rendering="crispEdges">
+<path fill="#24354b" d="M18 13h20v7H18zM14 20h28v14H14zM14 38h28v28H14zM18 66h9v12h-9zM31 66h9v12h-9z"/>
+<path fill="#bd957b" d="M20 20h17v16H20zM60 22h17v15H60zM40 43h20v7H40z"/>
+<path fill="#4a342b" d="M58 13h21v8H58zM54 20h8v24h-8zM77 20h7v24h-7z"/>
+<path fill="#ded4c4" d="M61 37h15l12 36H49z"/>
+<path fill="#fffdf8" d="M62 38h13l8 29H54zM23 39h11l-5 14z"/>
+<path fill="#7c293d" d="M47 13h5v5h5v5h-5v5h-5v-5h-5v-5h5z"/>
+</svg>
+</section>
+<section class="countdown-section section">
+<h2 class="date">2.7.27</h2>
+<p class="eyebrow">Until our next adventure begins</p>
+<div class="countdown" data-countdown-group>
+<div>
+<span class="countdown__num" data-countdown="days">00</span>
+<span class="countdown__label">days</span>
+</div>
+<div>
+<span class="countdown__num" data-countdown="hours">00</span>
+<span class="countdown__label">hours</span>
+</div>
+<div>
+<span class="countdown__num" data-countdown="minutes">00</span>
+<span class="countdown__label">minutes</span>
+</div>
+<div>
+<span class="countdown__num" data-countdown="seconds">00</span>
+<span class="countdown__label">seconds</span>
+</div>
+</div>
+</section>
+<section id="story" class="section story">
+<div class="section-heading">
+<h2>Our Story</h2>
+<p class="subtitle">From an unexpected meeting to a life they’re building together.</p>
+</div>
+<div class="story-copy">
+<p>Gica and Vho first crossed paths toward the end of 2024. A few encounters later, a conversation on Gica’s birthday became the beginning of something more.</p>
+<p>What followed was a collection of adventures—traveling with family to the UAE, experiencing Vho’s first BLACKPINK concert, exploring Japan together, and discovering that life was simply more fun when they shared it.</p>
+<p>Along the way, Vho became more willing to step outside his comfort zone, while Gica found someone ready to share her adventurous spirit. Somewhere between the big adventures and ordinary days, they began seeing the same future.</p>
+<p>Then came a proposal, a <strong>yes</strong>, and the start of their greatest adventure yet.</p>
+</div>
+<div class="story-moments">
+<figure>
+<div class="photo-slot" data-home-photo="0">
+<span>Photograph to follow</span>
+</div>
+<figcaption>Unexpected Meeting</figcaption>
+</figure>
+<figure>
+<div class="photo-slot" data-home-photo="1">
+<span>Photograph to follow</span>
+</div>
+<figcaption>Adventures Together</figcaption>
+</figure>
+<figure>
+<div class="photo-slot" data-home-photo="2">
+<span>Photograph to follow</span>
+</div>
+<figcaption>The Next Chapter</figcaption>
+</figure>
+</div>
+</section>
+<section class="closing section">
+<h2>Two People. One Journey.<br>A Lifetime of Adventures Ahead.</h2>
+<span class="pixel-heart" aria-hidden="true">♥</span>
+</section>
+</main>
+<footer class="site-footer">
+<p class="footer-names">Gica &amp; Vho</p>
+<span class="pixel-heart" aria-hidden="true">♥</span>
+<p>Two Players. One Love.<br>One Unforgettable Adventure.</p>
+<p class="footer-date">2.7.27</p>
+</footer>
+</div>
 </body>
 </html>

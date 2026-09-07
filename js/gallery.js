@@ -1,69 +1,110 @@
 (() => {
-  const lightbox = document.querySelector("[data-lightbox]");
-  const lightboxImage = document.querySelector("[data-lightbox-image]");
-  const items = [...document.querySelectorAll("[data-lightbox-src]")];
-  if (!lightbox || !lightboxImage || !items.length) return;
-
-  const panel = lightbox.querySelector(".lightbox__panel");
-  const closeButton = lightbox.querySelector("[data-lightbox-close]");
-  const previousButton = lightbox.querySelector("[data-lightbox-prev]");
-  const nextButton = lightbox.querySelector("[data-lightbox-next]");
-  let currentIndex = 0;
-  let lastFocusedElement = null;
-
-  const showItem = (index) => {
-    currentIndex = (index + items.length) % items.length;
-    const item = items[currentIndex];
-    panel.classList.remove("is-placeholder");
-    lightboxImage.src = item.dataset.lightboxSrc;
-    lightboxImage.alt = item.dataset.lightboxAlt || "";
-  };
-
-  const close = () => {
-    lightbox.hidden = true;
-    document.body.classList.remove("u-overflow-hidden");
-    lightboxImage.removeAttribute("src");
-    if (lastFocusedElement) lastFocusedElement.focus();
-  };
-
-  const open = (index) => {
-    lastFocusedElement = document.activeElement;
-    showItem(index);
-    lightbox.hidden = false;
-    document.body.classList.add("u-overflow-hidden");
-    closeButton.focus();
-  };
-
-  items.forEach((item, index) => item.addEventListener("click", () => open(index)));
-  closeButton.addEventListener("click", close);
-  previousButton.addEventListener("click", () => showItem(currentIndex - 1));
-  nextButton.addEventListener("click", () => showItem(currentIndex + 1));
-
-  lightboxImage.addEventListener("error", () => {
-    lightboxImage.removeAttribute("src");
-    panel.classList.add("is-placeholder");
+  'use strict';
+  const config = window.WEDDING_CONFIG || {};
+  const safe = window.weddingSafeUrl;
+  const videoContainer = document.querySelector('[data-video-container]');
+  if(safe(config.saveTheDateVideo)) {
+    const video = document.createElement('video');
+    video.controls = true;
+    video.preload = 'none';
+    video.playsInline = true;
+    video.src = config.saveTheDateVideo;
+    if(safe(config.videoPoster)) video.poster = config.videoPoster;
+    const play = videoContainer.querySelector('button');
+    videoContainer.querySelector('p').remove();
+    videoContainer.prepend(video);
+    play.disabled = false;
+    play.addEventListener('click', () => {
+      video.play().then(() => { play.hidden = true; }).catch(() => {
+        play.textContent = 'Try Playing Again';
+      });
+    });
+  }
+  const photos = (config.prenupPhotos || []).filter(photo => safe(photo.src));
+  if(!photos.length) return;
+  const slideshow = document.querySelector('[data-slideshow]');
+  const main = document.querySelector('[data-slide-image]');
+  const dialog = document.querySelector('[data-lightbox]');
+  const large = document.querySelector('[data-lightbox-image]');
+  const thumbs = document.querySelector('[data-thumbnails]');
+  const progress = document.querySelector('[data-photo-progress]');
+  let index = 0;
+  let request = 0;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  slideshow.hidden = false;
+  document.querySelector('[data-gallery-empty]').hidden = true;
+  progress.max = photos.length;
+  photos.forEach((photo,i) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.setAttribute('aria-label','View photograph '+(i+1));
+    const img = new Image();
+    img.src = photo.src;
+    img.alt = '';
+    img.loading = 'lazy';
+    button.append(img);
+    button.addEventListener('click', () => show(i));
+    thumbs.append(button);
   });
-
-  lightbox.addEventListener("click", (event) => {
-    if (event.target === lightbox) close();
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (lightbox.hidden) return;
-    if (event.key === "Escape") close();
-    if (event.key === "ArrowLeft") showItem(currentIndex - 1);
-    if (event.key === "ArrowRight") showItem(currentIndex + 1);
-    if (event.key === "Tab") {
-      const focusable = [closeButton, previousButton, nextButton];
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
+  function show(next) {
+    index = (next+photos.length)%photos.length;
+    const photo = photos[index];
+    const ticket = ++request;
+    const loaded = new Image();
+    loaded.onload = () => {
+      if(ticket !== request) return;
+      slideshow.querySelectorAll('.slide-outgoing').forEach(image => image.remove());
+      if(main.hasAttribute('src') && !reduced) {
+        const outgoing = main.cloneNode();
+        outgoing.removeAttribute('data-slide-image');
+        outgoing.alt = '';
+        outgoing.className = 'slide-outgoing';
+        main.before(outgoing);
+        outgoing.animate([{opacity:1},{opacity:0}],{duration:700,fill:'forwards'}).finished.then(() => outgoing.remove());
+        main.animate([{opacity:0},{opacity:1}],{duration:700});
       }
-    }
+      main.src = photo.src;
+      main.alt = photo.alt || 'Gica and Vho, pre-wedding photograph '+(index+1);
+      large.src = main.src;
+      large.alt = main.alt;
+    };
+    loaded.onerror = () => {
+      if(ticket !== request) return;
+      main.removeAttribute('src');
+      main.alt = 'This photograph is temporarily unavailable. Please try the next one.';
+      large.removeAttribute('src');
+      large.alt = main.alt;
+    };
+    loaded.src = photo.src;
+    document.querySelector('[data-photo-counter]').textContent = String(index+1).padStart(2,'0')+' / '+String(photos.length).padStart(2,'0');
+    progress.value = index+1;
+    [...thumbs.children].forEach((button,i) => button.setAttribute('aria-pressed',String(i === index)));
+    const selected = thumbs.children[index];
+    thumbs.scrollTo({left:selected.offsetLeft-thumbs.offsetLeft-thumbs.clientWidth/2+selected.clientWidth/2,behavior:'smooth'});
+  }
+  document.querySelectorAll('[data-prev], [data-lightbox-prev]').forEach(button => button.addEventListener('click',() => show(index-1)));
+  document.querySelectorAll('[data-next], [data-lightbox-next]').forEach(button => button.addEventListener('click',() => show(index+1)));
+  document.querySelector('[data-enlarge]').addEventListener('click', () => {
+    dialog.showModal();
+    document.body.classList.add('modal-open');
   });
+  document.querySelector('[data-lightbox-close]').addEventListener('click',() => dialog.close());
+  dialog.addEventListener('close',() => document.body.classList.remove('modal-open'));
+  [slideshow,dialog].forEach(surface => {
+    surface.addEventListener('keydown',e => {
+      if(e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        e.preventDefault(); show(index+(e.key === 'ArrowLeft' ? -1 : 1));
+      }
+    });
+    let start = null;
+    surface.addEventListener('touchstart',e => { start = {x:e.changedTouches[0].clientX,y:e.changedTouches[0].clientY}; },{passive:true});
+    surface.addEventListener('touchend',e => {
+      if(!start || e.target.closest('[data-thumbnails]')) return;
+      const dx = e.changedTouches[0].clientX-start.x;
+      const dy = e.changedTouches[0].clientY-start.y;
+      if(Math.abs(dx)>50 && Math.abs(dx)>Math.abs(dy)) show(index+(dx<0 ? 1 : -1));
+      start = null;
+    },{passive:true});
+  });
+  show(0);
 })();
