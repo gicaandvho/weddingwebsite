@@ -51,22 +51,23 @@ for name,page in pages.items():
     text = ' '.join(page.text)
     assert not re.search(r'Game Master|Bank Heist|Final Boss|Quest Hub|Player Registered|example\.com|Placeholder answer',text,re.I), name
 
-guide = pages['guide.html']
-assert sum('faq-item' == attrs.get('class') for _,attrs in guide.elements) == 10
+guide = pages['outfit.html']
+faq = pages['faq-gifts.html']
+assert sum('faq-item' == attrs.get('class') for _,attrs in faq.elements) == 10
 assert sum('outfit-card' == attrs.get('class') for _,attrs in guide.elements) == 12
-assert all(code in (ROOT/'guide.html').read_text(encoding='utf-8') for code in ['#3A2B20','#7E6A52','#B89C82'])
-for name in ['index.html','wedding.html','guide.html','gallery.html','rsvp.html']:
+assert all(code in (ROOT/'outfit.html').read_text(encoding='utf-8') for code in ['#3A2B20','#7E6A52','#B89C82'])
+for name in ['index.html','wedding.html','outfit.html','faq-gifts.html','gallery.html','rsvp.html']:
     assert sum(tag == 'footer' for tag,_ in pages[name].elements) == 1
 assert not any(tag in {'form','input','select','textarea'} for tag,_ in pages['rsvp.html'].elements)
 wedding = ' '.join(pages['wedding.html'].text)
 for time in ['10:00 AM','11:00 AM','12:30 PM','12:45 PM','1:30 PM','4:00 PM']: assert time in wedding
 assert 'Guest Welcome · 11:00 AM' in wedding
 assert 'January 16, 2027' in ' '.join(pages['rsvp.html'].text)
-print('PASS: 10 HTML pages; balanced markup; unique IDs; local links/assets; tab and ARIA targets; 10 FAQs; 12 outfit cards; timeline; RSVP gateway; no prohibited public content.')
+print('PASS: 12 HTML pages; balanced markup; unique IDs; local links/assets; tab and ARIA targets; 10 FAQs; 12 outfit cards; timeline; RSVP gateway; no prohibited public content.')
 
 # The illustrated V2 direction applies outside Gallery, including CSS scene assets.
 assert (ROOT/'BUILD_SPEC_FINAL_V2.md').exists()
-for name in ['index.html','wedding.html','guide.html','rsvp.html']:
+for name in ['index.html','wedding.html','outfit.html','faq-gifts.html','rsvp.html']:
     for tag, attrs in pages[name].elements:
         if tag == 'img': assert attrs.get('src','').startswith('assets/pixel/'), (name,'Non-gallery illustration required')
         assert tag != 'video', (name,'Real video belongs in Gallery')
@@ -85,8 +86,19 @@ for name, page in pages.items():
             assert int(attrs.get('width', 0)) > 0 and int(attrs.get('height', 0)) > 0, (name, 'Missing image dimensions')
         if tag in {'script', 'link'}:
             url = urlsplit(attrs.get('src') or attrs.get('href', ''))
-            if name in {'index.html','wedding.html','guide.html','gallery.html','rsvp.html'} and url.path.endswith(('.css', '.js')):
+            if name in {'index.html','wedding.html','outfit.html','faq-gifts.html','gallery.html','rsvp.html'} and url.path.endswith(('.css', '.js')):
                 import hashlib
                 expected = hashlib.sha256((ROOT / url.path).read_bytes()).hexdigest()[:12]
                 assert url.query == 'v=' + expected, (name, 'Stale generated asset version', url.path)
 print('PASS: reserved artwork dimensions and current CSS/JavaScript content versions.')
+
+assert not any('data-tabs' in a or 'data-panel' in a for _, a in pages['wedding.html'].elements)
+assert sum(a.get('class') == 'venue' for _, a in pages['wedding.html'].elements) == 2
+assert 'faqs' not in guide.ids and 'outfit' not in faq.ids
+assert not any(a.get('class') in {'faq-item', 'outfit-card'} for _, a in pages['guide.html'].elements)
+for name in ['index.html','wedding.html','outfit.html','faq-gifts.html','gallery.html','rsvp.html']:
+    html = (ROOT/name).read_text(encoding='utf-8')
+    assert 'Guest Guide' not in html and 'class="dropdown"' not in html
+    for target in ['outfit.html', 'faq-gifts.html']:
+        assert any(tag == 'a' and a.get('href') == target for tag,a in pages[name].elements)
+print('PASS: direct navigation, split content, compatibility page, and both visible event cards.')

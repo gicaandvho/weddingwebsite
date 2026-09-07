@@ -141,3 +141,59 @@ body {
   .opening .btn { margin-top: 14px; padding-block: 12px; min-height: 48px; }
   .opening-copy { font-size: 1rem; }
 }
+
+/* Readability and direct guest navigation: preserve the approved illustrated world. */
+body { font-size: clamp(1rem, .9rem + .2vw, 1.125rem); }
+.welcome-copy p:not(.eyebrow), .faq-item p, .note p, .supplier p,
+.outfit-card ul, .venue-content > p:not(.eyebrow):not(.venue-time),
+.rsvp-gateway > p:not(.small), .video-feature p { font-size: 1em; }
+.faq-item summary { font-size: clamp(1.0625rem, 1rem + .15vw, 1.1875rem); line-height: 1.6; }
+.eyebrow, .tabs a { font-size: .9375rem; }
+.small, .palette small { font-size: .875rem; }
+.countdown__label { font-size: .8125rem; }
+.nav-rsvp { border-bottom: 0; }
+.palette strong { font-size: 1rem; }
+.timeline time { font-size: 1rem; }
+.timeline li > span { font-size: 1.0625rem; }
+.section-heading h1 { font-size: clamp(2.5rem, 4vw, 3.5rem); }
+.desktop-nav { gap: clamp(18px, 2vw, 30px); }
+.desktop-nav > a { font-size: .9375rem; letter-spacing: .035em; }
+nav a[aria-current="page"] { color: var(--burgundy); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 7px; }
+.event-section { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; max-width: 1200px; }
+.event-section .venue { display: flex; flex-direction: column; width: 100%; max-width: none; margin: 0; padding: 7px; scroll-margin-top: 115px; }
+.event-section .venue-scene { min-height: 300px; background-size: auto 150%; }
+.event-section .venue-content { display: flex; flex-direction: column; flex: 1; width: 100%; padding: 28px 22px; }
+.event-section .venue-content h2 { font-size: clamp(1.8rem, 2.5vw, 2.25rem); }
+.event-section .venue-content h3 { font-size: 1.6rem; }
+.event-section .venue-content .actions { margin-top: auto; padding-top: 24px; }
+/* A thin gold keyline and small inset detail retain the pixel identity. */
+.btn, .opening .btn, .venue-content .btn {
+  font-family: var(--sans); font-size: 1rem; font-weight: 600; letter-spacing: .045em;
+  background: var(--burgundy); color: var(--paper); border: 1px solid var(--gold);
+  border-radius: 2px; padding: 14px 28px; min-height: 50px; margin-inline: 0;
+  box-shadow: inset 0 0 0 3px var(--burgundy), inset 0 0 0 4px #b49b6b66;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease;
+  max-width: 100%; white-space: normal; text-align: center;
+}
+.btn-outline, .venue-content .btn-outline { background: var(--paper); color: var(--burgundy); box-shadow: none; }
+.opening .btn { font-size: 1.125rem; min-height: 60px; padding: 17px 42px; }
+.btn:not(:disabled):not([aria-disabled="true"]):hover { background: var(--navy); color: var(--paper); box-shadow: none; transform: translateY(-1px); }
+.btn:focus-visible, .arrow:focus-visible { outline: 3px solid var(--burgundy); outline-offset: 4px; }
+.arrow { background: var(--paper); color: var(--burgundy); border: 1px solid var(--gold); box-shadow: none; border-radius: 2px; transition: background-color .2s ease; }
+.arrow:hover { background: var(--cream); }
+@media (max-width: 980px) {
+  .event-section { grid-template-columns: 1fr; max-width: 720px; }
+  .event-section .venue-scene { min-height: 290px; }
+}
+@media (max-width: 540px) {
+  .tabs { gap: 14px; }
+  .tabs a { font-size: .875rem; letter-spacing: .025em; }
+  .palette strong { font-size: .875rem; }
+  .timeline li { grid-template-columns: 94px minmax(0, 1fr); }
+  .event-section .venue-content { padding: 24px 14px; }
+  .event-section .venue-content .actions { flex-direction: column; }
+  .outfit-grid { grid-template-columns: 1fr; }
+  .outfit-card h3 { font-size: 1.3rem; }
+  .opening .btn { padding-inline: 32px; }
+}
+@media (prefers-reduced-motion: reduce) { .btn, .arrow { transition: none; } }

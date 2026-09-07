@@ -44,3 +44,9 @@ Generated PNG elements carry their intrinsic dimensions before loading. Home art
 The local Python preview uses Last-Modified/conditional requests, not a service worker. Versioned asset URLs prevent new generated HTML from reusing older CSS/JS responses. They do not update an already-open document or invalidate separately cached HTML; serve HTML with revalidation when deploying, and deploy generated HTML and its source assets together.
 
 The historical transient misalignment was not captured, so a single historical cause cannot be proven. Missing lazy-image dimensions were a confirmed layout-shift risk; unversioned assets were a cache-consistency risk. Browser checks found matching page geometry on initial and repeated navigations. The browser automation available here does not expose cache clearing or a hard-reload command, so those exact cache modes require a separate manual check.
+
+## Readability and direct guest pages
+
+The six primary destinations are Home, Wedding Details, Outfit Guide, FAQ & Gifts, Gallery, and RSVP. `outfit.html` owns attire, entourage tabs and supplier details; `faq-gifts.html` owns the guest-list note, ten FAQs and Gifts. `guide.html` is a compatibility page using `js/redirect-guide.js` to preserve recognized old hashes. Without JavaScript it offers both destination links. Party and Gifts legacy redirects point directly to the new pages.
+
+Wedding Details shows both venue cards together, in equal desktop columns and a mobile stack, followed by the existing Journey and timeline. Pixel CSS adds readable body/label sizes and refined ivory/burgundy buttons with thin gold details. Approved wording, art and palette remain unchanged. These usability requirements supersede the V2 spec's older Guest Guide navigation structure.
