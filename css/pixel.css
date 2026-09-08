@@ -197,3 +197,10 @@ nav a[aria-current="page"] { color: var(--burgundy); text-decoration: underline;
   .opening .btn { padding-inline: 32px; }
 }
 @media (prefers-reduced-motion: reduce) { .btn, .arrow { transition: none; } }
+
+/* Small-phone refinements only; retain the four-cell countdown and label sizes. */
+@media (max-width: 340px) {
+  .countdown-section { margin-inline: 12px; padding-inline: 10px; }
+  .countdown { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  .palette strong { min-height: 3.5em; }
+}

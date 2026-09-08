@@ -27,7 +27,7 @@ No actual prenup photographs or video were supplied. Gallery retains honest comi
 
 ## Local preview
 
-Run `python -m http.server 8000 --bind 127.0.0.1`, then open `http://127.0.0.1:8000`.
+Run `python -B scripts/serve_site.py`, then open `http://127.0.0.1:8000`. This loopback-only preview sends `Cache-Control: no-store` for every response and ignores conditional cache validators. Do not use the bare `python -m http.server` command for this project preview. The root URL and `/index.html` serve the same file. An already-open old document needs one normal reload after switching servers; subsequent navigations and reloads receive current bytes.
 
 Countdown: February 7, 2027 at 10:00 AM, Asia/Manila (UTC+08:00).
 
@@ -41,12 +41,16 @@ The generator emits content-hashed CSS/JavaScript query versions. Regenerate HTM
 
 Generated PNG elements carry their intrinsic dimensions before loading. Home artwork loads eagerly and the opening background is preloaded; below-fold artwork remains lazy. Existing scene containers retain their sizes and cropping. Press Start uses a centered responsive lockup and an aspect-preserving cover background, with a central-path crop on portrait screens.
 
-The local Python preview uses Last-Modified/conditional requests, not a service worker. Versioned asset URLs prevent new generated HTML from reusing older CSS/JS responses. They do not update an already-open document or invalidate separately cached HTML; serve HTML with revalidation when deploying, and deploy generated HTML and its source assets together.
+The previous bare Python server supplied Last-Modified validators without an explicit cache policy; its timestamp comparison has one-second precision. The audit observed cached Home HTML referencing old CSS hashes, while a fresh URL matched the current generated file. Asset hashes alone cannot refresh a cached HTML document. The new local preview bypasses both storage and conditional reuse, including redirect responses. There is no service-worker code in this project. This is a local-preview policy: configure the production host to revalidate HTML (for example, `Cache-Control: no-cache` with accurate validators), deploy HTML/assets together, and retain asset versioning.
 
-The historical transient misalignment was not captured, so a single historical cause cannot be proven. Missing lazy-image dimensions were a confirmed layout-shift risk; unversioned assets were a cache-consistency risk. Browser checks found matching page geometry on initial and repeated navigations. The browser automation available here does not expose cache clearing or a hard-reload command, so those exact cache modes require a separate manual check.
+Run `python -B scripts/check_preview.py` to verify real HTTP responses, including a simulated rebuild with an unchanged modification timestamp. Intrinsic image dimensions and eager Home artwork loading remain in place; no delays or client-side cache-busting redirects are used.
 
 ## Readability and direct guest pages
 
 The six primary destinations are Home, Wedding Details, Outfit Guide, FAQ & Gifts, Gallery, and RSVP. `outfit.html` owns attire, entourage tabs and supplier details; `faq-gifts.html` owns the guest-list note, ten FAQs and Gifts. `guide.html` is a compatibility page using `js/redirect-guide.js` to preserve recognized old hashes. Without JavaScript it offers both destination links. Party and Gifts legacy redirects point directly to the new pages.
 
 Wedding Details shows both venue cards together, in equal desktop columns and a mobile stack, followed by the existing Journey and timeline. Pixel CSS adds readable body/label sizes and refined ivory/burgundy buttons with thin gold details. Approved wording, art and palette remain unchanged. These usability requirements supersede the V2 spec's older Guest Guide navigation structure.
+
+## Small-phone refinement
+
+At widths up to 340px, the countdown frame uses slightly smaller outer/inner horizontal gutters to give its unchanged four cells more separation without adding height. Palette names reserve two lines so hex codes align even when a name wraps. Typography, content, and styles at 390px and desktop are unchanged.
