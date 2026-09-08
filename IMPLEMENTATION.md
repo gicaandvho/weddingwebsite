@@ -19,7 +19,7 @@ The older page-specific CSS files are retained but no longer loaded. Old story, 
 3. Around 15–20 real prenup photographs in `prenupPhotos`. Each photo uses `{src, alt}`. The slideshow includes arrows, swipe, thumbnails, a counter, progress, and a native dialog lightbox. It appears when photos are configured, only in Gallery.
 4. Save the Date video: direct MP4/WebM URL or local path in `saveTheDateVideo`, plus optional `videoPoster`. No autoplay. Real video belongs only in Gallery.
 5. Verify ceremony and reception venue pins and the actual route before publishing. Current buttons open Google Maps searches/directions using the approved venue names and addresses. Replace them with verified URLs in `links`.
-6. Review the responsive pixel-style SVG attire illustrations against final supplier references. These are representative color/style guides, not final supplier assets.
+6. Review the generated pixel-art attire illustrations against final supplier references. These are representative color/style guides, not final supplier assets.
 
 Non-gallery images are pixel-art illustrations stored in `assets/pixel/`. The supplied background is copied to `wedding-world.png`; three matching generated assets support the story, journey, and invitation sections. See `assets/pixel/ARTWORK.md` for provenance and prompts. Venue scenes and the route are thematic illustrations, not verified architectural or road depictions. The former Home photo configuration has been removed intentionally under the V2 direction.
 
@@ -54,3 +54,7 @@ Wedding Details shows both venue cards together, in equal desktop columns and a 
 ## Small-phone refinement
 
 At widths up to 340px, the countdown frame uses slightly smaller outer/inner horizontal gutters to give its unchanged four cells more separation without adding height. Palette names reserve two lines so hex codes align even when a name wraps. Typography, content, and styles at 390px and desktop are unchanged.
+
+## Generated outfit portraits
+
+All twelve attire examples on `outfit.html` use distinct generated PNG illustrations in `assets/pixel/outfits/`, replacing the former inline SVG figures. The generator maps each guest/entourage role to its own asset, preserves the approved card text, and emits intrinsic image dimensions and descriptive alt text. Shared portrait containers use `object-fit: contain` and pixelated rendering, with space reserved before lazy loading. See `assets/pixel/outfits/ARTWORK.md` for the supplied style reference, role mapping and exact generation prompts. These are generic style guides, not portraits of the couple or supplier product photographs.

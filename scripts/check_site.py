@@ -102,3 +102,16 @@ for name in ['index.html','wedding.html','outfit.html','faq-gifts.html','gallery
     for target in ['outfit.html', 'faq-gifts.html']:
         assert any(tag == 'a' and a.get('href') == target for tag,a in pages[name].elements)
 print('PASS: direct navigation, split content, compatibility page, and both visible event cards.')
+
+# Every attire card uses its own complete generated portrait with reserved dimensions.
+outfit_images = [a for tag,a in pages['outfit.html'].elements if tag == 'img' and a.get('class') == 'outfit-illustration']
+assert len(outfit_images) == 12
+assert len({a['src'] for a in outfit_images}) == 12
+for attrs in outfit_images:
+    import struct
+    assert attrs['src'].startswith('assets/pixel/outfits/')
+    size = struct.unpack('>II', (ROOT/attrs['src']).read_bytes()[16:24])
+    assert size == (int(attrs['width']), int(attrs['height']))
+    assert attrs.get('alt')
+assert not any(tag == 'svg' and a.get('class') == 'outfit-illustration' for tag,a in pages['outfit.html'].elements)
+print('PASS: twelve distinct generated attire portraits, descriptive alt text, and accurate intrinsic dimensions.')

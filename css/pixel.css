@@ -204,3 +204,17 @@ nav a[aria-current="page"] { color: var(--burgundy); text-decoration: underline;
   .countdown { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
   .palette strong { min-height: 3.5em; }
 }
+
+/* Generated attire portraits retain their full silhouette and intrinsic proportions. */
+.outfit-card img.outfit-illustration {
+  display: block;
+  width: min(100%, 220px);
+  height: 320px;
+  margin-inline: auto;
+  object-fit: contain;
+  object-position: center;
+  image-rendering: pixelated;
+}
+@media (max-width: 540px) {
+  .outfit-card img.outfit-illustration { width: min(100%, 200px); height: 290px; }
+}

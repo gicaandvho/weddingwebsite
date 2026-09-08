@@ -63,29 +63,19 @@ def tabs(group, items):
 timeline = ''.join(f'<li><time>{time}</time><span>{pixel_icon(["church","glass","ribbon","star","plate","heart"][["10:00 AM","11:00 AM","12:30 PM","12:45 PM","1:30 PM","4:00 PM"].index(time)])}{activity}</span></li>' for time,activity in [('10:00 AM','Wedding Ceremony'),('11:00 AM','Guest Welcome &amp; Cocktail Hour'),('12:30 PM','Reception Opens'),('12:45 PM','Reception Program Begins'),('1:30 PM','Lunch / Buffet'),('4:00 PM','Program Ends')])
 page('wedding.html', 'Wedding Details', intro('Wedding Details', 'Everything you need for our wedding day.') + f'''<div id="events" class="section event-section">{venue('ceremony','The Promise','Wedding Ceremony','10:00 AM','San Antonio de Padua Parish','Pooc, Silang, Cavite')}{venue('reception','The Celebration','Wedding Reception','Guest Welcome · 11:00 AM','Cana at Silang','Paglinawan Street, Pook 1<br>Silang, Cavite')}</div><section id="map" class="section journey"><h2>The Journey Continues</h2><p class="subtitle">From the Ceremony to the Celebration.</p><div class="route-art">{artwork('journey-map','Schematic pixel-art route from a church to a garden reception pavilion')}</div><div class="route-labels"><p>San Antonio de Padua Parish</p><span aria-hidden="true">→</span><p>Cana at Silang</p></div><p class="small muted">An illustrated journey, not a road map.</p><a class="btn btn-outline" data-journey-directions href="https://www.google.com/maps/dir/?api=1&amp;origin=San+Antonio+de+Padua+Parish+Pooc+Silang+Cavite&amp;destination=Cana+at+Silang+Paglinawan+Street+Pook+1+Silang+Cavite" target="_blank" rel="noopener noreferrer">Open Directions →</a></section><section id="timeline" class="section"><div class="section-heading"><h2>Game Day Timeline</h2><p class="subtitle">A little guide to the day ahead.</p></div><ol class="timeline">{timeline}</ol></section>''')
 
-def person(color, style='suit', vest=False, child=False):
-    skin, navy = '#c9a38a', '#24354b'
-    hair = '<path fill="#49392f" d="M22 9h18v3h4v18h-4V18h-4v-3H25v5h-5V12h2z"/>'
-    face = f'<path fill="{skin}" d="M22 17h18v16h-4v8h-9v-8h-5z"/><path fill="#b78d75" d="M36 22h4v11h-4z"/>'
-    if style == 'dress':
-        hair += '<path fill="#49392f" d="M18 17h5v22h-5zM40 18h5v22h-5z"/>'
-        clothes = f'<path fill="{color}" d="M24 38h15v4h4v15h3v12h3v12h4v16H11V81h4V69h3V57h3V42h3z"/><path fill="#fff8ee" opacity=".25" d="M25 46h3v14h-3zM22 65h3v22h-3zM38 65h3v27h-3z"/><path fill="{skin}" d="M17 43h5v21h-3v9h-5v-9h3zM42 43h5v21h3v9h-5v-9h-3z"/><path fill="{navy}" d="M22 97h7v6h-9v-3h2zM35 97h7v3h2v3h-9z"/>'
-    else:
-        sleeves = '#fffdf8' if child or style == 'guest' else color
-        jacket = '#fffdf8' if style == 'guest' else color
-        clothes = f'<path fill="{color}" d="M21 64h21v36h-9V77h-3v23h-9z"/><path fill="{jacket}" d="M21 38h21v29H21z"/><path fill="{sleeves}" d="M15 42h7v23h-7zM41 42h7v23h-7z"/><path fill="{skin}" d="M15 65h6v8h-6zM42 65h6v8h-6z"/><path fill="#fffdf8" d="M26 38h10v7h-3v11h-4V45h-3z"/>'
-        if vest: clothes += f'<path fill="{color}" stroke="#d5d8d8" stroke-width="1" d="M24 42h3v10h3v4h3v-4h3V42h3v21H24z"/>'
-        if style != 'guest':
-            clothes += f'<path fill="{navy}" d="'+('M26 40h4v2h3v-2h4v6h-4v-2h-3v2h-4z' if child else 'M30 40h3v4h-1v12h-2V44h-1v-4z')+'"/>'
-        clothes += f'<path fill="{navy}" d="M20 99h10v5H17v-3h3zM33 99h10v2h3v3H33z"/><path fill="#fff" opacity=".2" d="M23 70h2v26h-2zM38 70h2v26h-2z"/>'
-    return f'<svg class="outfit-illustration" viewBox="0 0 64 112" aria-hidden="true" shape-rendering="crispEdges"><path fill="#e0d3b8" d="M12 105h40v3H12z"/><g transform="{ "translate(8 25) scale(.75)" if child else "translate(0 0)" }">{face}{hair}{clothes}</g></svg>'
+OUTFIT_ASSETS = {
+    'For Women': 'guest-woman', 'For Men': 'guest-man',
+    'Fathers of the Couple': 'fathers', 'Best Man': 'best-man',
+    'Groomsmen & Secondary Sponsors': 'groomsmen', 'Kids — Entourage': 'kids',
+    'Mothers of the Couple': 'mothers', 'Maid of Honor': 'maid-of-honor',
+    'Bridesmaids & Secondary Sponsors': 'bridesmaids', 'Flower Girl': 'flower-girl',
+}
 
 men = [('Fathers of the Couple','#839aae',['Dusty Blue 3-Piece Suit','White Longsleeves','Navy Blue Neck Tie'],True,False),('Principal Sponsors','#4a4c50',['Dark Gray 2-Piece Suit','White Longsleeves','Navy Blue Neck Tie'],False,False),('Best Man','#b6b9bc',['Light Gray 3-Piece Suit','White Longsleeves','Navy Blue Neck Tie'],True,False),('Groomsmen & Secondary Sponsors','#b6b9bc',['Light Gray 2-Piece Suit','White Longsleeves','Navy Blue Neck Tie'],False,False),('Kids — Entourage','#adcadf',['Baby Blue Vest & Pants','White Longsleeves','Navy Blue Bow Tie'],True,True)]
 women = [('Mothers of the Couple','#bb8994',['Dusty Rose / Dusty Pink','Mauve']),('Principal Sponsors','#e7bbc4',['Light Pink / Blush Pink']),('Maid of Honor','#7c293d',['Burgundy with a touch of Pink']),('Bridesmaids & Secondary Sponsors','#7c293d',['Burgundy']),('Flower Girl','#efc6d0',['Baby Pink'])]
 def role_card(name,color,items,style='suit',vest=False,child=False):
-    illustration = person(color, 'guest' if name == 'For Men' else style, vest, child or name == 'Flower Girl')
-    if name == 'Maid of Honor':
-        illustration = illustration.replace('</g>', '<path fill="#e7bbc4" d="M22 55h21v4H22zM40 57h3v15h-3z"/></g>')
+    asset = ('female-sponsors' if style == 'dress' else 'male-sponsors') if name == 'Principal Sponsors' else OUTFIT_ASSETS[name]
+    illustration = artwork('outfits/' + asset, name + ': ' + ', '.join(items), 'outfit-illustration')
     return f'<article class="outfit-card">{illustration}<h3>{escape(name)}</h3><span class="role-swatch" style="--swatch:{color}" aria-hidden="true"></span><ul>'+''.join(f'<li>{escape(x)}</li>' for x in items)+'</ul></article>'
 men_cards = ''.join(role_card(n,c,i,vest=v,child=k) for n,c,i,v,k in men)
 women_cards = ''.join(role_card(n,c,i,'dress') for n,c,i in women)

@@ -7,7 +7,7 @@ All artwork is illustrative, not a factual rendering of the couple, venues, or d
 - `journey-map.png`: generated schematic church-to-reception garden route.
 - `invitation-still-life.png`: generated wedding stationery vignette for Gifts and RSVP.
 
-The three generated images use the built-in image-generation tool with the uploaded background as a style reference. No real photos were used. The original generated images remain in the tool's output folder; production copies are kept here. Pixel outfit figures and small UI icons are deterministic inline SVG in `scripts/build_site.py`.
+The three generated images use the built-in image-generation tool with the uploaded background as a style reference. No real photos were used. The original generated images remain in the tool's output folder; production copies are kept here. Small UI icons remain deterministic inline SVG in `scripts/build_site.py`. Outfit figures now use generated portraits; see `outfits/ARTWORK.md` for their reference and generation prompts.
 
 ## Generation prompts
 ### story
