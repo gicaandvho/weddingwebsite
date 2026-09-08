@@ -218,3 +218,13 @@ nav a[aria-current="page"] { color: var(--burgundy); text-decoration: underline;
 @media (max-width: 540px) {
   .outfit-card img.outfit-illustration { width: min(100%, 200px); height: 290px; }
 }
+
+/* Keep the Home focus frame inside its own section spacing. */
+#home:focus-visible { outline-offset: -16px; }
+.welcome-scene:has(.home-photo) { height: auto; }
+.welcome-scene .home-photo { height: auto; aspect-ratio: 3 / 2; object-fit: contain; object-position: center; }
+.avoid-note { text-align: center; }
+@media (max-width: 540px) {
+  /* Show the complete landscape below the title without stretching it. */
+  .opening { background-size: 100% auto; background-position: center bottom; }
+}

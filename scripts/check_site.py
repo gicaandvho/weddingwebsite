@@ -53,7 +53,7 @@ for name,page in pages.items():
 
 guide = pages['outfit.html']
 faq = pages['faq-gifts.html']
-assert sum('faq-item' == attrs.get('class') for _,attrs in faq.elements) == 10
+assert sum('faq-item' == attrs.get('class') for _,attrs in faq.elements) == 11
 assert sum('outfit-card' == attrs.get('class') for _,attrs in guide.elements) == 12
 assert all(code in (ROOT/'outfit.html').read_text(encoding='utf-8') for code in ['#3A2B20','#7E6A52','#B89C82'])
 for name in ['index.html','wedding.html','outfit.html','faq-gifts.html','gallery.html','rsvp.html']:
@@ -63,13 +63,13 @@ wedding = ' '.join(pages['wedding.html'].text)
 for time in ['10:00 AM','11:00 AM','12:30 PM','12:45 PM','1:30 PM','4:00 PM']: assert time in wedding
 assert 'Guest Welcome · 11:00 AM' in wedding
 assert 'January 16, 2027' in ' '.join(pages['rsvp.html'].text)
-print('PASS: 12 HTML pages; balanced markup; unique IDs; local links/assets; tab and ARIA targets; 10 FAQs; 12 outfit cards; timeline; RSVP gateway; no prohibited public content.')
+print('PASS: 12 HTML pages; balanced markup; unique IDs; local links/assets; tab and ARIA targets; 11 FAQs; 12 outfit cards; timeline; RSVP gateway; no prohibited public content.')
 
 # The illustrated V2 direction applies outside Gallery, including CSS scene assets.
 assert (ROOT/'BUILD_SPEC_FINAL_V2.md').exists()
 for name in ['index.html','wedding.html','outfit.html','faq-gifts.html','rsvp.html']:
     for tag, attrs in pages[name].elements:
-        if tag == 'img': assert attrs.get('src','').startswith('assets/pixel/'), (name,'Non-gallery illustration required')
+        if tag == 'img': assert attrs.get('src','').startswith('assets/pixel/') or (name == 'index.html' and attrs.get('src') == 'assets/story/DSC00330.jpg'), (name,'Unapproved non-gallery photograph')
         assert tag != 'video', (name,'Real video belongs in Gallery')
     assert any(tag == 'link' and urlsplit(attrs.get('href','')).path == 'css/pixel.css' for tag,attrs in pages[name].elements)
 for stylesheet in ['global.css','pixel.css']:
@@ -77,7 +77,7 @@ for stylesheet in ['global.css','pixel.css']:
     for url in re.findall(r'url\([\"\']?([^\)\"\']+)', css_path.read_text(encoding='utf-8')):
         if not urlsplit(url).scheme: assert (css_path.parent/url).exists(), (stylesheet,'Missing scene',url)
 assert 'data-home-photo' not in (ROOT/'index.html').read_text(encoding='utf-8')
-print('PASS: V2 source specification, pixel artwork references, and Gallery-only real-media structure.')
+print('PASS: V2 source specification, pixel artwork references, and approved Home photograph and Gallery media structure.')
 
 # Generated artwork must reserve its intrinsic size before lazy loading.
 for name, page in pages.items():

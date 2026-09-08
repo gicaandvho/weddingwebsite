@@ -569,6 +569,10 @@ This note may be presented inside an elegant illustrated info panel.
 > time to park and settle in. The wedding ceremony will **strictly begin
 > at 10:00 AM**, so please plan accordingly.
 
+### Can I join just for the reception?
+
+> Yes! If you aren't able to make it to the ceremony, you are very welcome to head straight to the reception venue. We have prepared something special for the cocktail hour, which begins at 11:00 AM.
+
 ### Can I take photos or videos during the ceremony?
 
 > We're having an **unplugged ceremony** and kindly ask that phones and
@@ -631,11 +635,11 @@ Use a short response directing guests to the Outfit Guide.
 
 ## Gifts
 
-### YOUR PRESENCE IS PRESENT ENOUGH
+### Your Presence Is the Greatest Gift
 
 > Your presence on our wedding day is already the greatest gift we could
 > ask for. Should you wish to give something more, a monetary gift
-> toward our next adventure would be sincerely appreciated.
+> toward our next chapter together would be sincerely appreciated.
 
 ### Website Gift Policy
 
