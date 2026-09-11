@@ -228,3 +228,56 @@ nav a[aria-current="page"] { color: var(--burgundy); text-decoration: underline;
   /* Show the complete landscape below the title without stretching it. */
   .opening { background-size: 100% auto; background-position: center bottom; }
 }
+
+/* Anchor the closing ornament and draw crisp, font-independent chevrons. */
+.closing > .pixel-heart { display: block; margin-inline: auto; }
+.slide-controls .arrow { display: inline-grid; place-items: center; min-width: 44px; min-height: 44px; font-size: 0; }
+/* Opening-only responsive artwork. */
+.opening { background-size: contain; background-position: center; }
+@media (max-width: 640px) {
+  .opening { background-image: url('../assets/pixel/press-start-mobile.png'); background-size: contain; background-position: center; padding: 20px 24px 24vh; }
+  .opening-lockup { width: min(100%, 400px); }
+  .opening h1 { font-size: clamp(2.8rem, 13vw, 3.35rem); line-height: 1.1; }
+  .opening .ornament { margin-block: 16px; }
+  .opening .opening-line { font-size: clamp(1rem, 4.5vw, 1.2rem); line-height: 1.4; }
+  .opening-date { font-size: clamp(2.8rem, 12vw, 3.4rem); margin: 18px 0 14px; }
+  .opening-copy { font-size: 1rem; line-height: 1.6; }
+  .opening .btn { width: 74%; max-width: 280px; min-height: 48px; padding: 12px 14px; margin-top: 22px; font-size: 1rem; }
+}
+
+/* Ivory stationery panels with a visible gold edge and quiet paper grain. */
+.note, .gifts, .supplier, .outfit-card, .venue, .countdown-section {
+  background-color: #fffdf7;
+  background-image: repeating-conic-gradient(#b49b6b06 0% 25%, transparent 0% 50%);
+  background-size: 6px 6px;
+  border: 1px solid var(--gold);
+  box-shadow: inset 0 0 0 5px #fffdf7, inset 0 0 0 6px #b49b6b66, 0 5px 16px #3a2b2014;
+}
+@media (min-width: 641px) {
+  .opening { width: 100%; height: 100dvh; max-width: none; background: #faf4e8 url('../assets/pixel/press-start-desktop-fullbleed.png') center / cover no-repeat; }
+}
+/* One viewport-sized atmospheric layer; content scrolls over the artwork. */
+#site-content { isolation: isolate; }
+#site-content::before {
+  content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: url('../assets/pixel/inner-page-background.png') center / cover no-repeat;
+  opacity: .16;
+}
+#main, .page-intro { background-image: none; }
+
+/* Continue the fixed atmosphere through the footer without a second landscape. */
+.footer-landscape { display: none; }
+.site-footer { background: transparent; border-top: 0; padding-top: 65px; }
+.icon-arrow { display: inline-block; width: 24px; height: 24px; flex: 0 0 24px; vertical-align: middle; color: var(--burgundy); }
+.icon-arrow--left { transform: rotate(180deg); }
+[data-directions] .icon-arrow { color: var(--pixel-line); }
+[data-directions], [data-journey-directions] { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.slide-controls .arrow .icon-arrow { width: 26px; height: 26px; }
+.supplier { text-align: left; padding: 28px; }
+.supplier > * { margin-left: 0; margin-right: 0; }
+@media (max-width: 540px) { .supplier { padding: 24px; } }
+
+/* Emphasize only the arrow connecting the two journey labels. */
+.route-labels { grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr); }
+.route-labels > span { display: flex; align-items: center; justify-content: center; }
+.journey-arrow { display: block; width: 40px; height: 28px; color: var(--burgundy); }

@@ -9,12 +9,12 @@
 <meta property="og:description" content="Two Players. One Love. One Unforgettable Adventure. 2.7.27">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="css/global.css?v=a0a542fe81ab">
-<link rel="stylesheet" href="css/pixel.css?v=cffd2ca4b20b">
+<link rel="stylesheet" href="css/pixel.css?v=ba3b21da17a0">
 <script src="js/config.js?v=28a65d688af7" defer>
 </script>
 <script src="js/main.js?v=98e1de0ef040" defer>
 </script>
-<script src="js/gallery.js?v=0edc82887525" defer>
+<script src="js/gallery.js?v=61f9a65603f8" defer>
 </script>
 </head>
 <body>
@@ -68,10 +68,18 @@
 <img data-slide-image alt="">
 </button>
 <div class="slide-controls">
-<button class="arrow" data-prev aria-label="Previous photograph">←</button>
+<button class="arrow" data-prev aria-label="Previous photograph">
+<svg class="icon-arrow icon-arrow--left" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/>
+</svg>
+</button>
 <span data-photo-counter aria-live="polite">
 </span>
-<button class="arrow" data-next aria-label="Next photograph">→</button>
+<button class="arrow" data-next aria-label="Next photograph">
+<svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/>
+</svg>
+</button>
 </div>
 <progress data-photo-progress aria-label="Photo progress" max="1" value="1">
 </progress>
@@ -92,8 +100,16 @@
 <button class="lightbox-close" data-lightbox-close aria-label="Close photograph">×</button>
 <img data-lightbox-image alt="">
 <div class="slide-controls">
-<button class="arrow" data-lightbox-prev aria-label="Previous photograph">←</button>
-<button class="arrow" data-lightbox-next aria-label="Next photograph">→</button>
+<button class="arrow" data-lightbox-prev aria-label="Previous photograph">
+<svg class="icon-arrow icon-arrow--left" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/>
+</svg>
+</button>
+<button class="arrow" data-lightbox-next aria-label="Next photograph">
+<svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/>
+</svg>
+</button>
 </div>
 </dialog>
 </main>

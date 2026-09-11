@@ -30,7 +30,24 @@
   const progress = document.querySelector('[data-photo-progress]');
   let index = 0;
   let request = 0;
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  let timer;
+  let hovered = false;
+  let touching = false;
+  function schedule() {
+    clearTimeout(timer);
+    if(photos.length < 2 || motion.matches || document.hidden || hovered || touching || dialog.open || slideshow.contains(document.activeElement)) return;
+    timer = setTimeout(() => show(index+1), 5000);
+  }
+  slideshow.addEventListener('pointerenter', e => { if(e.pointerType === 'mouse') { hovered = true; schedule(); } });
+  slideshow.addEventListener('pointerleave', e => { if(e.pointerType === 'mouse') { hovered = false; schedule(); } });
+  slideshow.addEventListener('pointerdown', () => { touching = true; schedule(); });
+  window.addEventListener('pointerup', () => { touching = false; schedule(); });
+  window.addEventListener('pointercancel', () => { touching = false; schedule(); });
+  slideshow.addEventListener('focusin', schedule);
+  slideshow.addEventListener('focusout', () => setTimeout(schedule, 0));
+  document.addEventListener('visibilitychange', schedule);
+  motion.addEventListener('change', schedule);
   slideshow.hidden = false;
   document.querySelector('[data-gallery-empty]').hidden = true;
   progress.max = photos.length;
@@ -47,6 +64,7 @@
     thumbs.append(button);
   });
   function show(next) {
+    clearTimeout(timer);
     index = (next+photos.length)%photos.length;
     const photo = photos[index];
     const ticket = ++request;
@@ -54,7 +72,7 @@
     loaded.onload = () => {
       if(ticket !== request) return;
       slideshow.querySelectorAll('.slide-outgoing').forEach(image => image.remove());
-      if(main.hasAttribute('src') && !reduced) {
+      if(main.hasAttribute('src') && !motion.matches) {
         const outgoing = main.cloneNode();
         outgoing.removeAttribute('data-slide-image');
         outgoing.alt = '';
@@ -67,6 +85,7 @@
       main.alt = photo.alt || 'Gica and Vho, pre-wedding photograph '+(index+1);
       large.src = main.src;
       large.alt = main.alt;
+      schedule();
     };
     loaded.onerror = () => {
       if(ticket !== request) return;
@@ -74,22 +93,24 @@
       main.alt = 'This photograph is temporarily unavailable. Please try the next one.';
       large.removeAttribute('src');
       large.alt = main.alt;
+      schedule();
     };
     loaded.src = photo.src;
     document.querySelector('[data-photo-counter]').textContent = String(index+1).padStart(2,'0')+' / '+String(photos.length).padStart(2,'0');
     progress.value = index+1;
     [...thumbs.children].forEach((button,i) => button.setAttribute('aria-pressed',String(i === index)));
     const selected = thumbs.children[index];
-    thumbs.scrollTo({left:selected.offsetLeft-thumbs.offsetLeft-thumbs.clientWidth/2+selected.clientWidth/2,behavior:'smooth'});
+    thumbs.scrollTo({left:selected.offsetLeft-thumbs.offsetLeft-thumbs.clientWidth/2+selected.clientWidth/2,behavior:motion.matches ? 'instant' : 'smooth'});
   }
   document.querySelectorAll('[data-prev], [data-lightbox-prev]').forEach(button => button.addEventListener('click',() => show(index-1)));
   document.querySelectorAll('[data-next], [data-lightbox-next]').forEach(button => button.addEventListener('click',() => show(index+1)));
   document.querySelector('[data-enlarge]').addEventListener('click', () => {
     dialog.showModal();
+    schedule();
     document.body.classList.add('modal-open');
   });
   document.querySelector('[data-lightbox-close]').addEventListener('click',() => dialog.close());
-  dialog.addEventListener('close',() => document.body.classList.remove('modal-open'));
+  dialog.addEventListener('close',() => { document.body.classList.remove('modal-open'); schedule(); });
   [slideshow,dialog].forEach(surface => {
     surface.addEventListener('keydown',e => {
       if(e.key === 'ArrowLeft' || e.key === 'ArrowRight') {

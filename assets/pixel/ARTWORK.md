@@ -21,3 +21,11 @@ Use attached artwork only as style reference. Generate one wide landscape 2:1 il
 ### stationery
 
 Use attached artwork as palette and pixel-art style reference only. Create an elegant 3:2 landscape pixel-art still life asset for wedding invitation and gifts sections. A cream open envelope and blank ivory invitation card tied with a narrow burgundy silk ribbon, small burgundy heart wax seal, tasteful white flowers with sage leaves resting beside it. Sophisticated fine 16-bit pixel clusters, delicate antique-gold detailing, soft warm light, no photorealism. Centered composition, airy warm-ivory #faf7f0 background, objects occupy middle 70%, no frame, no text, no lettering or numbers, no logo, no cash, no currency, no game loot or presents stack. Romantic premium wedding stationery, not childish.
+
+
+## Mobile opening artwork — 2026-09-08
+
+- Asset: `wedding-world-mobile.png` (941 × 1672, approximately 9:16).
+- Created with the built-in imagegen tool, using `wedding-world.png` as style/subject reference only. Original desktop asset unchanged.
+- Original output: `exec-d2f802d0-49ae-4c14-a079-d3379d2fe338.png`.
+- Prompt: Create a NEW portrait 9:16 wedding opening screen background, reference image is style and subject reference only, not a crop. Match its refined fine pixel-art, warm cream/navy/burgundy/muted gold palette, church, CANA reception building, flowers, clouds, hearts and path. Recompose for phone: full thin gold decorative rectangular outer border inset safely on ALL FOUR sides, small burgundy corner hearts. Church lower left and CANA lower right, both entirely within border; buildings and landscape/path/florals primarily bottom 25 percent. Upper and middle 70 percent a very calm light cream empty field for HTML title overlay, clouds only faint and peripheral, no important art behind central text. Elegant romantic premium pixel art, same architecture cues. No title, no date, no button or UI lettering; only CANA on venue facade. Portrait 9:16 output. Preserve full frame and both landmarks, do not crop landscape reference. Save as new artwork.
